@@ -4,12 +4,13 @@
  
 $sidebar-bg:                      $aside-bg;
 
-$sidebar-item-color:              #515253;
-$sidebar-item-color-active:       $nav-top-bg;
-$sidebar-item-bg-active:          darken($sidebar-bg, 1%);
+$sidebar-item-color:              #000;
+$sidebar-item-color-hover:        #acacac;
+$sidebar-item-color-active:       #000;
+$sidebar-item-bg-active:          rgb(245, 247, 250);
 
-$sidebar-icon-color:              inherits;
-$sidebar-icon-color-active:       $nav-top-bg;
+$sidebar-icon-color:              rgb(199, 203, 211);
+$sidebar-icon-color-active:       rgba(11, 36, 84, .3);
 
 $sidebar-bullet-color:            rgba(0,0,0,.25);
 $sidebar-bullet-color-active:     $sidebar-icon-color-active;
@@ -18,16 +19,49 @@ $sidebar-heading-color:           #919DA8;
 $sidebar-label-color:             $sidebar-item-color;
 
 $submenu-header-hg:               40px;   // Submenu header when hover collapse sidebar
-$sidebar-item-border-wd:          3px;
+$sidebar-item-border-wd:          4px;
 $scrollbar-wd:                    17px;
 
 .sidebar {
   height: 100%;
   padding-bottom: 20px;
-  background-color: $sidebar-bg; 
-  overflow-x: hidden;
+  background-color: $sidebar-bg;
   -webkit-overflow-scrolling: touch;
   
+  .hamburger {
+    position: absolute;
+    top: 87px;
+    right: -7.5px;
+    width: 17px;
+    height: 17px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(224, 226, 231);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    z-index:100;
+    
+    a {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      padding-left: 2px;
+      line-height: 16px;
+      text-decoration: none;
+      color: rgba(11, 36, 84, .3);
+
+      &:hover {
+        color: rgba(11, 36, 84, .6);
+      }
+    }
+    em {
+      font-size:7px;
+    }
+  }
+
   // draw a divider for the sidebar
   &:after {
     content:"";
@@ -54,6 +88,7 @@ $scrollbar-wd:                    17px;
   // First main level
   > .nav {
     position: relative;
+    padding-top: 42px;
 
     // Only the first item in sidebar
     > .nav-heading:first-child {
@@ -66,26 +101,34 @@ $scrollbar-wd:                    17px;
       
       > a,
       > .nav-item {
-        padding: 12px 24px;
+        padding: 11px 24px;
         color: $sidebar-item-color;
-        letter-spacing: .025em;
+        letter-spacing: -.035em;
         font-weight: normal;
 
         &:focus, &:hover {
           text-decoration: none;
           outline: none;
-          color: $sidebar-item-color-active;
+          color: $sidebar-item-color-hover;
         }
         // Item icon
         > em {
-          width: 1.8em;
+          width: 1.6em;
           display: inline-block;
           font-style: normal;
           font-weight: normal;
           line-height: 1;
           -webkit-font-smoothing: antialiased;
           color: $sidebar-icon-color;
+          padding-top: 5px;
+          vertical-align: top;
         }
+      }
+
+      > a span {
+        display: inline-block;
+        width: 91px;
+        line-height: 21px;
       }
 
       // Active item state
@@ -103,15 +146,45 @@ $scrollbar-wd:                    17px;
       }
 
       &.active {
-        border-left-color: $sidebar-item-color-active;
+        border-left-color: rgb(248, 160, 53);
       }
     }
     .label {
       display: block;
     }
   }
-}
 
+  > .news_block {
+    @include transition(all 0.4s ease);
+    margin: 11px 19px 11px 24px;
+    background-color: $sidebar-item-bg-active;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    padding: 15px 15px 15px 39px;
+
+    li {
+      position: relative;
+      list-style: none;
+      color: #27c14c;
+      line-height: 18px;
+      font-size: 12px;
+      padding-bottom: 18px;
+
+      &:before {
+        position: absolute;
+        left:-20px;
+        content:"·";
+        font-size:52px;
+        vertical-align:middle;
+      }
+      a {
+        
+      }
+    }
+  }
+}
+/* 
 // Hides the scrollbar only on desktops
 $tablet-landscape: 1025px;
 @media only screen and (min-width: $tablet-landscape) {
@@ -119,7 +192,7 @@ $tablet-landscape: 1025px;
     margin-right: -$scrollbar-wd;
     overflow-y: scroll;
   }
-}
+} */
 
 // Sub Levels
 .sidebar-subnav {
@@ -205,7 +278,11 @@ $tablet-landscape: 1025px;
   .sidebar > .nav {
 
     .label {
-      margin: 2px 0 0 0;
+      margin: 2px 12px 0 0;
+      padding: .2em .7em;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
     }
   }
   
@@ -219,7 +296,7 @@ $tablet-landscape: 1025px;
     // Applies to first level items
     > .nav {
       
-      .nav, 
+      .nav,
       > .nav-heading,
       > li > a > span {
         display: none !important;
@@ -244,13 +321,23 @@ $tablet-landscape: 1025px;
         }
       }
     }
+    
+    .hamburger {
+      .icon-left-arrow:before {
+        content: "\e900";
+      }
+    }
+
+    .news_block {
+      display: none !important;
+    }
 
     // labels in menu items
     .nav {
       .label {
         position: absolute;
         top: 10px; 
-        right: 5px;
+        right: 0;
         text-indent: 0;
       }
     }

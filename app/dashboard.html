@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + jQuery">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>Exall - Bitcoin Everywhere</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+   <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+   <!-- FONT Source Sans Pro-->
+   <link rel="stylesheet" href="../vendor/source-sans-pro/source-sans-pro.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- EXALL ICONS-->
+   <link rel="stylesheet" href="../vendor/exall-font/style.css">
+   <!-- ANIMATE.CSS-->
+   <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+   <!-- WHIRL (spinners)-->
+   <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<body>
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <!-- START Top Navbar-->
+         <nav role="navigation" class="navbar topnavbar">
+            <!-- START navbar header-->
+            <div class="navbar-header">
+               <a href="#" data-toggle-state="aside-collapsed aside-toggled" data-no-persist="true" class="navbar-brand">
+                  <div class="brand-logo">
+                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="img-responsive">
+                  </div>
+                  <div class="brand-logo-collapsed">
+                     <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-collapsed" class="img-responsive hidden-xs">
+                     <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="img-responsive visible-xs sidebar-toggle">
+                  </div>
+               </a>
+            </div>
+            <!-- END navbar header-->
+            <!-- START Nav wrapper-->
+            <div class="nav-wrapper">
+               <!-- START Right Navbar-->
+               <ul class="nav navbar-nav navbar-right">
+                  <!-- Wallet icon-->
+                  <li>
+                     <div data-toggle="dropdown" class="wallet">
+                        <em class="icon-wallet"></em>
+                        <span>2.43567823</span>
+                     </div>
+                     <div class="wallet-dropdown dropdown-menu animated fadeInUpShort">
+                        <span data-localize="topbar.confirmation"></span>: 0.23646723
+                        <span data-localize="topbar.deposited"></span>: 1.34756234</div>
+                  </li>
+                  <!-- Profile icon-->
+                  <li>
+                     <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true" class="profile">
+                        <div class="label label-danger">16</div>
+                        <img src="img/user/02.jpg" alt="User avatar" class="img-responsive">
+                     </a>
+                  </li>
+                  <!-- START Language list-->
+                  <li>
+                     <div data-toggle="dropdown" class="lenguage_changer">
+                        <span data-localize="topbar.current_lenguage" class="lang"></span>
+                        <span class="icon-down-arrow"></span>
+                     </div>
+                     <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+                        <li><a href="#" data-set-lang="en">English</a>
+                        </li>
+                        <li><a href="#" data-set-lang="ru">Russian</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <!-- END Language list  -->
+               </ul>
+               <!-- END Right Navbar-->
+               <!-- START Currencies bar-->
+               <div class="nav navbar-nav navbar-left currencies-wrapper">
+                  <div class="currencies">
+                     <div class="border">
+                        <ul>
+                           <li id="RUB_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>24 605 RUB</span>
+                              </span>
+                           </li>
+                           <li id="CNY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>150 CNY</span>
+                              </span>
+                           </li>
+                           <li id="ZAR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>150 ZAR</span>
+                              </span>
+                           </li>
+                           <li id="RON_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>140 RON</span>
+                              </span>
+                           </li>
+                        </ul>
+                        <ul>
+                           <li id="USD_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>250 USD</span>
+                              </span>
+                           </li>
+                           <li id="EUR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>220 EUR</span>
+                              </span>
+                           </li>
+                           <li id="JPY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>220 JPY</span>
+                              </span>
+                           </li>
+                           <li id="DKK_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td>Текущий</td>
+                                       <td>220</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последний час</td>
+                                       <td>
+                                          <em class="icon-small-arrow-down"></em>230 (-10)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>за последние 24 ч.</td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>253 (-33)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>223 DKK</span>
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="chooser">
+                        <div data-toggle="dropdown" class="icon-down-arrow"></div>
+                        <form method="get" action="/" role="currencies" class="form dropdown-menu animated fadeIn">
+                           <fieldset>
+                              <div class="form-group needsclick">
+                                 <div class="checkbox c-checkbox needsclick">
+                                    <label class="needsclick">
+                                       <input type="checkbox" checked="" value="RUB" class="needsclick">
+                                       <span class="icon-checkbox_checked"></span>RUB</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox">
+                                    <label>
+                                       <input type="checkbox" checked="" value="CNY">
+                                       <span class="icon-checkbox_checked"></span>CNY</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox">
+                                    <label>
+                                       <input type="checkbox" checked="" value="ZAR">
+                                       <span class="icon-checkbox_checked"></span>ZAR</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox">
+                                    <label>
+                                       <input type="checkbox" checked="" value="RON">
+                                       <span class="icon-checkbox_checked"></span>RON</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox needsclick">
+                                    <label class="needsclick">
+                                       <input type="checkbox" checked="" value="USD">
+                                       <span class="icon-checkbox_checked"></span>USD</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox needsclick">
+                                    <label class="needsclick">
+                                       <input type="checkbox" checked="" value="EUR">
+                                       <span class="icon-checkbox_checked"></span>EUR</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox needsclick">
+                                    <label class="needsclick">
+                                       <input type="checkbox" checked="" value="JPY">
+                                       <span class="icon-checkbox_checked"></span>JPY</label>
+                                 </div>
+                                 <div class="checkbox c-checkbox needsclick">
+                                    <label class="needsclick">
+                                       <input type="checkbox" checked="" value="DKK">
+                                       <span class="icon-checkbox_checked"></span>DKK</label>
+                                 </div>
+                              </div>
+                           </fieldset>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               <!-- END Currencies bar-->
+            </div>
+            <!-- END Nav wrapper-->
+         </nav>
+         <!-- END Top Navbar-->
+      </header>
+      <!-- sidebar-->
+      <aside class="aside">
+         <!-- START Sidebar (left)-->
+         <div class="aside-inner">
+            <nav data-sidebar-anyclick-close="" class="sidebar">
+               <div class="hamburger">
+                  <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                  <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
+                     <em class="icon-left-arrow"></em>
+                  </a>
+                  <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                  <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                     <em class="icon-right-arrow"></em>
+                  </a>
+               </div>
+               <!-- START sidebar nav-->
+               <ul class="nav">
+                  <!-- Iterates over all sidebar items-->
+                  <li class=" active">
+                     <a href="dashboard.html" title="Dashboard">
+                        <div class="pull-right label label-info">5</div>
+                        <em class="icon-dashboard"></em>
+                        <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
+                     </a>
+                  </li>
+                  <li class=" ">
+                     <a href="wallet.html" title="Wallet">
+                        <em class="icon-wallet"></em>
+                        <span data-localize="sidebar.nav.WALLET">Wallet</span>
+                     </a>
+                  </li>
+                  <li class=" ">
+                     <a href="trades.html" title="Trades">
+                        <div class="pull-right label label-success">30</div>
+                        <em class="icon-trades"></em>
+                        <span data-localize="sidebar.nav.TRADES">Trades</span>
+                     </a>
+                  </li>
+                  <li class=" ">
+                     <a href="referral.html" title="Partner Program">
+                        <em class="icon-partner"></em>
+                        <span data-localize="sidebar.nav.REFERRAL">Partner Program</span>
+                     </a>
+                  </li>
+                  <li class=" ">
+                     <a href="help.html" title="Help">
+                        <em class="icon-help"></em>
+                        <span data-localize="sidebar.nav.HELP">Help</span>
+                     </a>
+                  </li>
+                  <li class=" ">
+                     <a href="news.html" title="News">
+                        <em class="icon-news"></em>
+                        <span data-localize="sidebar.nav.NEWS">News</span>
+                     </a>
+                  </li>
+               </ul>
+               <!-- END sidebar nav-->
+               <ul class="news_block">
+                  <li><a href="#">English kerning must be better</a>
+                  </li>
+                  <li><a href="#">Заголовок новости 1 длинный заголовок, в 3 строки.</a>
+                  </li>
+                  <li><a href="#">Заголовок новости 2, в 2 строчки.</a>
+                  </li>
+                  <li><a href="#">Заголовок новости 3</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+         <!-- END Sidebar (left)-->
+      </aside>
+      <!-- offsidebar-->
+      <aside class="offsidebar hide">
+         <!-- START Off Sidebar (right)-->
+         <nav>
+            <div class="profile">
+               <label data-load-css="css/theme-a.css" class="switch switch-sm">
+                  <em class="icon-sun"></em>
+                  <input id="chk-fixed" type="checkbox">
+                  <span></span>
+                  <em class="icon-moon"></em>
+               </label>
+               <div class="content">
+                  <div class="name">Константин Константинопольский</div>
+                  <ul class="circles">
+                     <li>
+                        <div class="circle">78</div>Рейтинг</li>
+                     <li class="bold">
+                        <div class="circle">D+</div>Trust score</li>
+                     <li>
+                        <div class="circle">12</div>Сделок</li>
+                  </ul>
+               </div>
+               <div class="line"></div>
+               <ul class="menu">
+                  <li>
+                     <em class="icon-edit"></em><a href="">Мои данные</a>
+                  </li>
+                  <li>
+                     <em class="icon-partner"></em><a href="">Партнерская программа</a>
+                  </li>
+                  <li>
+                     <em class="icon-favorite"></em><a href="">Избранное</a>
+                  </li>
+                  <li>
+                     <em class="icon-blacklist"></em><a href="">Черный список</a>
+                  </li>
+               </ul>
+               <div class="line"></div>
+               <ul class="menu">
+                  <li>
+                     <em class="icon-exit"></em><a href="">Выйти</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+         <!-- END Off Sidebar (right)-->
+      </aside>
+      <!-- Main section-->
+      <section>
+         <!-- Page content-->
+         <div class="content-wrapper">
+            <h3>Dashboard
+               <small>Subtitle</small>
+            </h3>
+            <div class="row">
+               <div class="col-lg-12">
+                  <p>A row with content</p>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+   <!-- Page footer-->
+   <footer>
+      <div class="footer">
+         <div class="container">
+            <div class="col-xs-6 col-md-4 left">
+               <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="img-responsive">
+               <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
+                  with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle.
+                  <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
+            </div>
+            <div class="col-xs-6 col-md-5">
+               <ul>
+                  <li><a>About</a>
+                  </li>
+                  <li><a>How it works?</a>
+                  </li>
+                  <li><a>Limits</a>
+                  </li>
+                  <li><a>Safety</a>
+                  </li>
+                  <li><a>Feedback</a>
+                  </li>
+                  <li><a>News</a>
+                  </li>
+               </ul>
+               <ul>
+                  <li><a>FAQ</a>
+                  </li>
+                  <li><a>Support</a>
+                  </li>
+                  <li><a>Terms of use</a>
+                  </li>
+                  <li><a>Partnership</a>
+                  </li>
+                  <li><a>Login</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-xs-12 col-md-3">
+               <div class="social">
+                  <span class="icon-youtube"></span>
+                  <span class="icon-twitter"></span>
+                  <span class="icon-facebook"></span>
+               </div>
+               <form>
+                  <label for="subscribe">Subscribe for a newsletter:</label>
+                  <input id="subscribe" type="email" placeholder="Your email">
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="prefooter">
+         <div class="container">
+            <div class="col-xs-8 images">
+               <img src="img/bitgo.jpg" alt="BitGO" class="img-responsive">
+               <img src="img/cloudflare.jpg" alt="CloudFlare" class="img-responsive">
+               <img src="img/bitcoinaverage.jpg" alt="BitcoinAverage" class="img-responsive">
+            </div>
+            <div class="col-xs-4 copyright">© "ExAll", 2015</div>
+         </div>
+      </div>
+   </footer>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <!-- MODERNIZR-->
+   <script src="../vendor/modernizr/modernizr.custom.js"></script>
+   <!-- JQUERY-->
+   <script src="../vendor/jquery/dist/jquery.js"></script>
+   <!-- BOOTSTRAP-->
+   <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+   <!-- STORAGE API-->
+   <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+   <!-- JQUERY EASING-->
+   <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+   <!-- ANIMO-->
+   <script src="../vendor/animo.js/animo.js"></script>
+   <!-- LOCALIZE-->
+   <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+   <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+   <!-- =============== APP SCRIPTS ===============-->
+   <script src="js/app.js"></script>
+</body>
+
+</html>

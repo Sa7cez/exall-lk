@@ -1,27 +1,43 @@
 {
   "sidebar": [
     {
-      "text": "Menu Navigation",
-      "heading": "true",
-      "translate": "sidebar.heading.HEADER"
+      "text": "Dashboard",
+      "href": "dashboard.html",
+      "icon": "icon-dashboard",
+      "alert": "5",
+      "label": "label label-info",
+      "translate": "sidebar.nav.DASHBOARD"
     },
     {
-      "text": "Single View",
-      "href": "singleview.html",
-      "icon": "fa fa-file-o",
-      "translate": "sidebar.nav.SINGLEVIEW"
+      "text": "Wallet",
+      "href": "wallet.html",
+      "icon": "icon-wallet",
+      "translate": "sidebar.nav.WALLET"
     },
     {
-      "text": "Menu",
-      "href": "#menuid",
-      "icon": "icon-folder",
-      "submenu": [
-        { "text": "Sub Menu", 
-          "href": "submenu.html", 
-          "translate": "sidebar.nav.menu.SUBMENU" 
-        }    
-      ],
-      "translate": "sidebar.nav.menu.MENU"
+      "text": "Trades",
+      "href": "trades.html",
+      "icon": "icon-trades",
+      "alert": "30",
+      "translate": "sidebar.nav.TRADES"
+    },
+    {
+      "text": "Partner Program",
+      "href": "referral.html",
+      "icon": "icon-partner",
+      "translate": "sidebar.nav.REFERRAL"
+    },
+    {
+      "text": "Help",
+      "href": "help.html",
+      "icon": "icon-help",
+      "translate": "sidebar.nav.HELP"
+    },
+    {
+      "text": "News",
+      "href": "news.html",
+      "icon": "icon-news",
+      "translate": "sidebar.nav.NEWS"
     }
   ]
 }

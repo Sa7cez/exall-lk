@@ -3,7 +3,7 @@
 
 (function(window, document, $, undefined){
 
-  var preferredLang = 'en';
+  var preferredLang = 'ru';
   var pathPrefix    = 'i18n'; // folder of json files
   var packName      = 'site';
   var storageKey    = 'jq-appLang';
@@ -38,7 +38,7 @@
 
         setLanguage(opts);
 
-        activateDropdown($(this));
+        //activateDropdown($(this));
       }
 
     });
@@ -52,8 +52,8 @@
     function activateDropdown(elem) {
       var menu = elem.parents('.dropdown-menu');
       if ( menu.length ) {
-        var toggle = menu.prev('button, a');
-        toggle.text ( elem.text() );
+        var toggle = menu.prev('.lenguage_changer, button, a');
+        toggle.find('.lang').text ( elem.attr('data-set-lang') );
       }
     }
 

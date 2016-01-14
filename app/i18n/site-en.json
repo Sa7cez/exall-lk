@@ -1,23 +1,77 @@
 {
-  "dashboard": {
-    "WELCOME": "Welcome to Angle !"
+  "trades": {
+    "BUY": "Buy bitcoin",
+    "SELL": "Sell bitcoin",
+    "ORDER": "Order",
+    "AMOUNT": "Amount",
+    "STATUS": "Status",
+    "DATE": "Date",
+    "CREATE_ORDER": "Create order",
+    "ORDERSBUY": "Orders to buy",
+    "ORDERSSELL": "Orders to sell",
+    "BUY": "Buy",
+    "SELL": "Sell",
+    "PRICE": "Price",
+    "AMOUNTBTC": "Amount (BTC)",
+    "PAYMENTSYSTEM": "Payment system",
+    "SELLER": "Seller",
+    "RATING": "Rating",
+    "FAVORITE": "Choose from favorites",
+    "SEARCH": "Search for all applications",
+    "statuses" : {
+      "WAIT" : "Wait",
+      "WAITPAYMENT" : "Awayting transfer",
+      "SENDED": "Transferred",
+      "COMPLETE": "Completed",
+      "WAITCOMPLETE" : "Waiting"
+    },
+    "HIDE": "hide",
+    "CONFIRMPAYMENT" : "Agree to pay",
+    "DONTSEND" : "Do not transfer",
+    "TOSEND": "To send:",
+    "SEND": "Send:",
+    "ALL": "all",
+    "CLEARALL": "Clear all",
+    "TIMERDALAY": "Ask for more time:",
+    "2HOURS": "2 hour",
+    "3HOURS": "3 hours",
+    "4HOURS": "4 hours",
+    "DAY": "For day"
+  },
+  "countries": {
+    "RUSSIA": "Russia",
+    "USA": "USA",
+    "England": "England",
+    "CHINA": "China"
+  },
+  "payments": {
+    "types": {
+      "BANK":"Bank Transfer"
+    },
+    "TITLE": "Top payments (BTC)",
+    "ALL": "All types",
+    "OTHER": "show more payments",
+    "SBERBANK":"Sberbank",
+    "ALPHABANK":"Alpha-bank",
+    "WEBMONEY":"WebMoney",
+    "WU":"Western Union",
+    "VTB":"VTB",
+    "PKB":"Petrokommerz",
+    "ANOTHERBANK":"Another bank"
   },
   "topbar": {
-    "search": {
-      "PLACEHOLDER": "Type and hit enter.."
-    }
+    "current_lenguage":"EN",
+    "confirmation":"Awaiting Confirmation",
+    "deposited":"Deposited"
   },
   "sidebar": {
-    "WELCOME": "Welcome",
-    "heading": {
-      "HEADER": "Main Navigation"
-    },
     "nav": {
-      "SINGLEVIEW": "Single View",
-      "menu": {
-        "MENU": "Menu",
-        "SUBMENU": "Sub Menu"
-      }
+      "DASHBOARD": "Dashboard",
+      "WALLET": "Wallet",
+      "TRADES": "Trades",
+      "REFERRAL": "Partner Program",
+      "HELP": "Help",
+      "NEWS": "News"
     }
   }
 }

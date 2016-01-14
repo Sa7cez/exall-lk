@@ -7,10 +7,10 @@
 // Open status toggled via JS
 // -----------------------------------------
 
-$offsidebar-bg:           #fff;
+$offsidebar-bg:           transparent;
 $offsidebar-border-color: grayscale(darken($offsidebar-bg, 20%));
 $offsidebar-color:        $text-color;
-$offsidebar-wd:           $aside-wd + 15px;      // match the width with the main aside component
+$offsidebar-wd:           290px;
 
 .offsidebar {
   position: absolute;
@@ -74,6 +74,10 @@ $offsidebar-wd:           $aside-wd + 15px;      // match the width with the mai
   }
   @media only screen and (min-width: $mq-tablet) {
     overflow-y: auto;
+  }
+
+  .profile {
+    background-color: #fff !important;
   }
 }
 

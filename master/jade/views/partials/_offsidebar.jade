@@ -1,20 +1,42 @@
 // START Off Sidebar (right)
 nav
+  .profile
+    label.switch.switch-sm(data-load-css="css/theme-a.css")
+      em.icon-sun
+      input#chk-fixed(type='checkbox')
+      span
+      em.icon-moon
+    .content
+      .name Константин Константинопольский
+      ul.circles
+        li
+          .circle 78
+          | Рейтинг
+        li.bold
+          .circle D+
+          | Trust score
+        li
+          .circle 12
+          | Сделок
+    .line
+    ul.menu
+      li 
+        em.icon-edit
+        a(href="") Мои данные
+      li 
+        em.icon-partner
+        a(href="") Партнерская программа
+      li 
+        em.icon-favorite
+        a(href="") Избранное
+      li 
+        em.icon-blacklist
+        a(href="") Черный список
+    .line
 
-  div(role='tabpanel')
-    // Nav tabs
-    ul.nav.nav-tabs.nav-justified(role='tablist')
-      li.active(role='presentation')
-        a(href='#app-settings', aria-controls='app-settings', role='tab', data-toggle='tab')
-          em.icon-equalizer.fa-lg
-      li(role='presentation')
-        a(href='#app-chat', aria-controls='app-chat', role='tab', data-toggle='tab')
-          em.icon-user.fa-lg
-    // Tab panes
-    .tab-content
-      #app-settings.tab-pane.fade.in.active(role='tabpanel')
-        include _offsidebar-tab1
-      #app-chat.tab-pane.fade(role='tabpanel')
-        include _offsidebar-tab2
+    ul.menu
+      li
+        em.icon-exit
+        a(href="") Выйти
 
 // END Off Sidebar (right)

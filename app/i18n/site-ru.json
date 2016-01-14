@@ -1,0 +1,77 @@
+{
+  "trades": {
+    "BUY": "Купить биткоины",
+    "SELL": "Продать биткоины",
+    "ORDER": "Заявка",
+    "AMOUNT": "Сумма",
+    "STATUS": "Статус",
+    "DATE": "Дата",
+    "CREATE_ORDER": "Создать заявку",
+    "ORDERSBUY": "Заявки на покупку",
+    "ORDERSSELL": "Заявки на продажу",
+    "BUY": "Купить",
+    "SELL": "Продать",
+    "PRICE": "Цена",
+    "AMOUNTBTC": "Количество (BTC)",
+    "PAYMENTSYSTEM": "Платежная система",
+    "SELLER": "Продавец",
+    "RATING": "Рейтинг",
+    "FAVORITE": "Выбрать из избранных",
+    "SEARCH": "Поиск по всем заявкам",
+    "statuses" : {
+      "WAIT" : "Ожидает",
+      "WAITPAYMENT" : "Ожидает перевода",
+      "SENDED": "Переведено",
+      "COMPLETE": "Выполнено",
+      "WAITCOMPLETE" : "Ожидает выполнения"
+    },
+    "HIDE": "скрыть",
+    "CONFIRMPAYMENT" : "Согласиться оплатить",
+    "DONTSEND" : "Не переводить",
+    "TOSEND": "К отправке:",
+    "SEND": "Отправлю:",
+    "ALL": "все",
+    "CLEARALL": "Очистить все",
+    "TIMERDALAY": "Запросить продление таймера на:",
+    "2HOURS": "2 часа",
+    "3HOURS": "3 часа",
+    "4HOURS": "4 часа",
+    "DAY": "На день"
+  },
+  "countries": {
+    "RUSSIA": "Россия",
+    "USA": "США",
+    "England": "Великобритания",
+    "CHINA": "Китай"
+  },
+  "payments": {
+    "types": {
+      "BANK":"Банковский перевод"
+    },
+    "TITLE": "Топ платежных систем (BTC)",
+    "ALL": "Все виды оплаты",
+    "OTHER": "еще платежные системы",
+    "SBERBANK":"Сбербанк",
+    "ALPHABANK":"Альфа-Банк",
+    "WEBMONEY":"WebMoney",
+    "WU":"Western Union",
+    "VTB":"ВТБ",
+    "PKB":"Петрокоммерц",
+    "ANOTHERBANK":"Еще банк"
+  },
+  "topbar": {
+    "current_lenguage":"RU",
+    "confirmation":"Ожидает подтверждения",
+    "deposited":"Депонировано"
+  },
+  "sidebar": {
+    "nav": {
+      "DASHBOARD": "Дашборд",
+      "WALLET": "Кошелек",
+      "TRADES": "Торги",
+      "REFERRAL": "Партнерская программа",
+      "HELP": "Помощь",
+      "NEWS": "Новости"
+    }
+  }
+}

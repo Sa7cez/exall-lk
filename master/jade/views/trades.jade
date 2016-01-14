@@ -1,0 +1,306 @@
+extends ../_layout
+
+block active
+  - sidebar_active = 'trades.html'
+
+block content
+  
+  .row
+    .col-xs-12.col-md-8
+
+      // START buysell tab
+      #buysell.panel.panel-transparent(role='tabpanel')
+        // Nav tabs
+        ul.nav.nav-tabs.nav-justified(role='tablist')
+          li.active(role='presentation')
+            a.bb0(href='#buy', aria-controls='buy', role='tab', data-toggle='tab', data-localize="trades.BUY")
+          li(role='presentation')
+            a.bb0(href='#sell', aria-controls='sell', role='tab', data-toggle='tab', data-localize="trades.SELL")
+        // Tab panes
+        .tab-content.bg-white
+          #buy.tab-pane.active(role='tabpanel') 
+            .container-fluid
+              .row
+                .col-lg-12
+                    .table-responsive
+                      table#ordersBuy.table.table-striped
+                        thead
+                          tr
+                            th(style='width:10%').message
+                              .icon-message
+                            th(style='width:20%', data-localize="trades.ORDER")
+                            th(style='width:14%') BTC
+                            th(style='width:20%', data-localize="trades.AMOUNT")
+                            th(style='width:20%', data-localize="trades.STATUS")
+                            th(style='width:10%', data-localize="trades.DATE").date 
+                            th(style='width:6%').full-info  
+                        tbody
+            .panel-footer
+              a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
+          #sell.tab-pane(role='tabpanel') 
+            .container-fluid
+              .row
+                .col-lg-12
+                    .table-responsive
+                      table#ordersSell.table.table-striped
+                        thead
+                          tr
+                            th(style='width:12%').message
+                              .icon-message
+                            th(style='width:16%', data-localize="trades.ORDER")
+                            th(style='width:17%') BTC
+                            th(style='width:18%', data-localize="trades.AMOUNT")
+                            th(style='width:20%', data-localize="trades.STATUS")
+                            th(style='width:10%', data-localize="trades.DATE").date 
+                            th(style='width:7%').full-info  
+                        tbody
+            .panel-footer
+              a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")   
+          // START buysell popup
+          .buysell_popup.clearfix(role='buysellpopup', style="display:none")
+            .clearfix
+              .pull-left.hide_it(data-tool="popup-hide")
+                em.icon-up-arrow
+                span(data-localize="trades.HIDE")
+              .pull-right
+                em.icon-cross(data-tool="popup-hide")
+            .offset.title Заявка на покупку B-8658765
+            .order.clearfix
+              .column.message
+                em.icon-message
+              .column.date
+                .day 12.07.15
+              .column.btc 300 BTC
+              .column.amount 123 130 000 USD
+              .column.status(data-localize="trades.statuses.WAITCOMPLETE")
+              .column.author
+              .column.payment
+
+            .offset.pretitle(data-localize="trades.ORDERSBUY")
+            
+            .line
+
+            .order.clearfix
+              .column.offset.order-name О–284734743
+              .column.message
+                .label.label-transparent 10
+              .column.date
+                .day 12.07.15
+                span.adds Еще 15 минут
+              .column.btc + 100
+              .column.amount 382 325 USD
+              .column.status(data-localize="trades.statuses.SENDED")
+              .column.author
+                .status.online
+                .name Steve Collins
+                .rating (30+,  100,  A+)
+              .column.payment
+                em.icon-shield.green
+                span(data-localize="payments.types.BANK")
+            
+            .line
+            
+            .order.clearfix.opened
+              .column.offset.order-name О–284734743
+              .column.message
+                .label.label-danger 2
+              .column.date
+                .day 12.07.15
+                span.adds Еще 15 минут
+              .column.btc + 200
+              .column.amount 586 923 USD
+              .column.status(data-localize="trades.statuses.WAITPAYMENT")
+                a.adds(href="#", data-localize="trades.DONTSEND")
+              .column.author
+                .status.offline
+                .name Иванов Сергей
+                .rating (3,  15,  B-)
+              .column.payment
+                em.icon-shield.gray
+                span(data-localize="payments.types.BANK")
+              .payment_methods.clearfix
+                .col-xs-6
+                  .requisites
+                    .name На Сбербанк
+                    .bordered
+                      .info БИК:  040147781<br>Российская Федерация<br>Корр. счет: 30101810200000000604<br>АЛТАЙСКОЕ ОТДЕЛЕНИЕ N8644<br>ПАО СБЕРБАНК, БАРНАУЛ
+                      .send 
+                        span(data-localize="trades.TOSEND") 
+                        |&nbsp;&nbsp;382 325 345 RUB
+                        br
+                        span(data-localize="trades.SEND")
+                        label
+                          input.form-control.input-sm
+                        a(href="", data-localize="trades.ALL")
+                .col-xs-6
+                  .requisites
+                    .name На ВТБ
+                    .bordered
+                      .info БИК:  040147781<br>Российская Федерация<br>Корр. счет: 30101810200000000604<br>АЛТАЙСКОЕ ОТДЕЛЕНИЕ N8644<br>ПАО СБЕРБАНК, БАРНАУЛ
+                      .send 
+                        span(data-localize="trades.TOSEND") 
+                        |&nbsp;&nbsp;382 325 345 RUB
+                        br
+                        span(data-localize="trades.SEND")
+                        label
+                          input.form-control.input-sm
+                        a(href="", data-localize="trades.ALL")
+            .footer.clearfix
+                .functions
+                  a.clear-all(href="", data-localize="trades.CLEARALL")
+                  button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
+                  .drop
+                    button.dropdown.btn.btn-transparent(data-toggle="dropdown")
+                      span.lang(data-localize="trades.2HOURS")
+                      span.icon-down-arrow
+                    ul.dropdown-menu.dropdown-menu-right.animated.fadeInUpShort(role='menu')
+                      li
+                        a(href='#', data-localize="trades.3HOURS")
+                      li
+                        a(href='#', data-localize="trades.4HOURS")
+                      li
+                        a(href='#', data-localize="trades.DAY")
+                      li
+                        a(href='#', data-localize="trades.CUSTOM")
+                a.btn.btn-orange.btn-sm(href='#', data-localize="trades.CONFIRMPAYMENT")
+          // END buysell popup
+
+      // END buysell tab        
+    
+    .col-xs-12.col-md-4
+      
+      // START payment top panel
+      #paymentTop.panel.panel-transparent.remove
+        .title
+          span(data-localize="payments.TITLE")
+          em(href="#", data-tool="panel-dismiss", data-toggle="tooltip", title="Close Panel").pull-right.icon-cross.hidden-lg.hidden-md
+        .box-placeholder
+          .btn-group
+            button.btn.btn-transparent(data-toggle="dropdown")
+              span.lang(data-localize="countries.RUSSIA")
+              span.icon-down-arrow
+            ul.dropdown-menu.dropdown-menu-left.animated.fadeInUpShort(role='menu')
+              li
+                a(href='#', data-localize="countries.ENGLAND")
+              li
+                a(href='#', data-localize="countries.USA")
+              li
+                a(href='#', data-localize="countries.RUSSIA")
+              li
+                a(href='#', data-localize="countries.CHINA")
+          .btn-group
+            button.btn.btn-transparent(data-toggle="dropdown")
+              span.lang(data-localize="payments.ALL")
+              span.icon-down-arrow
+            ul.dropdown-menu.dropdown-menu-left.animated.fadeInUpShort(role='menu')
+              li
+                a(href='#', data-localize="payments.SBERBANK")
+              li
+                a(href='#', data-localize="payments.ALPHABANK")
+              li
+                a(href='#', data-localize="payments.WEBMONEY")
+              li
+                a(href='#', data-localize="payments.WU")
+              li
+                a(href='#', data-localize="payments.VTB")
+              li
+                a(href='#', data-localize="payments.PKB")
+              li
+                a(href='#', data-localize="payments.ANOTHERBANK")
+        // START table-responsive
+        .table-responsive
+          table.table
+            tbody
+              tr
+                td(data-localize="payments.SBERBANK")
+                td 29 404, 324
+              tr
+                td(data-localize="payments.ALPHABANK")
+                td 24 421, 424
+              tr
+                td(data-localize="payments.WEBMONEY")
+                td 1 842, 424
+              tr
+                td(data-localize="payments.WU")
+                td 1 424, 434
+              tr
+                td(data-localize="payments.VTB")
+                td 242 425
+              tr
+                td(data-localize="payments.PKB")
+                td 2 040
+              tr
+                td(data-localize="payments.ANOTHERBANK")
+                td 1 845
+              tr
+                td(data-localize="payments.SBERBANK")
+                td 2 131
+              tr
+                td(data-localize="payments.ALPHABANK")
+                td 234
+          // END table-responsive
+        .other
+          span.icon-down-arrow
+          span(data-localize="payments.OTHER")
+      // END payment top panel
+
+    .col-xs-12
+      #orders.panel.panel-transparent(role='tabpanel')
+        // Nav tabs
+        ul.nav.nav-tabs.nav-justified(role='tablist')
+          li.active(role='presentation')
+            a.bb0(href='#orders-buy', aria-controls='buy', role='tab', data-toggle='tab', data-localize="trades.ORDERSBUY")
+          li(role='presentation')
+            a.bb0(href='#orders-sell', aria-controls='sell', role='tab', data-toggle='tab', data-localize="trades.ORDERSSELL")
+        // Tab panes
+        .orders-tabs.tab-content.p0.bg-white
+          #orders-buy.tab-pane.active(role='tabpanel') 
+            .container-fluid
+              .row
+                .col-lg-12
+                  .table-responsive
+                    table#orders-buy-table.table
+                      thead
+                        tr
+                          th(style='width:15%', data-localize="trades.PRICE").price
+                          th(style='width:17%', data-localize="trades.AMOUNTBTC")
+                          th(style='width:26%', data-localize="trades.PAYMENTSYSTEM")
+                          th(style='width:23%', data-localize="trades.SELLER")
+                          th(style='width:10%', data-localize="trades.RATING") 
+                          th(style='width:9%').buy_button
+                      tbody 
+          #orders-sell.tab-pane(role='tabpanel') 
+            .container-fluid
+              .row
+                .col-lg-12
+                    .table-responsive
+                      table#orders-sell-table.table
+                        thead
+                          tr
+                            th(style='width:15%', data-localize="trades.PRICE").price
+                            th(style='width:17%', data-localize="trades.AMOUNTBTC")
+                            th(style='width:26%', data-localize="trades.PAYMENTSYSTEM")
+                            th(style='width:23%', data-localize="trades.SELLER")
+                            th(style='width:10%', data-localize="trades.RATING") 
+                            th(style='width:9%').buy_button
+                        tbody
+            .panel-footer
+              a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
+  
+  .row
+    .col-xs-12
+      button.btn.btn-default(type="button", data-notify="", data-message="Вы завершили сделку с <a id=\"popup_username\" href=\"#\">Serj1597</a><br>Оставьте <a href=\"#\">отзыв</a> о работе с ним." data-options='{"pos":"bottom-right"}') Сообщение о сделке
+
+block vendor_css
+  // DATATABLES
+  link(rel='stylesheet', href='../vendor/datatables-colvis/css/dataTables.colVis.css')
+  link(rel='stylesheet', href='vendor/datatable-bootstrap/css/dataTables.bootstrap.css')
+
+block vendor_js
+  // DATATABLES
+  script(src='../vendor/datatables/media/js/jquery.dataTables.min.js')
+  script(src='../vendor/datatables-colvis/js/dataTables.colVis.js')
+  script(src='vendor/datatable-bootstrap/js/dataTables.bootstrap.js')
+  script(src='vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js')
+  script(src='js/demo/demo-datatable.js')
+  script(src='js/demo/demo-panels.js')  

@@ -16,9 +16,9 @@ $gray-lighter:           #edf1f2;
 
 // Classic brand colors
 
-$brand-primary:          #5d9cec;
+$brand-primary:          #000;
 $brand-success:          #27c24c;
-$brand-info:             #23b7e5;
+$brand-info:             #0b2454;
 $brand-warning:          #ff902b;
 $brand-danger:           #f05050;
 
@@ -67,7 +67,7 @@ $brand-yellow-dark:            darken($brand-yellow, $amountOfLight);
 //** Background color for `<body>`.
 $body-bg:               #f5f7fa;
 //** Global text color on `<body>`.
-$text-color:            #515253;
+$text-color:            rgb(0,0,0);
 
 //** Global textual link color.
 $link-color:            $brand-primary;
@@ -186,6 +186,14 @@ $btn-font-weight:                normal;
 $btn-default-color:              #333;
 $btn-default-bg:                 #fff;
 $btn-default-border:             #eaeaea;
+
+$btn-orange-color:               #fff;
+$btn-orange-bg:                  rgb(248, 160, 53);
+$btn-orange-border:              transparent;
+
+$btn-transparent-color:          #000;
+$btn-transparent-bg:             transparent;
+$btn-transparent-border:         rgba(98, 111, 133, 0.2);
 
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
@@ -389,7 +397,7 @@ $container-lg:                 $container-large-desktop;
 //##
 
 // Basics of a navbar
-$navbar-height:                    55px;
+$navbar-height:                    70px;
 $navbar-margin-bottom:             $line-height-computed;
 $navbar-border-radius:             $border-radius-base;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2));
@@ -481,17 +489,17 @@ $nav-pills-active-link-hover-color:         $component-active-color;
 //
 //##
 
-$pagination-color:                     $text-color;
-$pagination-bg:                        #fff;
-$pagination-border:                    #eee;
+$pagination-color:                     #000;
+$pagination-bg:                        transparent;
+$pagination-border:                    #e6e8ec;
 
-$pagination-hover-color:               $link-hover-color;
-$pagination-hover-bg:                  #fafafa;
-$pagination-hover-border:              #eee;
+$pagination-hover-color:               #000;
+$pagination-hover-bg:                  #f5f5f5;
+$pagination-hover-border:              #e6e8ec;
 
-$pagination-active-color:              #fff;
-$pagination-active-bg:                 $brand-primary;
-$pagination-active-border:             $brand-primary;
+$pagination-active-color:              #000;
+$pagination-active-bg:                 #f6f8f9;
+$pagination-active-border:             #e6e8ec;
 
 $pagination-disabled-color:            $gray-light;
 $pagination-disabled-bg:               #fff;
@@ -737,15 +745,15 @@ $list-group-link-heading-color: #333;
 //##
 $panel-global-border:         #cfdbe2;
 
-$panel-bg:                    #fff;
+$panel-bg:                    #f6f8f9;
 $panel-body-padding:          15px;
 $panel-heading-padding:       10px 15px;
 $panel-footer-padding:        $panel-heading-padding;
-$panel-border-radius:         $border-radius-base;
+$panel-border-radius:         3px;
 
 //** Border color for elements within panels
-$panel-inner-border:          #eee;
-$panel-footer-bg:             #fafafa;
+$panel-inner-border:          transparent;
+$panel-footer-bg:             #f6f8f9;
 
 $panel-default-text:          #444;
 $panel-default-border:        $panel-global-border;

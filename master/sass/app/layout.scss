@@ -14,14 +14,14 @@
 // shared with other components
 // -------------------------------------------------------------
 
-$aside-wd:                                220px;
+$aside-wd:                                210px;
 $aside-wd-collapsed:                      70px;
 $aside-bg:                                #fff;
 
 $content-bg:                              $body-bg;
 $content-heading-bg:                      #fafbfc;
 $content-heading-border:                  #cfdbe2;
-$content-padding:                         20px;
+$content-padding:                         15px;
 
 $footer-hg:                               60px;
 
@@ -41,6 +41,7 @@ html {
 html, body {
   // overflow-x: hidden;
   height: 100%;
+  min-width: 480px;
 }
 
 // Main wrapper
@@ -69,7 +70,7 @@ html, body {
     background-color: $aside-bg;
 
     .aside-inner {
-      padding-top: $navbar-hg * 2;
+      padding-top: $navbar-hg;
       height: 100%;
       width: $aside-wd;
       overflow: hidden;
@@ -125,7 +126,7 @@ html, body {
 // Page main content
 // -----------------------------
 .content-wrapper {
-  padding: 15px;
+  padding: 56px $content-padding;
   width: 100%;
   // styling to visually wrap the component
   border-top: 1px solid rgba(0,0,0,.15);
@@ -166,7 +167,7 @@ html, body {
   }
 
   @media only screen and (min-width: $mq-tablet) {
-    padding: $content-padding;
+    padding: 56px $content-padding;
     //overflow: auto; // required for portlets
     > h3,
     > .content-heading {

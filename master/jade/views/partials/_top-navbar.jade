@@ -2,46 +2,265 @@
 nav.navbar.topnavbar(role='navigation')
     // START navbar header
     .navbar-header
-      a.navbar-brand(href='#/') 
-        .brand-logo 
-          img.img-responsive(src="img/logo.png", alt="App Logo")
-        .brand-logo-collapsed 
-          img.img-responsive(src="img/logo-single.png", alt="App Logo")
+      a.navbar-brand(href='#', data-toggle-state="aside-collapsed aside-toggled", data-no-persist="true") 
+        .brand-logo
+          img.img-responsive(src="img/logo.svg", alt="Exall - Bitcoin everywhere")
+        .brand-logo-collapsed
+          // Button used to collapse the left sidebar. Only visible on tablet and desktops
+          img.img-responsive(src="img/logo.svg", alt="Exall - Bitcoin everywhere", href='#', data-toggle-state="aside-collapsed").hidden-xs
+          // Button to show/hide the sidebar on mobile. Visible on mobile only.
+          img.img-responsive(src="img/logo.svg", alt="Exall - Bitcoin everywhere", href='#', data-toggle-state="aside-toggled", data-no-persist="true").visible-xs.sidebar-toggle
     // END navbar header
 
     // START Nav wrapper
     .nav-wrapper
-      // START Left navbar
-      ul.nav.navbar-nav
-        li
-          // Button used to collapse the left sidebar. Only visible on tablet and desktops
-          a(href='#', data-toggle-state="aside-collapsed").hidden-xs
-            em.fa.fa-navicon
-          // Button to show/hide the sidebar on mobile. Visible on mobile only.
-          a(href='#', data-toggle-state="aside-toggled", data-no-persist="true").visible-xs.sidebar-toggle
-            em.fa.fa-navicon
-      // END Left navbar
 
       // START Right Navbar
       ul.nav.navbar-nav.navbar-right
-        // Search icon
+        // Wallet icon
         li
-          a(href='#', data-search-open="")
-            em.icon-magnifier
-        // START Offsidebar button
+          .wallet(data-toggle="dropdown")
+            em.icon-wallet
+            span 2.43567823
+          .wallet-dropdown.dropdown-menu.animated.fadeInUpShort
+            span(data-localize="topbar.confirmation")
+            | :     0.23646723
+            span(data-localize="topbar.deposited")
+            | :     1.34756234
+
+        // Profile icon
         li
-          a(href='#', data-toggle-state="offsidebar-open", data-no-persist="true")
-            em.icon-notebook
-        // END Offsidebar menu
+          a(href='#', data-toggle-state="offsidebar-open", data-no-persist="true").profile
+            .label.label-danger 16
+            img.img-responsive(src="img/user/02.jpg", alt="User avatar")
+
+        // START Language list
+        li
+          .lenguage_changer(data-toggle="dropdown")
+              span.lang(data-localize="topbar.current_lenguage")
+              span.icon-down-arrow
+            ul.dropdown-menu.dropdown-menu-right.animated.fadeInUpShort(role='menu')
+              li
+                a(href='#', data-set-lang="en") English
+              li
+                a(href='#', data-set-lang="ru") Russian
+        // END Language list  
+
       // END Right Navbar
+
+      // START Currencies bar
+      .nav.navbar-nav.navbar-left.currencies-wrapper
+        .currencies
+          .border
+            ul
+              li#RUB_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 24 605 RUB
+              li#CNY_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 150 CNY
+              li#ZAR_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 150 ZAR
+              li#RON_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 140 RON
+            ul
+              li#USD_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 250 USD
+              li#EUR_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 220 EUR
+              li#JPY_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up 
+                  span 220 JPY
+              li#DKK_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td Текущий
+                      td 220
+                    tr
+                      td за последний час
+                      td 
+                        em.icon-small-arrow-down
+                        | 230 (-10) 
+                    tr
+                      td за последние 24 ч.
+                      td 
+                        em.icon-small-arrow-up
+                        | 253 (-33)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 223 DKK
+          .chooser
+            div.icon-down-arrow(data-toggle="dropdown")
+            form.form(method='get', action="/", role='currencies').dropdown-menu.animated.fadeIn
+              fieldset
+                .form-group.needsclick
+                  .checkbox.c-checkbox.needsclick
+                    label.needsclick
+                      input(type='checkbox', checked='', value='RUB').needsclick
+                      span.icon-checkbox_checked
+                      | RUB
+                  .checkbox.c-checkbox
+                    label
+                      input(type='checkbox', checked='', value='CNY')
+                      span.icon-checkbox_checked
+                      | CNY
+                  .checkbox.c-checkbox
+                    label
+                      input(type='checkbox', checked='', value='ZAR')
+                      span.icon-checkbox_checked
+                      | ZAR
+                  .checkbox.c-checkbox
+                    label
+                      input(type='checkbox', checked='', value='RON')
+                      span.icon-checkbox_checked
+                      | RON
+                  .checkbox.c-checkbox.needsclick
+                    label.needsclick
+                      input(type='checkbox', checked='', value='USD')
+                      span.icon-checkbox_checked
+                      | USD
+                  .checkbox.c-checkbox.needsclick
+                    label.needsclick
+                      input(type='checkbox', checked='', value='EUR')
+                      span.icon-checkbox_checked
+                      | EUR
+                  .checkbox.c-checkbox.needsclick
+                    label.needsclick
+                      input(type='checkbox', checked='', value='JPY')
+                      span.icon-checkbox_checked
+                      | JPY
+                  .checkbox.c-checkbox.needsclick
+                    label.needsclick
+                      input(type='checkbox', checked='', value='DKK')
+                      span.icon-checkbox_checked
+                      | DKK
+      // END Currencies bar
+  
     // END Nav wrapper
-    
-    // START Search form
-    form.navbar-form(role='search', action="search.html")
-      .form-group.has-feedback
-        input.form-control(type='text', placeholder="Type and hit enter ...")
-        .fa.fa-times.form-control-feedback(data-search-dismiss="")
-      button.hidden.btn.btn-default(type='submit') Submit
-    // END Search form
 
 // END Top Navbar

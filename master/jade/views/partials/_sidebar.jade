@@ -35,10 +35,29 @@ mixin build_sidebar_tree(tree)
 // START Sidebar (left)
 .aside-inner
   nav.sidebar(data-sidebar-anyclick-close="")
+
+    div.hamburger
+      // Button used to collapse the left sidebar. Only visible on tablet and desktops
+      a(href='#', data-toggle-state="aside-collapsed").hidden-xs
+        em.icon-left-arrow
+      // Button to show/hide the sidebar on mobile. Visible on mobile only.
+      a(href='#', data-toggle-state="aside-toggled", data-no-persist="true").visible-xs.sidebar-toggle
+        em.icon-right-arrow
+
     // START sidebar nav
     ul.nav
       // Iterates over all sidebar items
       +build_sidebar_tree(sidebar)
     // END sidebar nav
+
+    ul.news_block
+      li
+        a(href='#') English kerning must be better
+      li
+        a(href='#') Заголовок новости 1 длинный заголовок, в 3 строки.
+      li
+        a(href='#') Заголовок новости 2, в 2 строчки.
+      li
+        a(href='#') Заголовок новости 3
 
 // END Sidebar (left)

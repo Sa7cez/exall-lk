@@ -30,11 +30,6 @@
   @include animation(fadeIn 1s); 
 }
 
-.sidebar li > a, .sidebar li > .nav-item,
-.sidebar > .nav > .nav-heading {
-  white-space: nowrap;
-}
-
 .aside-collapsed {
   .user-block-picture {
     @include transition(width .2s cubic-bezier(0.35, 0, 0.25, 1));

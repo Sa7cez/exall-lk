@@ -34,12 +34,20 @@
 @import "app/sidebar";
 @import "app/offsidebar";
 
+// Tables
+@import "app/datatable";
+
 // Components
 @import "app/breadcrumbs";
 @import "app/animate";
+@import "app/form-elements";
+@import "app/notify";
 
 // Utilities 
 @import "app/utils";
 
 // Print CSS
 @import "app/print";
+
+// Custom styles
+@import "app/custom";
