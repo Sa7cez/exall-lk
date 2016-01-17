@@ -80,7 +80,7 @@ block content
             
             .line
 
-            .order.clearfix
+            .order.to-open.clearfix
               .column.offset.order-name О–284734743
               .column.message
                 .label.label-transparent 10
@@ -97,10 +97,51 @@ block content
               .column.payment
                 em.icon-shield.green
                 span(data-localize="payments.types.BANK")
+              .payment_methods.clearfix
+                .col-xs-6
+                  .requisites
+                    .name На Сбербанк
+                    .bordered
+                      .info БИК:  040147781<br>Российская Федерация<br>Корр. счет: 30101810200000000604<br>АЛТАЙСКОЕ ОТДЕЛЕНИЕ N8644<br>ПАО СБЕРБАНК, БАРНАУЛ
+                      .send 
+                        span(data-localize="trades.TOSEND") 
+                        |&nbsp;&nbsp;382 325 345 RUB
+                        br
+                        span(data-localize="trades.SEND")
+                        label
+                          input.form-control.input-sm
+                        a(href="", data-localize="trades.ALL")
+                .col-xs-6
+                  .requisites
+                    .name На ВТБ
+                    .bordered
+                      .info БИК:  040147781<br>Российская Федерация<br>Корр. счет: 30101810200000000604<br>АЛТАЙСКОЕ ОТДЕЛЕНИЕ N8644<br>ПАО СБЕРБАНК, БАРНАУЛ
+                      .send 
+                        span(data-localize="trades.TOSEND") 
+                        |&nbsp;&nbsp;382 325 345 RUB
+                        br
+                        span(data-localize="trades.SEND")
+                        label
+                          input.form-control.input-sm
+                        a(href="", data-localize="trades.ALL")
+              .footer.clearfix
+                .elements
+                  .functions
+                    a.clear-all(href="", data-localize="trades.CLEARALL")
+                    button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
+                    .drop
+                      label.control-label
+                        select.delay-selector.form-control
+                          option(value='1800' data-localize="trades.05HOURS")
+                          option(value='3600' data-localize="trades.1HOURS")
+                          option(value='7200' data-localize="trades.2HOURS")
+                          option(value='10800' data-localize="trades.3HOURS")
+                          option(value='14400' data-localize="trades.4HOURS")
+                  a.btn.btn-orange.btn-sm(href='#', data-localize="trades.CONFIRMPAYMENT")
             
             .line
             
-            .order.clearfix.opened
+            .order.to-open.clearfix
               .column.offset.order-name О–284734743
               .column.message
                 .label.label-danger 2
@@ -145,37 +186,27 @@ block content
                         label
                           input.form-control.input-sm
                         a(href="", data-localize="trades.ALL")
-            .footer.clearfix
-              .elements
-                .functions
-                  a.clear-all(href="", data-localize="trades.CLEARALL")
-                  button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
-                  .drop
-                    label.control-label.mb
-                      select.delay-selector.form-control
-                        option(value='1800' data-localize="trades.05HOURS")
-                        option(value='3600' data-localize="trades.1HOURS")
-                        option(value='7200' data-localize="trades.2HOURS")
-                        option(value='10800' data-localize="trades.3HOURS")
-                        option(value='14400' data-localize="trades.4HOURS")
-                a.btn.btn-orange.btn-sm(href='#', data-localize="trades.CONFIRMPAYMENT")
-            //- .footer.clearfix
-            //-   .elements
-            //-     .functions
-            //-       a.clear-all(href="", data-localize="trades.CLEARALL")
-            //-       button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
-            //-       .drop
-            //-         label.control-label.mb
-            //-           select.delay-selector.form-control
-            //-             option(value='1800' data-localize="trades.05HOURS")
-            //-             option(value='3600' data-localize="trades.1HOURS")
-            //-             option(value='7200' data-localize="trades.2HOURS")
-            //-             option(value='10800' data-localize="trades.3HOURS")
-            //-             option(value='14400' data-localize="trades.4HOURS")
-            //-     a.btn.btn-gray.btn-sm(href='#', data-localize="trades.PAID")
-            //-     label.control-label Загрузите подтверждение
-            //-     .file
-            //-       input.filestyle(type='file', data-classbutton='btn btn-transparent btn-sm', data-classinput="inline")
+              .footer.clearfix
+                .elements
+                  .functions
+                    a.clear-all(href="", data-localize="trades.CLEARALL")
+                    button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
+                    .drop
+                      label.control-label
+                        select.delay-selector.form-control
+                          option(value='1800' data-localize="trades.05HOURS")
+                          option(value='3600' data-localize="trades.1HOURS")
+                          option(value='7200' data-localize="trades.2HOURS")
+                          option(value='10800' data-localize="trades.3HOURS")
+                          option(value='14400' data-localize="trades.4HOURS")
+                  a.btn.btn-gray.btn-sm(href='#', data-localize="trades.PAID")
+                  .confirm
+                    .col-xs-12.col-md-4
+                      label.control-label Загрузите подтверждение
+                    .file.col-xs-12.col-md-4
+                      input.filestyle(type='file', data-classbutton='btn btn-transparent btn-sm', data-classinput="inline", data-buttonText="Add")
+                    .file.col-xs-12.col-md-4
+                      input.filestyle(type='file', data-classbutton='btn btn-transparent btn-sm', data-classinput="inline", data-buttonText="Add")
             
           // END buysell popup
 
@@ -189,14 +220,14 @@ block content
           span(data-localize="payments.TITLE")
           em(href="#", data-tool="panel-dismiss", data-toggle="tooltip", title="Close Panel").pull-right.icon-cross.hidden-lg.hidden-md
         .box-placeholder
-          label.control-label.mb
+          label.control-label
             select.delay-selector.form-control(name="top_country")
               option(value='all' data-localize="countries.ALL")
               option(value='england' data-localize="countries.ENGLAND")
               option(value='usa' data-localize="countries.USA")
               option(value='russia' data-localize="countries.RUSSIA")
               option(value='china' data-localize="countries.CHINA")
-          label.control-label.mb
+          label.control-label
             select.delay-selector.form-control(name="top_payment")
               option(value='all' data-localize="payments.ALL")
               option(value='sberbank' data-localize="payments.SBERBANK")
@@ -285,6 +316,8 @@ block content
                         tbody
             .panel-footer
               a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
+              #create_order
+
   
   .row
     .col-xs-12

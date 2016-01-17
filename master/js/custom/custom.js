@@ -58,6 +58,11 @@
     });
   });
 
+  $(document).on('click', '.buysell_popup .to-open', function () {
+      $(this).parent().find('.opened').toggleClass('opened').toggleClass('closed');
+      $(this).toggleClass('opened').toggleClass('closed');
+  });
+
 	// Something else
 
   // 
@@ -71,7 +76,7 @@
       'bInfo': false,
       "sDom":
       "<'row'<'col-xs-6'l><'col-xs-6'f>r>"+"t"+
-      "<'row'p>",
+      "<'row'p<'show-closed'>>",
       language: {
       paginate: {
           first:    '«',
@@ -90,7 +95,11 @@
         { mData: 'status' },
         { mData: 'date' },
         { sClass: 'arrow', bSortable: false, sDefaultContent: '<span class="icon-down-arrow"></span>', mData: null }
-      ]
+      ],
+      initComplete: function () {
+          this.parent().find('.show-closed').append('<button class="button btn btn-transparent"></button>');
+          this.parent().find('.show-closed button').attr('data-localize', 'trades.SHOWCLOSED').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+      }
   });
 
   $('#orders-buy-table, #orders-sell-table').dataTable({
@@ -124,7 +133,8 @@
       initComplete: function () {
           this.parent().find('[type=search]').attr('data-localize', 'trades.SEARCH').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
 
-          this.parent().find('.fav').append('<label class="control-label mb"><i class="icon-favorite"></i><select id="fav-'+ this.attr('id') +'" class="favorite-selector form-control" name="favorite" value=""><option value="" data-localize="trades.FAVORITE"></option><option value="Константин Константинопольский">Константин Константинопольский</option><option value="Александридис Константинопулос">Александридис Константинопулос</option><option value="Валерий Панфилов">Валерий Панфилов</option><option value="Александр Валерьев">Александр Валерьев</option></select></label>');
+          this.parent().find('.fav').append('<label class="control-label mb"><i class="icon-favorite"></i><select id="fav-'+ this.attr('id') +'" class="favorite-selector form-control" name="favorite" value=""><option class="default" value="" data-localize="trades.FAVORITE"></option><option value="Константин Константинопольский">Константин Константинопольский</option><option value="Александридис Константинопулос">Александридис Константинопулос</option><option value="Валерий Панфилов">Валерий Панфилов</option><option value="Александр Валерьев">Александр Валерьев</option></select></label>');
+          var favid = '#fav-'+ this.attr('id');
 
           this.parent().find('.currencies').append('<a href="#" class="active">RUB</a><a href="#">USD</a><a href="#">EUR</a>');
 
@@ -151,27 +161,30 @@
 
           this.parent().find('.fav, .buy_button').find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
 
-          $('.favorite-selector').select2({
-              minimumResultsForSearch: Infinity
-          });
+          $('.favorite-selector').select2({});
 
-          $('.payment-selector').select2({
-              minimumResultsForSearch: Infinity
-          });
+          $('.payment-selector').select2({});
 
-          oTable = this;
           this.api().column('.seller').every( function () {
+              var val = '';
               var column = this;
-              var select = $('#fav-' + oTable.attr('id'))
+              var select = $(favid)
                   .on( 'change', function () {
-                      var val = $.fn.dataTable.util.escapeRegex(
+                      val = $.fn.dataTable.util.escapeRegex(
                           $(this).val()
                       );
 
                       column
                           .search( val ? '^'+val+'$' : '', true, false )
                           .draw();
-                          console.log('s');
+
+                      console.log(favid);
+
+                      if(val == '') {
+                        $(favid).parent().find('.select2-selection__rendered').css('color','#B8BBCA');
+                      } else {
+                        $(favid).parent().find('.select2-selection__rendered').css('color','#000'); 
+                      }
                   } );
           });
 

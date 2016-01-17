@@ -217,8 +217,21 @@ label {
 		background-color: #f5f7fa;
 	}
 
+	.show-closed {
+		padding: 24px 20px 24px 42px;
+
+
+		@media (max-width: $mq-tablet) {
+			padding:0 42px 24px;
+		}
+		.btn {
+			padding:5px 15px;
+			font-size:12px;
+		}
+	}
+
 	.panel-footer {
-		border-top:1px solid #e0e3e7;
+		border-top:1px solid #e0e3e7 15px;
 		padding: 18px 44px;
 		.btn-orange {
 		   width: 159px;
@@ -288,7 +301,7 @@ label {
 						color: #B8BBCA;
 					}
 					.select2-selection__arrow {
-						height: 36px;
+						height: 35px;
 					}
 				}
 			}
@@ -442,10 +455,22 @@ table.dataTable {
 }
 
 div.dataTables_paginate {
-	float: none;
+	float: left;
 	font-size: 12px;
 	font-weight: 400;
-	padding: 24px 42px;
+	padding: 24px 72px 24px 42px;
+	@media (max-width: $mq-tablet) {
+		padding:24px 42px;
+	}
+	ul.pagination {
+		margin: 0;
+		li {
+			a {
+				padding:0 9px;
+				line-height: 28px;
+			}
+		}
+	}
 }
 
 .pagination > li > a, .pagination > li > span {
@@ -500,7 +525,7 @@ $padding-size: 18px;
 		font-size:9px;
 		margin-right: 14px;
 	}
-	.icon-cross {
+	.pull-right .icon-cross {
 		margin-right: 14px;
 		cursor: pointer;
 		font-size:16px;
@@ -532,8 +557,15 @@ $padding-size: 18px;
 		.column {
 			float: left;
 		}
+		&.to-open {
+			cursor: pointer;
+		}
 		&.opened {
 			background-color: #f5f7fa;
+			.footer,
+			.payment_methods {
+				display: block;
+			}
 		}
 		.order-name {
 			float: none;
@@ -628,9 +660,10 @@ $padding-size: 18px;
 		}
 	}
 	.payment_methods {
+		display: none;
 		clear: both;
 		padding: 18px $offset-size 0;
-		margin:0 -$padding-size - 15;
+		margin:0 (-$padding-size - 15) 18px;
 		.requisites {
 			.name {
 				padding-left: $padding-size;
@@ -669,7 +702,9 @@ $padding-size: 18px;
 		}
 	}
 	.footer {
-		padding: 7px 18px 7px $offset-size;
+		display: none;
+		margin: 0 -18px;
+		padding: 7px $offset-size;
 		font-size:12px;
 		background-color: #f5f7fa;
 
@@ -679,12 +714,12 @@ $padding-size: 18px;
 
 		.functions {
 			float: left;
-			margin-bottom: 18px;
 			margin-right: 23px;
+			margin-bottom: 18px;
 
 			.clear-all {
 				text-decoration: underline;
-				margin-right: 28px;
+				margin-right: 24px;
 			}
 
 			.field, .dropdown {
@@ -701,22 +736,51 @@ $padding-size: 18px;
 			.drop {
 				display: inline;
 				position: relative;
+
+				label {
+					margin-bottom: 0;
+				}
+			}
+
+			.select2-container {
+				width: 90px !important;
 			}
 		}
 
 		.btn-sm {
-			margin: 0 23px 18px 0;
+			margin: 0;
 			font-size: 12px;
 			font-weight: 700;
 			padding: 5px 17px;
 		}
 
 		.confirm {
-			margin-bottom: 18px;
+			margin: 18px -15px;
 
 			input, span {
 				font-size:12px;
 			}
+			
+			.file {
+				.input-group {
+					margin-bottom: 10px;
+				}
+				input {
+					height: 30px;
+				}
+				.icon-span-filestyle {
+					display: none;
+				}
+				.input-group-btn {
+					line-height: 1;
+				}
+				.btn {
+					height: 30px;
+	    			line-height: 15px;
+				}
+			}
+
+			
 		}
 		
 	}
@@ -727,11 +791,17 @@ $padding-size: 18px;
 		
 		.footer {
 			padding-bottom: 0;
+
+			.functions {
+				float: none;
+				margin-right: 0;
+				margin-bottom: 18px;
+			}
 		}	
 	}
 
 	@media only screen and (min-width: $mq-desktop) {
-		min-width: 620px;
+		min-width: 640px;
 	}
 
 	//width: 705px;

@@ -580,7 +580,7 @@
                            </div>
                            <div data-localize="trades.ORDERSBUY" class="offset pretitle"></div>
                            <div class="line"></div>
-                           <div class="order clearfix">
+                           <div class="order to-open clearfix">
                               <div class="column offset order-name">О–284734743</div>
                               <div class="column message">
                                  <div class="label label-transparent">10</div>
@@ -601,9 +601,73 @@
                                  <em class="icon-shield green"></em>
                                  <span data-localize="payments.types.BANK"></span>
                               </div>
+                              <div class="payment_methods clearfix">
+                                 <div class="col-xs-6">
+                                    <div class="requisites">
+                                       <div class="name">На Сбербанк</div>
+                                       <div class="bordered">
+                                          <div class="info">БИК: 040147781
+                                             <br>Российская Федерация
+                                             <br>Корр. счет: 30101810200000000604
+                                             <br>АЛТАЙСКОЕ ОТДЕЛЕНИЕ N8644
+                                             <br>ПАО СБЕРБАНК, БАРНАУЛ</div>
+                                          <div class="send">
+                                             <span data-localize="trades.TOSEND"></span>&nbsp;&nbsp;382 325 345 RUB
+                                             <br>
+                                             <span data-localize="trades.SEND"></span>
+                                             <label>
+                                                <input class="form-control input-sm">
+                                             </label>
+                                             <a href="" data-localize="trades.ALL"></a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-xs-6">
+                                    <div class="requisites">
+                                       <div class="name">На ВТБ</div>
+                                       <div class="bordered">
+                                          <div class="info">БИК: 040147781
+                                             <br>Российская Федерация
+                                             <br>Корр. счет: 30101810200000000604
+                                             <br>АЛТАЙСКОЕ ОТДЕЛЕНИЕ N8644
+                                             <br>ПАО СБЕРБАНК, БАРНАУЛ</div>
+                                          <div class="send">
+                                             <span data-localize="trades.TOSEND"></span>&nbsp;&nbsp;382 325 345 RUB
+                                             <br>
+                                             <span data-localize="trades.SEND"></span>
+                                             <label>
+                                                <input class="form-control input-sm">
+                                             </label>
+                                             <a href="" data-localize="trades.ALL"></a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="footer clearfix">
+                                 <div class="elements">
+                                    <div class="functions">
+                                       <a href="" data-localize="trades.CLEARALL" class="clear-all"></a>
+                                       <button data-localize="trades.TIMERDALAY" class="field btn btn-transparent"></button>
+                                       <div class="drop">
+                                          <label class="control-label">
+                                             <select class="delay-selector form-control">
+                                                <option value="1800" data-localize="trades.05HOURS"></option>
+                                                <option value="3600" data-localize="trades.1HOURS"></option>
+                                                <option value="7200" data-localize="trades.2HOURS"></option>
+                                                <option value="10800" data-localize="trades.3HOURS"></option>
+                                                <option value="14400" data-localize="trades.4HOURS"></option>
+                                             </select>
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <a href="#" data-localize="trades.CONFIRMPAYMENT" class="btn btn-orange btn-sm"></a>
+                                 </div>
+                              </div>
                            </div>
                            <div class="line"></div>
-                           <div class="order clearfix opened">
+                           <div class="order to-open clearfix">
                               <div class="column offset order-name">О–284734743</div>
                               <div class="column message">
                                  <div class="label label-danger">2</div>
@@ -670,25 +734,36 @@
                                     </div>
                                  </div>
                               </div>
-                           </div>
-                           <div class="footer clearfix">
-                              <div class="elements">
-                                 <div class="functions">
-                                    <a href="" data-localize="trades.CLEARALL" class="clear-all"></a>
-                                    <button data-localize="trades.TIMERDALAY" class="field btn btn-transparent"></button>
-                                    <div class="drop">
-                                       <label class="control-label mb">
-                                          <select class="delay-selector form-control">
-                                             <option value="1800" data-localize="trades.05HOURS"></option>
-                                             <option value="3600" data-localize="trades.1HOURS"></option>
-                                             <option value="7200" data-localize="trades.2HOURS"></option>
-                                             <option value="10800" data-localize="trades.3HOURS"></option>
-                                             <option value="14400" data-localize="trades.4HOURS"></option>
-                                          </select>
-                                       </label>
+                              <div class="footer clearfix">
+                                 <div class="elements">
+                                    <div class="functions">
+                                       <a href="" data-localize="trades.CLEARALL" class="clear-all"></a>
+                                       <button data-localize="trades.TIMERDALAY" class="field btn btn-transparent"></button>
+                                       <div class="drop">
+                                          <label class="control-label">
+                                             <select class="delay-selector form-control">
+                                                <option value="1800" data-localize="trades.05HOURS"></option>
+                                                <option value="3600" data-localize="trades.1HOURS"></option>
+                                                <option value="7200" data-localize="trades.2HOURS"></option>
+                                                <option value="10800" data-localize="trades.3HOURS"></option>
+                                                <option value="14400" data-localize="trades.4HOURS"></option>
+                                             </select>
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <a href="#" data-localize="trades.PAID" class="btn btn-gray btn-sm"></a>
+                                    <div class="confirm">
+                                       <div class="col-xs-12 col-md-4">
+                                          <label class="control-label">Загрузите подтверждение</label>
+                                       </div>
+                                       <div class="file col-xs-12 col-md-4">
+                                          <input type="file" data-classbutton="btn btn-transparent btn-sm" data-classinput="inline" data-buttonText="Add" class="filestyle">
+                                       </div>
+                                       <div class="file col-xs-12 col-md-4">
+                                          <input type="file" data-classbutton="btn btn-transparent btn-sm" data-classinput="inline" data-buttonText="Add" class="filestyle">
+                                       </div>
                                     </div>
                                  </div>
-                                 <a href="#" data-localize="trades.CONFIRMPAYMENT" class="btn btn-orange btn-sm"></a>
                               </div>
                            </div>
                         </div>
@@ -705,7 +780,7 @@
                         <em href="#" data-tool="panel-dismiss" data-toggle="tooltip" title="Close Panel" class="pull-right icon-cross hidden-lg hidden-md"></em>
                      </div>
                      <div class="box-placeholder">
-                        <label class="control-label mb">
+                        <label class="control-label">
                            <select name="top_country" class="delay-selector form-control">
                               <option value="all" data-localize="countries.ALL"></option>
                               <option value="england" data-localize="countries.ENGLAND"></option>
@@ -714,7 +789,7 @@
                               <option value="china" data-localize="countries.CHINA"></option>
                            </select>
                         </label>
-                        <label class="control-label mb">
+                        <label class="control-label">
                            <select name="top_payment" class="delay-selector form-control">
                               <option value="all" data-localize="payments.ALL"></option>
                               <option value="sberbank" data-localize="payments.SBERBANK"></option>
@@ -838,6 +913,7 @@
                            </div>
                            <div class="panel-footer">
                               <a href="#" data-localize="trades.CREATE_ORDER" class="btn btn-orange btn-lg"></a>
+                              <div id="create_order"></div>
                            </div>
                         </div>
                      </div>
