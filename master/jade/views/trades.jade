@@ -6,7 +6,7 @@ block active
 block content
   
   .row
-    .col-xs-12.col-md-8
+    .col-xs-12.col-md-8.col-lg-9
 
       // START buysell tab
       #buysell.panel.panel-transparent(role='tabpanel')
@@ -57,7 +57,7 @@ block content
             .panel-footer
               a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")   
           // START buysell popup
-          .buysell_popup.clearfix(role='buysellpopup', style="display:none")
+          .buysell_popup.clearfix(role='buysellpopup' style="display:none")
             .clearfix
               .pull-left.hide_it(data-tool="popup-hide")
                 em.icon-up-arrow
@@ -146,28 +146,42 @@ block content
                           input.form-control.input-sm
                         a(href="", data-localize="trades.ALL")
             .footer.clearfix
+              .elements
                 .functions
                   a.clear-all(href="", data-localize="trades.CLEARALL")
                   button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
                   .drop
-                    button.dropdown.btn.btn-transparent(data-toggle="dropdown")
-                      span.lang(data-localize="trades.2HOURS")
-                      span.icon-down-arrow
-                    ul.dropdown-menu.dropdown-menu-right.animated.fadeInUpShort(role='menu')
-                      li
-                        a(href='#', data-localize="trades.3HOURS")
-                      li
-                        a(href='#', data-localize="trades.4HOURS")
-                      li
-                        a(href='#', data-localize="trades.DAY")
-                      li
-                        a(href='#', data-localize="trades.CUSTOM")
+                    label.control-label.mb
+                      select.delay-selector.form-control
+                        option(value='1800' data-localize="trades.05HOURS")
+                        option(value='3600' data-localize="trades.1HOURS")
+                        option(value='7200' data-localize="trades.2HOURS")
+                        option(value='10800' data-localize="trades.3HOURS")
+                        option(value='14400' data-localize="trades.4HOURS")
                 a.btn.btn-orange.btn-sm(href='#', data-localize="trades.CONFIRMPAYMENT")
+            //- .footer.clearfix
+            //-   .elements
+            //-     .functions
+            //-       a.clear-all(href="", data-localize="trades.CLEARALL")
+            //-       button.field.btn.btn-transparent(data-localize="trades.TIMERDALAY")
+            //-       .drop
+            //-         label.control-label.mb
+            //-           select.delay-selector.form-control
+            //-             option(value='1800' data-localize="trades.05HOURS")
+            //-             option(value='3600' data-localize="trades.1HOURS")
+            //-             option(value='7200' data-localize="trades.2HOURS")
+            //-             option(value='10800' data-localize="trades.3HOURS")
+            //-             option(value='14400' data-localize="trades.4HOURS")
+            //-     a.btn.btn-gray.btn-sm(href='#', data-localize="trades.PAID")
+            //-     label.control-label Загрузите подтверждение
+            //-     .file
+            //-       input.filestyle(type='file', data-classbutton='btn btn-transparent btn-sm', data-classinput="inline")
+            
           // END buysell popup
 
       // END buysell tab        
     
-    .col-xs-12.col-md-4
+    .col-xs-12.col-md-4.col-lg-3
       
       // START payment top panel
       #paymentTop.panel.panel-transparent.remove
@@ -175,38 +189,23 @@ block content
           span(data-localize="payments.TITLE")
           em(href="#", data-tool="panel-dismiss", data-toggle="tooltip", title="Close Panel").pull-right.icon-cross.hidden-lg.hidden-md
         .box-placeholder
-          .btn-group
-            button.btn.btn-transparent(data-toggle="dropdown")
-              span.lang(data-localize="countries.RUSSIA")
-              span.icon-down-arrow
-            ul.dropdown-menu.dropdown-menu-left.animated.fadeInUpShort(role='menu')
-              li
-                a(href='#', data-localize="countries.ENGLAND")
-              li
-                a(href='#', data-localize="countries.USA")
-              li
-                a(href='#', data-localize="countries.RUSSIA")
-              li
-                a(href='#', data-localize="countries.CHINA")
-          .btn-group
-            button.btn.btn-transparent(data-toggle="dropdown")
-              span.lang(data-localize="payments.ALL")
-              span.icon-down-arrow
-            ul.dropdown-menu.dropdown-menu-left.animated.fadeInUpShort(role='menu')
-              li
-                a(href='#', data-localize="payments.SBERBANK")
-              li
-                a(href='#', data-localize="payments.ALPHABANK")
-              li
-                a(href='#', data-localize="payments.WEBMONEY")
-              li
-                a(href='#', data-localize="payments.WU")
-              li
-                a(href='#', data-localize="payments.VTB")
-              li
-                a(href='#', data-localize="payments.PKB")
-              li
-                a(href='#', data-localize="payments.ANOTHERBANK")
+          label.control-label.mb
+            select.delay-selector.form-control(name="top_country")
+              option(value='all' data-localize="countries.ALL")
+              option(value='england' data-localize="countries.ENGLAND")
+              option(value='usa' data-localize="countries.USA")
+              option(value='russia' data-localize="countries.RUSSIA")
+              option(value='china' data-localize="countries.CHINA")
+          label.control-label.mb
+            select.delay-selector.form-control(name="top_payment")
+              option(value='all' data-localize="payments.ALL")
+              option(value='sberbank' data-localize="payments.SBERBANK")
+              option(value='alphabank' data-localize="payments.ALPHABANK")
+              option(value='webmoney' data-localize="payments.WEBMONEY")
+              option(value='wu' data-localize="payments.WU")
+              option(value='vtb' data-localize="payments.VTB")
+              option(value='pkb' data-localize="payments.PKB")
+              option(value='anotherbank' data-localize="payments.ANOTHERBANK")
         // START table-responsive
         .table-responsive
           table.table
@@ -244,7 +243,7 @@ block content
           span(data-localize="payments.OTHER")
       // END payment top panel
 
-    .col-xs-12
+    .col-xs-12.col-lg-9
       #orders.panel.panel-transparent(role='tabpanel')
         // Nav tabs
         ul.nav.nav-tabs.nav-justified(role='tablist')
@@ -296,6 +295,10 @@ block vendor_css
   link(rel='stylesheet', href='../vendor/datatables-colvis/css/dataTables.colVis.css')
   link(rel='stylesheet', href='vendor/datatable-bootstrap/css/dataTables.bootstrap.css')
 
+  // SELECT2
+  link(rel='stylesheet', href='../vendor/select2/dist/css/select2.css')
+  link(rel='stylesheet', href='../vendor/select2-bootstrap-theme/dist/select2-bootstrap.css')
+
 block vendor_js
   // DATATABLES
   script(src='../vendor/datatables/media/js/jquery.dataTables.min.js')
@@ -304,3 +307,9 @@ block vendor_js
   script(src='vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js')
   script(src='js/demo/demo-datatable.js')
   script(src='js/demo/demo-panels.js')  
+
+  // SELECT2
+  script(src='../vendor/select2/dist/js/select2.js')
+
+  // FILESTYLE
+  script(src='../vendor/bootstrap-filestyle/src/bootstrap-filestyle.js')

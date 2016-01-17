@@ -27,21 +27,25 @@
     },
     "HIDE": "hide",
     "CONFIRMPAYMENT" : "Agree to pay",
+    "PAID" : "Paid",
     "DONTSEND" : "Do not transfer",
     "TOSEND": "To send:",
     "SEND": "Send:",
     "ALL": "all",
     "CLEARALL": "Clear all",
     "TIMERDALAY": "Ask for more time:",
+    "05HOURS": "30 min",
+    "1HOURS": "1 hour",
     "2HOURS": "2 hour",
     "3HOURS": "3 hours",
     "4HOURS": "4 hours",
     "DAY": "For day"
   },
   "countries": {
+    "ALL": "All country",
     "RUSSIA": "Russia",
     "USA": "USA",
-    "England": "England",
+    "ENGLAND": "England",
     "CHINA": "China"
   },
   "payments": {

@@ -24,6 +24,9 @@
    <!-- DATATABLES-->
    <link rel="stylesheet" href="../vendor/datatables-colvis/css/dataTables.colVis.css">
    <link rel="stylesheet" href="vendor/datatable-bootstrap/css/dataTables.bootstrap.css">
+   <!-- SELECT2-->
+   <link rel="stylesheet" href="../vendor/select2/dist/css/select2.css">
+   <link rel="stylesheet" href="../vendor/select2-bootstrap-theme/dist/select2-bootstrap.css">
    <!-- =============== BOOTSTRAP STYLES ===============-->
    <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
    <!-- =============== APP STYLES ===============-->
@@ -478,7 +481,7 @@
          <!-- Page content-->
          <div class="content-wrapper">
             <div class="row">
-               <div class="col-xs-12 col-md-8">
+               <div class="col-xs-12 col-md-8 col-lg-9">
                   <!-- START buysell tab-->
                   <div id="buysell" role="tabpanel" class="panel panel-transparent">
                      <!-- Nav tabs-->
@@ -669,31 +672,24 @@
                               </div>
                            </div>
                            <div class="footer clearfix">
-                              <div class="functions">
-                                 <a href="" data-localize="trades.CLEARALL" class="clear-all"></a>
-                                 <button data-localize="trades.TIMERDALAY" class="field btn btn-transparent"></button>
-                                 <div class="drop">
-                                    <button data-toggle="dropdown" class="dropdown btn btn-transparent">
-                                       <span data-localize="trades.2HOURS" class="lang"></span>
-                                       <span class="icon-down-arrow"></span>
-                                    </button>
-                                    <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
-                                       <li>
-                                          <a href="#" data-localize="trades.3HOURS"></a>
-                                       </li>
-                                       <li>
-                                          <a href="#" data-localize="trades.4HOURS"></a>
-                                       </li>
-                                       <li>
-                                          <a href="#" data-localize="trades.DAY"></a>
-                                       </li>
-                                       <li>
-                                          <a href="#" data-localize="trades.CUSTOM"></a>
-                                       </li>
-                                    </ul>
+                              <div class="elements">
+                                 <div class="functions">
+                                    <a href="" data-localize="trades.CLEARALL" class="clear-all"></a>
+                                    <button data-localize="trades.TIMERDALAY" class="field btn btn-transparent"></button>
+                                    <div class="drop">
+                                       <label class="control-label mb">
+                                          <select class="delay-selector form-control">
+                                             <option value="1800" data-localize="trades.05HOURS"></option>
+                                             <option value="3600" data-localize="trades.1HOURS"></option>
+                                             <option value="7200" data-localize="trades.2HOURS"></option>
+                                             <option value="10800" data-localize="trades.3HOURS"></option>
+                                             <option value="14400" data-localize="trades.4HOURS"></option>
+                                          </select>
+                                       </label>
+                                    </div>
                                  </div>
+                                 <a href="#" data-localize="trades.CONFIRMPAYMENT" class="btn btn-orange btn-sm"></a>
                               </div>
-                              <a href="#" data-localize="trades.CONFIRMPAYMENT" class="btn btn-orange btn-sm"></a>
                            </div>
                         </div>
                         <!-- END buysell popup-->
@@ -701,7 +697,7 @@
                   </div>
                   <!-- END buysell tab        -->
                </div>
-               <div class="col-xs-12 col-md-4">
+               <div class="col-xs-12 col-md-4 col-lg-3">
                   <!-- START payment top panel-->
                   <div id="paymentTop" class="panel panel-transparent remove">
                      <div class="title">
@@ -709,55 +705,27 @@
                         <em href="#" data-tool="panel-dismiss" data-toggle="tooltip" title="Close Panel" class="pull-right icon-cross hidden-lg hidden-md"></em>
                      </div>
                      <div class="box-placeholder">
-                        <div class="btn-group">
-                           <button data-toggle="dropdown" class="btn btn-transparent">
-                              <span data-localize="countries.RUSSIA" class="lang"></span>
-                              <span class="icon-down-arrow"></span>
-                           </button>
-                           <ul role="menu" class="dropdown-menu dropdown-menu-left animated fadeInUpShort">
-                              <li>
-                                 <a href="#" data-localize="countries.ENGLAND"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="countries.USA"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="countries.RUSSIA"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="countries.CHINA"></a>
-                              </li>
-                           </ul>
-                        </div>
-                        <div class="btn-group">
-                           <button data-toggle="dropdown" class="btn btn-transparent">
-                              <span data-localize="payments.ALL" class="lang"></span>
-                              <span class="icon-down-arrow"></span>
-                           </button>
-                           <ul role="menu" class="dropdown-menu dropdown-menu-left animated fadeInUpShort">
-                              <li>
-                                 <a href="#" data-localize="payments.SBERBANK"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="payments.ALPHABANK"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="payments.WEBMONEY"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="payments.WU"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="payments.VTB"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="payments.PKB"></a>
-                              </li>
-                              <li>
-                                 <a href="#" data-localize="payments.ANOTHERBANK"></a>
-                              </li>
-                           </ul>
-                        </div>
+                        <label class="control-label mb">
+                           <select name="top_country" class="delay-selector form-control">
+                              <option value="all" data-localize="countries.ALL"></option>
+                              <option value="england" data-localize="countries.ENGLAND"></option>
+                              <option value="usa" data-localize="countries.USA"></option>
+                              <option value="russia" data-localize="countries.RUSSIA"></option>
+                              <option value="china" data-localize="countries.CHINA"></option>
+                           </select>
+                        </label>
+                        <label class="control-label mb">
+                           <select name="top_payment" class="delay-selector form-control">
+                              <option value="all" data-localize="payments.ALL"></option>
+                              <option value="sberbank" data-localize="payments.SBERBANK"></option>
+                              <option value="alphabank" data-localize="payments.ALPHABANK"></option>
+                              <option value="webmoney" data-localize="payments.WEBMONEY"></option>
+                              <option value="wu" data-localize="payments.WU"></option>
+                              <option value="vtb" data-localize="payments.VTB"></option>
+                              <option value="pkb" data-localize="payments.PKB"></option>
+                              <option value="anotherbank" data-localize="payments.ANOTHERBANK"></option>
+                           </select>
+                        </label>
                      </div>
                      <!-- START table-responsive-->
                      <div class="table-responsive">
@@ -810,7 +778,7 @@
                   </div>
                   <!-- END payment top panel-->
                </div>
-               <div class="col-xs-12">
+               <div class="col-xs-12 col-lg-9">
                   <div id="orders" role="tabpanel" class="panel panel-transparent">
                      <!-- Nav tabs-->
                      <ul role="tablist" class="nav nav-tabs nav-justified">
@@ -971,6 +939,10 @@
    <script src="js/demo/demo-datatable.js"></script>
    <script src="js/demo/demo-panels.js">
    </script>
+   <!-- SELECT2-->
+   <script src="../vendor/select2/dist/js/select2.js"></script>
+   <!-- FILESTYLE-->
+   <script src="../vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
    <!-- =============== APP SCRIPTS ===============-->
    <script src="js/app.js"></script>
 </body>

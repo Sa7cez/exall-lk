@@ -48,7 +48,7 @@ var source = {
   scripts: {
     app: [paths.scripts + 'app.init.js',
           paths.scripts + 'modules/*.js',
-          paths.scripts + 'custom/**/*.js'
+          paths.scripts + 'custom/custom.js'
     ],
     demo: paths.scripts + 'modules/demo/*.js'
   },

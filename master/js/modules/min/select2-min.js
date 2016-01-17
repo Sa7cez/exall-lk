@@ -1,0 +1,1 @@
+!function(e,n,$,c){$(function(){$.fn.select2&&$(".delay-selector").select2({minimumResultsForSearch:1/0})})}(window,document,window.jQuery);

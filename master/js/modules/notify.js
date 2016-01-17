@@ -206,7 +206,7 @@
     Message.defaults = {
         message: "",
         status: "normal",
-        timeout: 10000,
+        timeout: 5000,
         group: null,
         pos: 'bottom-right'
     };
