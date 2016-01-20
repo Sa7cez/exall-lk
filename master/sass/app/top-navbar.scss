@@ -99,7 +99,10 @@ $nav-border-color:              #4d5d79;
     }
     .brand-logo-collapsed { 
       display: none; 
-      padding: 29px 15px;
+      padding: 21px 15px;
+      &:hover {
+        opacity: .9;
+      }
     }
   }
   
@@ -276,9 +279,9 @@ $nav-border-color:              #4d5d79;
       }
     }
 
-    form {
+    .chooser_popup {
       top:10px;
-      right: -72px !important;
+      right: -86px !important;
       width: 87px;
       min-width: 87px;
       z-index:4;
@@ -408,6 +411,11 @@ $nav-border-color:              #4d5d79;
         color: $nav-top-item-desktop;
       }
     }
+  }
+
+  .dropdown-menu {
+    margin-top: -1px;
+    margin-right: 15px;
   }
   
 }

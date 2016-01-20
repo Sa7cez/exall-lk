@@ -1,0 +1,537 @@
+
+@import '../app/variables';
+@import '../bootstrap/bootstrap/mixins/gradients';
+@import '../app/media-queries';
+
+
+// 
+// Variables to change general look 
+// 
+
+// LAYOUT
+
+$content-bg:                    #212121;
+$aside-bg:                      #262626;
+
+// NAVBAR TOP
+
+$nav-top-bg:                    #212121;
+$nav-top-bg-start:              $nav-top-bg;
+$nav-top-bg-end:                #212121;
+$nav-header-bg:                 transparent;
+
+$nav-top-item-mobile:           $nav-top-bg;
+$nav-top-item-mobile-active:    darken($nav-top-item-mobile, 20%);
+
+$nav-top-item-desktop:          #fff;
+$nav-top-item-desktop-active:   darken($nav-top-item-desktop, 20%);
+$nav-border-color:              #494949;
+
+// SIDEBAR
+
+$sidebar-bg:                      $aside-bg;
+
+$sidebar-item-color:              rgb(108, 108, 108);
+$sidebar-item-color-active:       rgb(211, 211, 211);
+$sidebar-item-bg-active:          #212121;
+
+$sidebar-icon-color:              rgb(108, 108, 108);
+$sidebar-icon-color-active:       rgb(211, 211, 211);
+
+$sidebar-bullet-color:            rgba(0,0,0,.25);
+$sidebar-bullet-color-active:     $sidebar-icon-color-active;
+
+$sidebar-heading-color:           #919DA8;
+$sidebar-label-color:             $sidebar-item-color;
+
+// OFFSIDEBAR
+
+$offsidebar-bg:           transparent;
+$offsidebar-border-color: greyscale(darken($offsidebar-bg, 20%));
+$offsidebar-color:        #969696;
+
+
+/* ========================================================================
+   Component: layout
+ ========================================================================== */
+
+body,
+.wrapper > section {
+  background-color: $content-bg;
+  color: rgba(255,255,255,.4);
+}
+.wrapper > .aside { 
+  background-color: $aside-bg;
+}
+.wrapper .aside-inner {
+  border-right: 1px solid rgba(86, 86, 86, 0.5);
+}
+
+footer {
+  background-color: #262626;
+  border-color:#323539;
+  color:rgba(255,255,255,.3);
+  .prefooter {
+    border-color:#323539;
+  }
+  .footer {
+    .social {
+      opacity: .2;
+      a, span {
+        color: #FFF;
+      }
+    }
+    .left {
+      border-right:1px solid #323539;
+      .light_version {
+        display: none;
+      }
+      .dark_version {
+        display: block !important;
+      }
+    }
+
+    ul li a {
+      color:rgba(255,255,255,.3);
+    }
+  }
+}
+
+#buysell,
+#orders {
+  background-color: #262626;
+}
+
+// Nav tabs 
+
+.nav-tabs-justified,
+.nav-tabs.nav-justified {
+  background-color: #262626;
+
+  > li > a {
+    background-color: rgb(29, 29, 29);
+    color:rgba(255,255,255,.4);
+    border-bottom: 1px solid rgba(86, 86, 86, 0.3);
+
+    &:hover {
+      color:rgba(255,255,255,.6);
+    }
+  }
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    color:rgba(255,255,255,.4);
+    border-color:transparent;
+    background-color: #262626;
+  }
+}
+
+.panel {
+  background-color: #262626;
+  .tab-content {
+    color:white;
+  }
+  .panel-footer {
+    background-color: #2c2c2c !important;
+  }
+  .table thead tr th,
+  .table thead tr td,
+  table.dataTable tbody tr td {
+    color:rgba(255,255,255,.4) !important;
+  }
+  table.dataTable tbody tr:hover {
+    background-color: #2c2c2c !important; 
+  }
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #2b2b2b !important;
+  }
+  .btn-transparent {
+    color:rgba(255,255,255,.4);
+  }
+  .panel-footer {
+    border-color:#34363a !important;
+  }
+
+}
+
+.pagination > li > a, .pagination > li > span {
+  color:rgba(255,255,255,.4) !important;
+  border-color: #343434 !important;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  background-color: transparent;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  color:rgba(255,255,255,.4) !important;
+  border-color: #343434 !important;
+}
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: #2c2c2c;
+}
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+  background-color: #2c2c2c !important;
+}
+
+#paymentTop, #paymentTop .other {
+  color:rgba(255,255,255,.4);
+}
+
+.select2-dropdown {
+  background-color: #2B2B2B !important;
+  border-color:#3F3F3F !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border-color:rgba(86, 86, 86, .7) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color:rgba(255,255,255,.4) !important;
+}
+.select2-container--default .select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #262626;
+  color:rgba(255,255,255,.4) !important;
+}
+
+.select2-search__field {
+  background-color: #262626;
+  color:rgba(255,255,255,.4) !important;
+  border-color:rgba(86, 86, 86, .7) !important;
+}
+
+
+.form-control {
+  border-color:#484848;
+}
+
+.form-control::-moz-placeholder {
+  color: rgba(255,255,255,.4);
+}
+.form-control:-ms-input-placeholder {
+  color: rgba(255,255,255,.4);
+}
+.form-control::-webkit-input-placeholder {
+  color: rgba(255,255,255,.4);
+}
+
+#orders .currencies a {
+  color: rgba(255,255,255,.2);
+}
+
+#orders .currencies a.active {
+  color: rgba(255,255,255,.4);
+}
+
+.seller a {
+  color:rgba(255,255,255,.4) !important;
+}
+
+.btn.btn-default {
+  background-color: #2c2c2c;
+  color:rgba(255,255,255,.4);
+  border-color:rgba(86, 86, 86, .7);
+
+  &:hover {
+    background-color: #2f2f2f;
+    color:rgba(255,255,255,.4);
+  }
+}
+
+/* ========================================================================
+   Component: top-navbar
+ ========================================================================== */
+
+// Navbar Mobile General styles
+// ------------------------------
+
+.topnavbar {
+  background-color: #fff;
+  border-color: $nav-border-color;
+  @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
+  .navbar-header {
+    border-color: #515762;
+    background-color: $nav-header-bg;
+    @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
+    @media only screen and (min-width: $mq-tablet) {
+      background-image: none;
+    }
+  }
+  
+  .navbar-nav > li > a,
+  .navbar-nav > .open > a {
+    color: $nav-top-item-mobile;
+    &:hover, &:focus {
+      color: $nav-top-item-mobile-active;
+    }
+  }
+
+  // Navbar link active style
+  .navbar-nav > .active > a,
+  .navbar-nav > .open   > a {
+    &, &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+
+  // the button to toggle search
+  .navbar-nav > li > [data-toggle='navbar-search'] {
+    color: $nav-top-item-desktop;
+  }
+  
+  .nav-wrapper {
+    background-color: $nav-top-bg;
+    @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
+  }
+
+  .currencies {
+    .border {
+      border-color: $nav-border-color;
+    }
+  }
+
+  .lenguage_changer,
+  .profile {
+    border-color: $nav-border-color;
+    color:rgba(255,255,255,.4);
+  }
+  .currencies ul li span {
+    color:rgba(255,255,255,.4);
+  }
+  .currencies form {
+    background-color: #2B2B2B;
+    color:rgba(255,255,255,.4);
+    border-color:#3F3F3F;
+  }
+  .wallet {
+    color:rgba(255,255,255,.4);
+    em {
+      color:rgba(255,255,255,.4);
+    }
+  }
+  .dropdown-menu {
+    background-color: #2B2B2B !important;
+    border-color:#3F3F3F !important;
+  }
+  .currencies ul li .popover_cur .arrow {
+    border-bottom-color:#3F3F3F;
+  }
+  .currencies ul li .popover_cur .arrow:after {
+    border-bottom-color:#2A2A2A;
+  }
+}
+
+// Navbar Desktop styles
+// ------------------------------
+
+@media only screen and (min-width: $mq-tablet) {
+
+  // Navbar top styles
+  .topnavbar {
+    background-color: $nav-top-bg;
+    @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
+
+    .navbar-nav > .open > a {
+      &, &:hover, &:focus {
+        box-shadow: 0 -3px 0 rgba(255,255,255,.5) inset;
+      }
+    }
+
+    .navbar-nav > li > a,
+    .navbar-nav > .open > a {
+      color: $nav-top-item-desktop;
+      &:hover, &:focus {
+        color: $nav-top-item-mobile-active;
+      }
+    }
+
+  } // .topnavbar
+
+}
+
+/* ========================================================================
+   Component: sidebar
+ ========================================================================== */
+
+.sidebar {
+  background-color: $sidebar-bg; 
+
+  .nav-heading {
+    color: $sidebar-heading-color;
+  }
+
+  .hamburger {
+    background-color: rgb(33, 33, 33);
+    border: 1px solid rgb(86, 86, 86);
+    a {
+      font-size:12px;
+      color:rgba(86, 86, 86, .7);
+
+      em {
+        font-weight: 700;
+        color:rgba(86, 86, 86, .7);
+      }
+      &:hover {
+        color:rgba(86, 86, 86, 1);
+      }
+    }
+  }
+
+  // Items
+  .nav {
+    > li {
+      > a,
+      > .nav-item {
+        color: $sidebar-item-color;
+        &:focus, &:hover {
+          color: $sidebar-item-color-active;
+          em {
+            color: $sidebar-icon-color-active;
+          }
+        }
+        // Item icon
+        > em {
+          color: $sidebar-icon-color;
+        }
+      }
+
+      // Active item state
+      &.active,
+      &.open {
+        &,
+        > a,
+        .nav {
+          background-color: $sidebar-item-bg-active;
+          color: $sidebar-item-color-active;
+        }
+        > a > em {
+          color: $sidebar-icon-color-active;
+        }  
+      }
+      &.active {
+        border-left-color: rgb(248, 160, 53);
+      }
+    }
+  }
+
+  .news_block {
+    background-color:#2c2c2c;
+    a {
+      color:rgba(255,255,255,.4);
+    }
+  }
+}
+
+.sidebar-subnav {
+  background-color: $sidebar-bg;
+  > .sidebar-subnav-header {
+    color: $sidebar-item-color;
+  }
+  > li  {
+    > a,
+    > .nav-item {
+      color: $sidebar-item-color;
+      &:focus, &:hover {
+        color: $sidebar-item-color-active;
+      }
+    }
+
+    &.active {
+      > a,
+      > .nav-item {
+        color: $sidebar-icon-color-active;
+        &:after {
+          border-color: $sidebar-bullet-color-active;
+          background-color: $sidebar-bullet-color-active;
+        }
+      }
+    }
+  } // li
+}
+
+/* ========================================================================
+   Component: offsidebar
+ ========================================================================== */
+
+.offsidebar {
+  border:none;
+  background-color: $offsidebar-bg;
+  color: $offsidebar-color;
+  .profile {
+    background-color: #262626;
+    .switch {
+      .icon-sun {
+        color: rgb(248, 160, 53);
+      }
+      span {
+        background-color: rgb(33, 33, 33);
+        border: 1px solid rgba(86, 86, 86, 0.3);
+
+        &:after {
+          background-color: rgb(71, 71, 71);
+          border-color: rgb(71, 71, 71);
+        }
+      }
+    }
+    a {
+      color: $offsidebar-color;
+    }
+    .line {
+      background-color: $nav-border-color;
+    }
+    .content .circles li {
+      color: $offsidebar-color;
+    }
+  }
+}
+
+// Buy sell
+
+.buysell_popup {
+  background-color: #262626;
+  border:1px solid #484848;
+  color: rgba(255,255,255,.4);
+  .form-control {
+    background-color: transparent;
+  }
+  a, em, .text {
+    color: rgba(255,255,255,.4);
+  }
+  .order.opened {
+    background-color: #2B2B2B;
+  }
+  .line {
+    background-color: #484848;
+  }
+  .footer {
+    background-color: #2B2B2B;
+  }
+  .footer .functions .field, 
+  .footer .functions .dropdown,
+  .payment_methods .requisites .info {
+    border-color: rgba(86, 86, 86, 0.7); 
+  }
+  .payment_methods .requisites .bordered {
+    border-color: #484848;
+    background-color: #2C2C2C;
+  }
+}
+
+#create_order_buy,
+#create_order_sell {
+  color: rgba(255,255,255,.4);
+  background-color: #262626;
+  .line .sortable li {
+    background-color: transparent;
+    border-color:#474747;
+  }
+  a, em, b:before {
+    color: rgba(255,255,255,.4) !important;
+  }
+  .line.gray {
+    background-color: #2C2C2C;
+  }
+  .settings-panel {
+    background-color: #262626;
+  }
+}

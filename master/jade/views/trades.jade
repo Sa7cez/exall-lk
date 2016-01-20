@@ -6,7 +6,7 @@ block active
 block content
   
   .row
-    .col-xs-12.col-md-8.col-lg-9
+    .col-xs-12.col-md-8.col-lg-9.buysell-block
 
       // START buysell tab
       #buysell.panel.panel-transparent(role='tabpanel')
@@ -17,7 +17,7 @@ block content
           li(role='presentation')
             a.bb0(href='#sell', aria-controls='sell', role='tab', data-toggle='tab', data-localize="trades.SELL")
         // Tab panes
-        .tab-content.bg-white
+        .tab-content
           #buy.tab-pane.active(role='tabpanel') 
             .container-fluid
               .row
@@ -26,17 +26,146 @@ block content
                       table#ordersBuy.table.table-striped
                         thead
                           tr
-                            th(style='width:10%').message
+                            th.message
                               .icon-message
-                            th(style='width:20%', data-localize="trades.ORDER")
-                            th(style='width:14%') BTC
-                            th(style='width:20%', data-localize="trades.AMOUNT")
-                            th(style='width:20%', data-localize="trades.STATUS")
-                            th(style='width:10%', data-localize="trades.DATE").date 
-                            th(style='width:6%').full-info  
+                            th(data-localize="trades.ORDER").order_name
+                            th.btc BTC
+                            th(data-localize="trades.AMOUNT").amount
+                            th(data-localize="trades.STATUS").status
+                            th(data-localize="trades.DATE").date 
+                            th.full-info  
                         tbody
             .panel-footer
-              a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
+              button.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER" data-action="create_order_buy")
+              #create_order_buy(style="display:none")
+                .pull-right.hide_it(data-tool="popup-hide")
+                  em.icon-up-arrow
+                  span(data-localize="trades.HIDE")
+                .line.title(data-localize="trades.popup.BUY")
+                .line.payments.clearfix
+                  .plus 
+                    label
+                      select#payment-list-buy-filter.delay-selector
+                        option(value='', data-localize="trades.popup.METHOD") 
+                        option(value='Сбербанк') Сбербанк
+                        option(value='Альфа-банк') Альфа-банк
+                        option(value='Western Union') Western Union
+                        option(value='Paypal') Paypal
+                        option(value='Bank Of America') Bank Of America
+                .line.gray.clearfix
+                  ul#payment-list-buy.payments.sortable
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | Yandex Money
+                      .remove
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | Webmoney
+                      .remove
+                  .text(data-localize="trades.popup.PRIORITY1")
+                .line.currency.clearfix
+                  .plus 
+                    label.control-label
+                      select#currencies-list-buy-filter.delay-selector.form-control
+                        option(value='', data-localize="trades.popup.CUR")
+                        option(value='EUR') EUR
+                        option(value='DKK') DKK
+                        option(value='ZAR') ZAR
+                        option(value='RON') RON
+                        option(value='JPY') JPY
+                        option(value='CNY') CNY
+                    .col2
+                      .text(data-localize="trades.popup.CURTEXT") 
+                .line.currencies.gray.clearfix
+                  ul#currencies-list-buy.col.sortable
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | RUB
+                      .remove
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | USD
+                      .remove
+                  .col2
+                    .text(data-localize="trades.popup.PRIORITY1")
+                .line.clearfix.inputs
+                  .col
+                    label
+                      span(data-localize="trades.popup.LABEL1")
+                      input.form-control.input-sm
+                  .col2
+                    label
+                      span(data-localize="trades.popup.LABEL2")
+                      input.form-control.input-sm
+                  .col
+                    label
+                      span(data-localize="trades.popup.LABEL3")
+                      input.form-control.input-sm
+                  .col2
+                    label
+                      span(data-localize="trades.popup.LABEL4")
+                      input.form-control.input-sm
+                  .col
+                    label
+                      span(data-localize="trades.popup.LABEL5")
+                      input.form-control.input-sm
+                  .col2
+                    label
+                      span(data-localize="trades.popup.LABEL6")
+                      input.form-control.input-sm
+                .line.green(data-localize="trades.popup.PERCENT")
+                .line.settings.clearfix
+                  button.col.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
+                  a(href="#", class="arrow", data-localize="trades.popup.SETTINGS")
+                  br
+                  a(href="#" data-localize="trades.popup.DEFAULTS")
+                .settings-panel(style="display:none")
+                  .close-settings
+                    em.icon-left-arrow
+                    span(data-localize="trades.popup.HIDESETTINGS")
+                  .line.country.clearfix
+                    .plus 
+                      label
+                        select#country-list-buy-filter.delay-selector
+                          option(value='' data-localize="trades.popup.COUNTRY")  
+                          option(value='Россия') Россия  
+                          option(value='Израиль') Израиль
+                          option(value='Китай') Китай
+                          option(value='Великобритания') Великобритания
+                  .line.countries.gray.clearfix
+                    ul#country-list-buy.col.sortable
+                      li.list-group-item
+                        em.icon-dashboard.text-muted.mr-lg
+                        | США
+                        .remove
+                      li.list-group-item
+                        em.icon-dashboard.text-muted.mr-lg
+                        | Франция
+                        .remove
+                    .col2
+                      .text(data-localize="trades.popup.PRIORITY1")
+                  .line.others.clearfix
+                    .time-react
+                      select.delay-selector
+                        option(value='' data-localize="trades.popup.TIMEREACT") 
+                        option(value='3600') 1 Час
+                        option(value='7200') 2 Часа
+                    .time-confirm
+                      select.delay-selector
+                        option(value='' data-localize="trades.popup.TIMEWAIT")
+                        option(value='3600') 1 Час
+                        option(value='7200') 2 Часа
+                    .time-buy
+                      select.delay-selector
+                        option(value='' data-localize="trades.popup.TIMEBUY")
+                        option(value='3600') 1 Час
+                        option(value='7200') 2 Часа
+                    .main-currency
+                      select.delay-selector
+                        option(value='USD') USD
+                        option(value='RUB') RUB
+                        option(value='JPY') JPY
+
           #sell.tab-pane(role='tabpanel') 
             .container-fluid
               .row
@@ -45,17 +174,146 @@ block content
                       table#ordersSell.table.table-striped
                         thead
                           tr
-                            th(style='width:12%').message
+                            th.message
                               .icon-message
-                            th(style='width:16%', data-localize="trades.ORDER")
-                            th(style='width:17%') BTC
-                            th(style='width:18%', data-localize="trades.AMOUNT")
-                            th(style='width:20%', data-localize="trades.STATUS")
-                            th(style='width:10%', data-localize="trades.DATE").date 
+                            th(data-localize="trades.ORDER").order_name
+                            th.btc BTC
+                            th(data-localize="trades.AMOUNT").amount
+                            th(data-localize="trades.STATUS").status
+                            th(data-localize="trades.DATE").date 
                             th(style='width:7%').full-info  
                         tbody
             .panel-footer
-              a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")   
+              button.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER" data-action="create_order_sell")
+              #create_order_sell(style="display:none")
+                .pull-right.hide_it(data-tool="popup-hide")
+                  em.icon-up-arrow
+                  span(data-localize="trades.HIDE")
+                .line.title(data-localize="trades.popup.BUY")
+                .line.payments.clearfix
+                  .plus 
+                    label
+                      select#payment-list-sell-filter.delay-selector
+                        option(value='', data-localize="trades.popup.METHOD") 
+                        option(value='Сбербанк') Сбербанк
+                        option(value='Альфа-банк') Альфа-банк
+                        option(value='Western Union') Western Union
+                        option(value='Paypal') Paypal
+                        option(value='Bank Of America') Bank Of America
+                .line.gray.clearfix
+                  ul#payment-list-sell.payments.sortable
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | Yandex Money
+                      .remove
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | Webmoney
+                      .remove
+                  .text(data-localize="trades.popup.PRIORITY1")
+                .line.currency.clearfix
+                  .plus 
+                    label.control-label
+                      select#currencies-list-sell-filter.delay-selector.form-control
+                        option(value='', data-localize="trades.popup.CUR")
+                        option(value='EUR') EUR
+                        option(value='DKK') DKK
+                        option(value='ZAR') ZAR
+                        option(value='RON') RON
+                        option(value='JPY') JPY
+                        option(value='CNY') CNY
+                    .col2
+                      .text(data-localize="trades.popup.CURTEXT") 
+                .line.currencies.gray.clearfix
+                  ul#currencies-list-sell.col.sortable
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | RUB
+                      .remove
+                    li.list-group-item
+                      em.icon-dashboard.text-muted.mr-lg
+                      | USD
+                      .remove
+                  .col2
+                    .text(data-localize="trades.popup.PRIORITY1")
+                .line.clearfix.inputs
+                  .col
+                    label
+                      span(data-localize="trades.popup.LABEL1")
+                      input.form-control.input-sm
+                  .col2
+                    label
+                      span(data-localize="trades.popup.LABEL2")
+                      input.form-control.input-sm
+                  .col
+                    label
+                      span(data-localize="trades.popup.LABEL3")
+                      input.form-control.input-sm
+                  .col2
+                    label
+                      span(data-localize="trades.popup.LABEL4")
+                      input.form-control.input-sm
+                  .col
+                    label
+                      span(data-localize="trades.popup.LABEL5")
+                      input.form-control.input-sm
+                  .col2
+                    label
+                      span(data-localize="trades.popup.LABEL6")
+                      input.form-control.input-sm
+                .line.green(data-localize="trades.popup.PERCENT")
+                .line.settings.clearfix
+                  button.col.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
+                  a(href="#", class="arrow", data-localize="trades.popup.SETTINGS")
+                  br
+                  a(href="#" data-localize="trades.popup.DEFAULTS")
+                .settings-panel(style="display:none")
+                  .close-settings
+                    em.icon-left-arrow
+                    span(data-localize="trades.popup.HIDESETTINGS")
+                  .line.country.clearfix
+                    .plus 
+                      label
+                        select#country-list-sell-filter.delay-selector
+                          option(value='' data-localize="trades.popup.COUNTRY")  
+                          option(value='Россия') Россия  
+                          option(value='Израиль') Израиль
+                          option(value='Китай') Китай
+                          option(value='Великобритания') Великобритания
+                  .line.countries.gray.clearfix
+                    ul#country-list-sell.col.sortable
+                      li.list-group-item
+                        em.icon-dashboard.text-muted.mr-lg
+                        | США
+                        .remove
+                      li.list-group-item
+                        em.icon-dashboard.text-muted.mr-lg
+                        | Франция
+                        .remove
+                    .col2
+                      .text(data-localize="trades.popup.PRIORITY1")
+                  .line.others.clearfix
+                    .time-react
+                      select.delay-selector
+                        option(value='' data-localize="trades.popup.TIMEREACT") 
+                        option(value='3600') 1 Час
+                        option(value='7200') 2 Часа
+                    .time-confirm
+                      select.delay-selector
+                        option(value='' data-localize="trades.popup.TIMEWAIT")
+                        option(value='3600') 1 Час
+                        option(value='7200') 2 Часа
+                    .time-buy
+                      select.delay-selector
+                        option(value='' data-localize="trades.popup.TIMEBUY")
+                        option(value='3600') 1 Час
+                        option(value='7200') 2 Часа
+                    .main-currency
+                      select.delay-selector
+                        option(value='USD') USD
+                        option(value='RUB') RUB
+                        option(value='JPY') JPY
+          
           // START buysell popup
           .buysell_popup.clearfix(role='buysellpopup' style="display:none")
             .clearfix
@@ -137,7 +395,7 @@ block content
                           option(value='7200' data-localize="trades.2HOURS")
                           option(value='10800' data-localize="trades.3HOURS")
                           option(value='14400' data-localize="trades.4HOURS")
-                  a.btn.btn-orange.btn-sm(href='#', data-localize="trades.CONFIRMPAYMENT")
+                  button.btn.btn-orange.btn-sm(href='#', data-localize="trades.CONFIRMPAYMENT")
             
             .line
             
@@ -199,7 +457,7 @@ block content
                           option(value='7200' data-localize="trades.2HOURS")
                           option(value='10800' data-localize="trades.3HOURS")
                           option(value='14400' data-localize="trades.4HOURS")
-                  a.btn.btn-gray.btn-sm(href='#', data-localize="trades.PAID")
+                  button.btn.btn-gray.btn-sm(href='#', data-localize="trades.PAID")
                   .confirm
                     .col-xs-12.col-md-4
                       label.control-label Загрузите подтверждение
@@ -212,68 +470,96 @@ block content
 
       // END buysell tab        
     
-    .col-xs-12.col-md-4.col-lg-3
-      
-      // START payment top panel
-      #paymentTop.panel.panel-transparent.remove
-        .title
-          span(data-localize="payments.TITLE")
-          em(href="#", data-tool="panel-dismiss", data-toggle="tooltip", title="Close Panel").pull-right.icon-cross.hidden-lg.hidden-md
-        .box-placeholder
-          label.control-label
-            select.delay-selector.form-control(name="top_country")
-              option(value='all' data-localize="countries.ALL")
-              option(value='england' data-localize="countries.ENGLAND")
-              option(value='usa' data-localize="countries.USA")
-              option(value='russia' data-localize="countries.RUSSIA")
-              option(value='china' data-localize="countries.CHINA")
-          label.control-label
-            select.delay-selector.form-control(name="top_payment")
-              option(value='all' data-localize="payments.ALL")
-              option(value='sberbank' data-localize="payments.SBERBANK")
-              option(value='alphabank' data-localize="payments.ALPHABANK")
-              option(value='webmoney' data-localize="payments.WEBMONEY")
-              option(value='wu' data-localize="payments.WU")
-              option(value='vtb' data-localize="payments.VTB")
-              option(value='pkb' data-localize="payments.PKB")
-              option(value='anotherbank' data-localize="payments.ANOTHERBANK")
-        // START table-responsive
-        .table-responsive
-          table.table
-            tbody
-              tr
-                td(data-localize="payments.SBERBANK")
-                td 29 404, 324
-              tr
-                td(data-localize="payments.ALPHABANK")
-                td 24 421, 424
-              tr
-                td(data-localize="payments.WEBMONEY")
-                td 1 842, 424
-              tr
-                td(data-localize="payments.WU")
-                td 1 424, 434
-              tr
-                td(data-localize="payments.VTB")
-                td 242 425
-              tr
-                td(data-localize="payments.PKB")
-                td 2 040
-              tr
-                td(data-localize="payments.ANOTHERBANK")
-                td 1 845
-              tr
-                td(data-localize="payments.SBERBANK")
-                td 2 131
-              tr
-                td(data-localize="payments.ALPHABANK")
-                td 234
-          // END table-responsive
-        .other
-          span.icon-down-arrow
-          span(data-localize="payments.OTHER")
-      // END payment top panel
-
+    .col-xs-12.col-md-4.col-lg-3.payment-block
+        
+        // START payment top panel
+        #paymentTop.panel.panel-transparent.remove
+          .title
+            span(data-localize="payments.TITLE")
+            em(href="#", data-tool="panel-dismiss", data-toggle="tooltip", title="Close Panel").pull-right.icon-cross.hidden-lg.hidden-md
+          .box-placeholder
+            label.control-label
+              select.delay-selector.form-control(name="top_country")
+                option(value='all' data-localize="countries.ALL")
+                option(value='england' data-localize="countries.ENGLAND")
+                option(value='usa' data-localize="countries.USA")
+                option(value='russia' data-localize="countries.RUSSIA")
+                option(value='china' data-localize="countries.CHINA")
+            label.control-label
+              select.delay-selector.form-control(name="top_payment")
+                option(value='all' data-localize="payments.ALL")
+                option(value='sberbank' data-localize="payments.SBERBANK")
+                option(value='alphabank' data-localize="payments.ALPHABANK")
+                option(value='webmoney' data-localize="payments.WEBMONEY")
+                option(value='wu' data-localize="payments.WU")
+                option(value='vtb' data-localize="payments.VTB")
+                option(value='pkb' data-localize="payments.PKB")
+                option(value='anotherbank' data-localize="payments.ANOTHERBANK")
+          // START table-responsive
+          .table-responsive
+            table.table
+              tbody
+                tr
+                  td(data-localize="payments.SBERBANK")
+                  td 29 404, 324
+                tr
+                  td(data-localize="payments.ALPHABANK")
+                  td 24 421, 424
+                tr
+                  td(data-localize="payments.WEBMONEY")
+                  td 1 842, 424
+                tr
+                  td(data-localize="payments.WU")
+                  td 1 424, 434
+                tr
+                  td(data-localize="payments.VTB")
+                  td 242 425
+                tr
+                  td(data-localize="payments.PKB")
+                  td 2 040
+                tr
+                  td(data-localize="payments.ANOTHERBANK")
+                  td 1 845
+                tr
+                  td(data-localize="payments.SBERBANK")
+                  td 2 131
+                tr
+                  td(data-localize="payments.ALPHABANK")
+                  td 234
+                tr
+                  td(data-localize="payments.SBERBANK")
+                  td 29 404, 324
+                tr
+                  td(data-localize="payments.ALPHABANK")
+                  td 24 421, 424
+                tr
+                  td(data-localize="payments.WEBMONEY")
+                  td 1 842, 424
+                tr
+                  td(data-localize="payments.WU")
+                  td 1 424, 434
+                tr
+                  td(data-localize="payments.VTB")
+                  td 242 425
+                tr
+                  td(data-localize="payments.PKB")
+                  td 2 040
+                tr
+                  td(data-localize="payments.ANOTHERBANK")
+                  td 1 845
+                tr
+                  td(data-localize="payments.SBERBANK")
+                  td 2 131
+                tr
+                  td(data-localize="payments.ALPHABANK")
+                  td 234
+            // END table-responsive
+          .other
+            span.icon-down-arrow
+            span(data-localize="payments.OTHER")
+        // END payment top panel
+  
+  .row
     .col-xs-12.col-lg-9
       #orders.panel.panel-transparent(role='tabpanel')
         // Nav tabs
@@ -283,7 +569,7 @@ block content
           li(role='presentation')
             a.bb0(href='#orders-sell', aria-controls='sell', role='tab', data-toggle='tab', data-localize="trades.ORDERSSELL")
         // Tab panes
-        .orders-tabs.tab-content.p0.bg-white
+        .orders-tabs.tab-content
           #orders-buy.tab-pane.active(role='tabpanel') 
             .container-fluid
               .row
@@ -292,12 +578,12 @@ block content
                     table#orders-buy-table.table
                       thead
                         tr
-                          th(style='width:15%', data-localize="trades.PRICE").price
-                          th(style='width:17%', data-localize="trades.AMOUNTBTC")
-                          th(style='width:26%', data-localize="trades.PAYMENTSYSTEM")
-                          th(style='width:23%', data-localize="trades.SELLER")
-                          th(style='width:10%', data-localize="trades.RATING") 
-                          th(style='width:9%').buy_button
+                          th(data-localize="trades.PRICE").price
+                          th(data-localize="trades.AMOUNTBTC")
+                          th(data-localize="trades.PAYMENTSYSTEM")
+                          th(data-localize="trades.SELLER")
+                          th(data-localize="trades.RATING") 
+                          th.buy_button
                       tbody 
           #orders-sell.tab-pane(role='tabpanel') 
             .container-fluid
@@ -307,18 +593,16 @@ block content
                       table#orders-sell-table.table
                         thead
                           tr
-                            th(style='width:15%', data-localize="trades.PRICE").price
-                            th(style='width:17%', data-localize="trades.AMOUNTBTC")
-                            th(style='width:26%', data-localize="trades.PAYMENTSYSTEM")
-                            th(style='width:23%', data-localize="trades.SELLER")
-                            th(style='width:10%', data-localize="trades.RATING") 
-                            th(style='width:9%').buy_button
+                            th(data-localize="trades.PRICE").price
+                            th(data-localize="trades.AMOUNTBTC")
+                            th(data-localize="trades.PAYMENTSYSTEM")
+                            th(data-localize="trades.SELLER")
+                            th(data-localize="trades.RATING") 
+                            th.buy_button
                         tbody
             .panel-footer
               a.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER")
-              #create_order
 
-  
   .row
     .col-xs-12
       button.btn.btn-default(type="button", data-notify="", data-message="Вы завершили сделку с <a id=\"popup_username\" href=\"#\">Serj1597</a><br>Оставьте <a href=\"#\">отзыв</a> о работе с ним." data-options='{"pos":"bottom-right"}') Сообщение о сделке
@@ -330,7 +614,6 @@ block vendor_css
 
   // SELECT2
   link(rel='stylesheet', href='../vendor/select2/dist/css/select2.css')
-  link(rel='stylesheet', href='../vendor/select2-bootstrap-theme/dist/select2-bootstrap.css')
 
 block vendor_js
   // DATATABLES
@@ -338,11 +621,15 @@ block vendor_js
   script(src='../vendor/datatables-colvis/js/dataTables.colVis.js')
   script(src='vendor/datatable-bootstrap/js/dataTables.bootstrap.js')
   script(src='vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js')
-  script(src='js/demo/demo-datatable.js')
-  script(src='js/demo/demo-panels.js')  
 
   // SELECT2
   script(src='../vendor/select2/dist/js/select2.js')
 
   // FILESTYLE
   script(src='../vendor/bootstrap-filestyle/src/bootstrap-filestyle.js')
+
+  // SORTABLE
+  script(src='../vendor/html.sortable/dist/html.sortable.js')
+
+  // MATCH HEIGHT
+  script(src='../vendor/jquery-match-height-master/dist/jquery.matchHeight.js')

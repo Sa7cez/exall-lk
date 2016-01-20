@@ -1,0 +1,474 @@
+/* ========================================================================
+     Component: media-queries
+ ========================================================================== */
+/* ========================================================================
+   Component: layout
+ ========================================================================== */
+body,
+.wrapper > section {
+  background-color: #212121;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.wrapper > .aside {
+  background-color: #262626;
+}
+
+.wrapper .aside-inner {
+  border-right: 1px solid rgba(86, 86, 86, 0.5);
+}
+
+footer {
+  background-color: #262626;
+  border-color: #323539;
+  color: rgba(255, 255, 255, 0.3);
+}
+footer .prefooter {
+  border-color: #323539;
+}
+footer .footer .social {
+  opacity: .2;
+}
+footer .footer .social a, footer .footer .social span {
+  color: #FFF;
+}
+footer .footer .left {
+  border-right: 1px solid #323539;
+}
+footer .footer .left .light_version {
+  display: none;
+}
+footer .footer .left .dark_version {
+  display: block !important;
+}
+footer .footer ul li a {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+#buysell,
+#orders {
+  background-color: #262626;
+}
+
+.nav-tabs-justified,
+.nav-tabs.nav-justified {
+  background-color: #262626;
+}
+.nav-tabs-justified > li > a,
+.nav-tabs.nav-justified > li > a {
+  background-color: #1d1d1d;
+  color: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(86, 86, 86, 0.3);
+}
+.nav-tabs-justified > li > a:hover,
+.nav-tabs.nav-justified > li > a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+.nav-tabs-justified > .active > a,
+.nav-tabs-justified > .active > a:hover,
+.nav-tabs-justified > .active > a:focus,
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  color: rgba(255, 255, 255, 0.4);
+  border-color: transparent;
+  background-color: #262626;
+}
+
+.panel {
+  background-color: #262626;
+}
+.panel .tab-content {
+  color: white;
+}
+.panel .panel-footer {
+  background-color: #2c2c2c !important;
+}
+.panel .table thead tr th,
+.panel .table thead tr td,
+.panel table.dataTable tbody tr td {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+.panel table.dataTable tbody tr:hover {
+  background-color: #2c2c2c !important;
+}
+.panel .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #2b2b2b !important;
+}
+.panel .btn-transparent {
+  color: rgba(255, 255, 255, 0.4);
+}
+.panel .panel-footer {
+  border-color: #34363a !important;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: rgba(255, 255, 255, 0.4) !important;
+  border-color: #343434 !important;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  background-color: transparent;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  color: rgba(255, 255, 255, 0.4) !important;
+  border-color: #343434 !important;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: #2c2c2c;
+}
+
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+  background-color: #2c2c2c !important;
+}
+
+#paymentTop, #paymentTop .other {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.select2-dropdown {
+  background-color: #2B2B2B !important;
+  border-color: #3F3F3F !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border-color: rgba(86, 86, 86, 0.7) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true],
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #262626;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.select2-search__field {
+  background-color: #262626;
+  color: rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(86, 86, 86, 0.7) !important;
+}
+
+.form-control {
+  border-color: #484848;
+}
+
+.form-control::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-control:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#orders .currencies a {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+#orders .currencies a.active {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.seller a {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn.btn-default {
+  background-color: #2c2c2c;
+  color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(86, 86, 86, 0.7);
+}
+.btn.btn-default:hover {
+  background-color: #2f2f2f;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ========================================================================
+   Component: top-navbar
+ ========================================================================== */
+.topnavbar {
+  background-color: #fff;
+  border-color: #494949;
+  background-image: -webkit-linear-gradient(left, #212121 0%, #212121 100%);
+  background-image: -o-linear-gradient(left, #212121 0%, #212121 100%);
+  background-image: linear-gradient(to right, #212121 0%, #212121 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF212121', endColorstr='#FF212121', GradientType=1);
+}
+.topnavbar .navbar-header {
+  border-color: #515762;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(left, #212121 0%, #212121 100%);
+  background-image: -o-linear-gradient(left, #212121 0%, #212121 100%);
+  background-image: linear-gradient(to right, #212121 0%, #212121 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF212121', endColorstr='#FF212121', GradientType=1);
+}
+@media only screen and (min-width: 768px) {
+  .topnavbar .navbar-header {
+    background-image: none;
+  }
+}
+.topnavbar .navbar-nav > li > a,
+.topnavbar .navbar-nav > .open > a {
+  color: #212121;
+}
+.topnavbar .navbar-nav > li > a:hover, .topnavbar .navbar-nav > li > a:focus,
+.topnavbar .navbar-nav > .open > a:hover,
+.topnavbar .navbar-nav > .open > a:focus {
+  color: black;
+}
+.topnavbar .navbar-nav > .active > a, .topnavbar .navbar-nav > .active > a:hover, .topnavbar .navbar-nav > .active > a:focus,
+.topnavbar .navbar-nav > .open > a,
+.topnavbar .navbar-nav > .open > a:hover,
+.topnavbar .navbar-nav > .open > a:focus {
+  background-color: transparent;
+}
+.topnavbar .navbar-nav > li > [data-toggle='navbar-search'] {
+  color: #fff;
+}
+.topnavbar .nav-wrapper {
+  background-color: #212121;
+  background-image: -webkit-linear-gradient(left, #212121 0%, #212121 100%);
+  background-image: -o-linear-gradient(left, #212121 0%, #212121 100%);
+  background-image: linear-gradient(to right, #212121 0%, #212121 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF212121', endColorstr='#FF212121', GradientType=1);
+}
+.topnavbar .currencies .border {
+  border-color: #494949;
+}
+.topnavbar .lenguage_changer,
+.topnavbar .profile {
+  border-color: #494949;
+  color: rgba(255, 255, 255, 0.4);
+}
+.topnavbar .currencies ul li span {
+  color: rgba(255, 255, 255, 0.4);
+}
+.topnavbar .currencies form {
+  background-color: #2B2B2B;
+  color: rgba(255, 255, 255, 0.4);
+  border-color: #3F3F3F;
+}
+.topnavbar .wallet {
+  color: rgba(255, 255, 255, 0.4);
+}
+.topnavbar .wallet em {
+  color: rgba(255, 255, 255, 0.4);
+}
+.topnavbar .dropdown-menu {
+  background-color: #2B2B2B !important;
+  border-color: #3F3F3F !important;
+}
+.topnavbar .currencies ul li .popover_cur .arrow {
+  border-bottom-color: #3F3F3F;
+}
+.topnavbar .currencies ul li .popover_cur .arrow:after {
+  border-bottom-color: #2A2A2A;
+}
+
+@media only screen and (min-width: 768px) {
+  .topnavbar {
+    background-color: #212121;
+    background-image: -webkit-linear-gradient(left, #212121 0%, #212121 100%);
+    background-image: -o-linear-gradient(left, #212121 0%, #212121 100%);
+    background-image: linear-gradient(to right, #212121 0%, #212121 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF212121', endColorstr='#FF212121', GradientType=1);
+  }
+  .topnavbar .navbar-nav > .open > a, .topnavbar .navbar-nav > .open > a:hover, .topnavbar .navbar-nav > .open > a:focus {
+    box-shadow: 0 -3px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  .topnavbar .navbar-nav > li > a,
+  .topnavbar .navbar-nav > .open > a {
+    color: #fff;
+  }
+  .topnavbar .navbar-nav > li > a:hover, .topnavbar .navbar-nav > li > a:focus,
+  .topnavbar .navbar-nav > .open > a:hover,
+  .topnavbar .navbar-nav > .open > a:focus {
+    color: black;
+  }
+}
+/* ========================================================================
+   Component: sidebar
+ ========================================================================== */
+.sidebar {
+  background-color: #262626;
+}
+.sidebar .nav-heading {
+  color: #919DA8;
+}
+.sidebar .hamburger {
+  background-color: #212121;
+  border: 1px solid #565656;
+}
+.sidebar .hamburger a {
+  font-size: 12px;
+  color: rgba(86, 86, 86, 0.7);
+}
+.sidebar .hamburger a em {
+  font-weight: 700;
+  color: rgba(86, 86, 86, 0.7);
+}
+.sidebar .hamburger a:hover {
+  color: #565656;
+}
+.sidebar .nav > li > a,
+.sidebar .nav > li > .nav-item {
+  color: #6c6c6c;
+}
+.sidebar .nav > li > a:focus, .sidebar .nav > li > a:hover,
+.sidebar .nav > li > .nav-item:focus,
+.sidebar .nav > li > .nav-item:hover {
+  color: lightgray;
+}
+.sidebar .nav > li > a:focus em, .sidebar .nav > li > a:hover em,
+.sidebar .nav > li > .nav-item:focus em,
+.sidebar .nav > li > .nav-item:hover em {
+  color: lightgray;
+}
+.sidebar .nav > li > a > em,
+.sidebar .nav > li > .nav-item > em {
+  color: #6c6c6c;
+}
+.sidebar .nav > li.active,
+.sidebar .nav > li.active > a,
+.sidebar .nav > li.active .nav, .sidebar .nav > li.open,
+.sidebar .nav > li.open > a,
+.sidebar .nav > li.open .nav {
+  background-color: #212121;
+  color: lightgray;
+}
+.sidebar .nav > li.active > a > em, .sidebar .nav > li.open > a > em {
+  color: lightgray;
+}
+.sidebar .nav > li.active {
+  border-left-color: #f8a035;
+}
+.sidebar .news_block {
+  background-color: #2c2c2c;
+}
+.sidebar .news_block a {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebar-subnav {
+  background-color: #262626;
+}
+.sidebar-subnav > .sidebar-subnav-header {
+  color: #6c6c6c;
+}
+.sidebar-subnav > li > a,
+.sidebar-subnav > li > .nav-item {
+  color: #6c6c6c;
+}
+.sidebar-subnav > li > a:focus, .sidebar-subnav > li > a:hover,
+.sidebar-subnav > li > .nav-item:focus,
+.sidebar-subnav > li > .nav-item:hover {
+  color: lightgray;
+}
+.sidebar-subnav > li.active > a,
+.sidebar-subnav > li.active > .nav-item {
+  color: lightgray;
+}
+.sidebar-subnav > li.active > a:after,
+.sidebar-subnav > li.active > .nav-item:after {
+  border-color: lightgray;
+  background-color: lightgray;
+}
+
+/* ========================================================================
+   Component: offsidebar
+ ========================================================================== */
+.offsidebar {
+  border: none;
+  background-color: transparent;
+  color: #969696;
+}
+.offsidebar .profile {
+  background-color: #262626;
+}
+.offsidebar .profile .switch .icon-sun {
+  color: #f8a035;
+}
+.offsidebar .profile .switch span {
+  background-color: #212121;
+  border: 1px solid rgba(86, 86, 86, 0.3);
+}
+.offsidebar .profile .switch span:after {
+  background-color: #474747;
+  border-color: #474747;
+}
+.offsidebar .profile a {
+  color: #969696;
+}
+.offsidebar .profile .line {
+  background-color: #494949;
+}
+.offsidebar .profile .content .circles li {
+  color: #969696;
+}
+
+.buysell_popup {
+  background-color: #262626;
+  border: 1px solid #484848;
+  color: rgba(255, 255, 255, 0.4);
+}
+.buysell_popup .form-control {
+  background-color: transparent;
+}
+.buysell_popup a, .buysell_popup em, .buysell_popup .text {
+  color: rgba(255, 255, 255, 0.4);
+}
+.buysell_popup .order.opened {
+  background-color: #2B2B2B;
+}
+.buysell_popup .line {
+  background-color: #484848;
+}
+.buysell_popup .footer {
+  background-color: #2B2B2B;
+}
+.buysell_popup .footer .functions .field,
+.buysell_popup .footer .functions .dropdown,
+.buysell_popup .payment_methods .requisites .info {
+  border-color: rgba(86, 86, 86, 0.7);
+}
+.buysell_popup .payment_methods .requisites .bordered {
+  border-color: #484848;
+  background-color: #2C2C2C;
+}
+
+#create_order_buy,
+#create_order_sell {
+  color: rgba(255, 255, 255, 0.4);
+  background-color: #262626;
+}
+#create_order_buy .line .sortable li,
+#create_order_sell .line .sortable li {
+  background-color: transparent;
+  border-color: #474747;
+}
+#create_order_buy a, #create_order_buy em, #create_order_buy b:before,
+#create_order_sell a,
+#create_order_sell em,
+#create_order_sell b:before {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+#create_order_buy .line.gray,
+#create_order_sell .line.gray {
+  background-color: #2C2C2C;
+}
+#create_order_buy .settings-panel,
+#create_order_sell .settings-panel {
+  background-color: #262626;
+}

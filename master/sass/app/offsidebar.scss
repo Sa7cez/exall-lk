@@ -18,7 +18,7 @@ $offsidebar-wd:           290px;
   bottom: 0;
   right: 0;
   width: $offsidebar-wd;
-  margin-top: ($navbar-height + 2) * 2;
+  margin-top: $navbar-height;
   border-left: 1px solid $offsidebar-border-color;
   background-color: $offsidebar-bg;
   color: $offsidebar-color;
@@ -76,9 +76,7 @@ $offsidebar-wd:           290px;
     overflow-y: auto;
   }
 
-  .profile {
-    background-color: #fff !important;
-  }
+  .nav-wrapper .profile {background-color: rgba(255,255,255,.05);}
 }
 
 // No tranformation devices

@@ -26,7 +26,6 @@
    <link rel="stylesheet" href="vendor/datatable-bootstrap/css/dataTables.bootstrap.css">
    <!-- SELECT2-->
    <link rel="stylesheet" href="../vendor/select2/dist/css/select2.css">
-   <link rel="stylesheet" href="../vendor/select2-bootstrap-theme/dist/select2-bootstrap.css">
    <!-- =============== BOOTSTRAP STYLES ===============-->
    <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
    <!-- =============== APP STYLES ===============-->
@@ -47,9 +46,9 @@
                   </div>
                   <div class="brand-logo-collapsed">
                      <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-collapsed" class="img-responsive hidden-xs">
+                     <img src="img/small_logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-collapsed" class="img-responsive hidden-xs">
                      <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
-                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="img-responsive visible-xs sidebar-toggle">
+                     <img src="img/small_logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="img-responsive visible-xs sidebar-toggle">
                   </div>
                </a>
             </div>
@@ -70,7 +69,7 @@
                   </li>
                   <!-- Profile icon-->
                   <li>
-                     <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true" class="profile">
+                     <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true" class="profile offsidebar-toggle">
                         <div class="label label-danger">16</div>
                         <img src="img/user/02.jpg" alt="User avatar" class="img-responsive">
                      </a>
@@ -301,8 +300,8 @@
                         </ul>
                      </div>
                      <div class="chooser">
-                        <div data-toggle="dropdown" class="icon-down-arrow"></div>
-                        <form method="get" action="/" role="currencies" class="form dropdown-menu animated fadeIn">
+                        <div data-toggle="open-currencies" class="icon-down-arrow"></div>
+                        <div class="chooser_popup dropdown-menu animated fadeIn">
                            <fieldset>
                               <div class="form-group needsclick">
                                  <div class="checkbox c-checkbox needsclick">
@@ -347,7 +346,7 @@
                                  </div>
                               </div>
                            </fieldset>
-                        </form>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -377,7 +376,7 @@
                   <!-- Iterates over all sidebar items-->
                   <li class=" ">
                      <a href="dashboard.html" title="Dashboard">
-                        <div class="pull-right label label-info">5</div>
+                        <div class="pull-right label label-success">5</div>
                         <em class="icon-dashboard"></em>
                         <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
                      </a>
@@ -434,9 +433,9 @@
          <!-- START Off Sidebar (right)-->
          <nav>
             <div class="profile">
-               <label data-load-css="css/theme-a.css" class="switch switch-sm">
+               <label class="switch switch-sm">
                   <em class="icon-sun"></em>
-                  <input id="chk-fixed" type="checkbox">
+                  <input id="chk-fixed" type="checkbox" data-load-css="css/theme-black.css">
                   <span></span>
                   <em class="icon-moon"></em>
                </label>
@@ -481,7 +480,7 @@
          <!-- Page content-->
          <div class="content-wrapper">
             <div class="row">
-               <div class="col-xs-12 col-md-8 col-lg-9">
+               <div class="col-xs-12 col-md-8 col-lg-9 buysell-block">
                   <!-- START buysell tab-->
                   <div id="buysell" role="tabpanel" class="panel panel-transparent">
                      <!-- Nav tabs-->
@@ -494,7 +493,7 @@
                         </li>
                      </ul>
                      <!-- Tab panes-->
-                     <div class="tab-content bg-white">
+                     <div class="tab-content">
                         <div id="buy" role="tabpanel" class="tab-pane active">
                            <div class="container-fluid">
                               <div class="row">
@@ -503,15 +502,15 @@
                                        <table id="ordersBuy" class="table table-striped">
                                           <thead>
                                              <tr>
-                                                <th style="width:10%" class="message">
+                                                <th class="message">
                                                    <div class="icon-message"></div>
                                                 </th>
-                                                <th style="width:20%" data-localize="trades.ORDER"></th>
-                                                <th style="width:14%">BTC</th>
-                                                <th style="width:20%" data-localize="trades.AMOUNT"></th>
-                                                <th style="width:20%" data-localize="trades.STATUS"></th>
-                                                <th style="width:10%" data-localize="trades.DATE" class="date"></th>
-                                                <th style="width:6%" class="full-info"></th>
+                                                <th data-localize="trades.ORDER" class="order_name"></th>
+                                                <th class="btc">BTC</th>
+                                                <th data-localize="trades.AMOUNT" class="amount"></th>
+                                                <th data-localize="trades.STATUS" class="status"></th>
+                                                <th data-localize="trades.DATE" class="date"></th>
+                                                <th class="full-info"></th>
                                              </tr>
                                           </thead>
                                           <tbody></tbody>
@@ -521,7 +520,183 @@
                               </div>
                            </div>
                            <div class="panel-footer">
-                              <a href="#" data-localize="trades.CREATE_ORDER" class="btn btn-orange btn-lg"></a>
+                              <button href="#" data-localize="trades.CREATE_ORDER" data-action="create_order_buy" class="btn btn-orange btn-lg"></button>
+                              <div id="create_order_buy" style="display:none">
+                                 <div data-tool="popup-hide" class="pull-right hide_it">
+                                    <em class="icon-up-arrow"></em>
+                                    <span data-localize="trades.HIDE"></span>
+                                 </div>
+                                 <div data-localize="trades.popup.BUY" class="line title"></div>
+                                 <div class="line payments clearfix">
+                                    <div class="plus">
+                                       <label>
+                                          <select id="payment-list-buy-filter" class="delay-selector">
+                                             <option value="" data-localize="trades.popup.METHOD"></option>
+                                             <option value="Сбербанк">Сбербанк</option>
+                                             <option value="Альфа-банк">Альфа-банк</option>
+                                             <option value="Western Union">Western Union</option>
+                                             <option value="Paypal">Paypal</option>
+                                             <option value="Bank Of America">Bank Of America</option>
+                                          </select>
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div class="line gray clearfix">
+                                    <ul id="payment-list-buy" class="payments sortable">
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>Yandex Money
+                                          <div class="remove"></div>
+                                       </li>
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>Webmoney
+                                          <div class="remove"></div>
+                                       </li>
+                                    </ul>
+                                    <div data-localize="trades.popup.PRIORITY1" class="text"></div>
+                                 </div>
+                                 <div class="line currency clearfix">
+                                    <div class="plus">
+                                       <label class="control-label">
+                                          <select id="currencies-list-buy-filter" class="delay-selector form-control">
+                                             <option value="" data-localize="trades.popup.CUR"></option>
+                                             <option value="EUR">EUR</option>
+                                             <option value="DKK">DKK</option>
+                                             <option value="ZAR">ZAR</option>
+                                             <option value="RON">RON</option>
+                                             <option value="JPY">JPY</option>
+                                             <option value="CNY">CNY</option>
+                                          </select>
+                                       </label>
+                                       <div class="col2">
+                                          <div data-localize="trades.popup.CURTEXT" class="text"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="line currencies gray clearfix">
+                                    <ul id="currencies-list-buy" class="col sortable">
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>RUB
+                                          <div class="remove"></div>
+                                       </li>
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>USD
+                                          <div class="remove"></div>
+                                       </li>
+                                    </ul>
+                                    <div class="col2">
+                                       <div data-localize="trades.popup.PRIORITY1" class="text"></div>
+                                    </div>
+                                 </div>
+                                 <div class="line clearfix inputs">
+                                    <div class="col">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL1"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col2">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL2"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL3"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col2">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL4"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL5"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col2">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL6"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div data-localize="trades.popup.PERCENT" class="line green"></div>
+                                 <div class="line settings clearfix">
+                                    <button href="#" data-localize="trades.CREATE_ORDER" class="col btn btn-orange btn-lg"></button>
+                                    <a href="#" data-localize="trades.popup.SETTINGS" class="arrow"></a>
+                                    <br>
+                                    <a href="#" data-localize="trades.popup.DEFAULTS"></a>
+                                 </div>
+                                 <div style="display:none" class="settings-panel">
+                                    <div class="close-settings">
+                                       <em class="icon-left-arrow"></em>
+                                       <span data-localize="trades.popup.HIDESETTINGS"></span>
+                                    </div>
+                                    <div class="line country clearfix">
+                                       <div class="plus">
+                                          <label>
+                                             <select id="country-list-buy-filter" class="delay-selector">
+                                                <option value="" data-localize="trades.popup.COUNTRY"></option>
+                                                <option value="Россия">Россия</option>
+                                                <option value="Израиль">Израиль</option>
+                                                <option value="Китай">Китай</option>
+                                                <option value="Великобритания">Великобритания</option>
+                                             </select>
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <div class="line countries gray clearfix">
+                                       <ul id="country-list-buy" class="col sortable">
+                                          <li class="list-group-item">
+                                             <em class="icon-dashboard text-muted mr-lg"></em>США
+                                             <div class="remove"></div>
+                                          </li>
+                                          <li class="list-group-item">
+                                             <em class="icon-dashboard text-muted mr-lg"></em>Франция
+                                             <div class="remove"></div>
+                                          </li>
+                                       </ul>
+                                       <div class="col2">
+                                          <div data-localize="trades.popup.PRIORITY1" class="text"></div>
+                                       </div>
+                                    </div>
+                                    <div class="line others clearfix">
+                                       <div class="time-react">
+                                          <select class="delay-selector">
+                                             <option value="" data-localize="trades.popup.TIMEREACT"></option>
+                                             <option value="3600">1 Час</option>
+                                             <option value="7200">2 Часа</option>
+                                          </select>
+                                       </div>
+                                       <div class="time-confirm">
+                                          <select class="delay-selector">
+                                             <option value="" data-localize="trades.popup.TIMEWAIT"></option>
+                                             <option value="3600">1 Час</option>
+                                             <option value="7200">2 Часа</option>
+                                          </select>
+                                       </div>
+                                       <div class="time-buy">
+                                          <select class="delay-selector">
+                                             <option value="" data-localize="trades.popup.TIMEBUY"></option>
+                                             <option value="3600">1 Час</option>
+                                             <option value="7200">2 Часа</option>
+                                          </select>
+                                       </div>
+                                       <div class="main-currency">
+                                          <select class="delay-selector">
+                                             <option value="USD">USD</option>
+                                             <option value="RUB">RUB</option>
+                                             <option value="JPY">JPY</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                         <div id="sell" role="tabpanel" class="tab-pane">
@@ -532,14 +707,14 @@
                                        <table id="ordersSell" class="table table-striped">
                                           <thead>
                                              <tr>
-                                                <th style="width:12%" class="message">
+                                                <th class="message">
                                                    <div class="icon-message"></div>
                                                 </th>
-                                                <th style="width:16%" data-localize="trades.ORDER"></th>
-                                                <th style="width:17%">BTC</th>
-                                                <th style="width:18%" data-localize="trades.AMOUNT"></th>
-                                                <th style="width:20%" data-localize="trades.STATUS"></th>
-                                                <th style="width:10%" data-localize="trades.DATE" class="date"></th>
+                                                <th data-localize="trades.ORDER" class="order_name"></th>
+                                                <th class="btc">BTC</th>
+                                                <th data-localize="trades.AMOUNT" class="amount"></th>
+                                                <th data-localize="trades.STATUS" class="status"></th>
+                                                <th data-localize="trades.DATE" class="date"></th>
                                                 <th style="width:7%" class="full-info"></th>
                                              </tr>
                                           </thead>
@@ -550,7 +725,183 @@
                               </div>
                            </div>
                            <div class="panel-footer">
-                              <a href="#" data-localize="trades.CREATE_ORDER" class="btn btn-orange btn-lg"></a>
+                              <button href="#" data-localize="trades.CREATE_ORDER" data-action="create_order_sell" class="btn btn-orange btn-lg"></button>
+                              <div id="create_order_sell" style="display:none">
+                                 <div data-tool="popup-hide" class="pull-right hide_it">
+                                    <em class="icon-up-arrow"></em>
+                                    <span data-localize="trades.HIDE"></span>
+                                 </div>
+                                 <div data-localize="trades.popup.BUY" class="line title"></div>
+                                 <div class="line payments clearfix">
+                                    <div class="plus">
+                                       <label>
+                                          <select id="payment-list-sell-filter" class="delay-selector">
+                                             <option value="" data-localize="trades.popup.METHOD"></option>
+                                             <option value="Сбербанк">Сбербанк</option>
+                                             <option value="Альфа-банк">Альфа-банк</option>
+                                             <option value="Western Union">Western Union</option>
+                                             <option value="Paypal">Paypal</option>
+                                             <option value="Bank Of America">Bank Of America</option>
+                                          </select>
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div class="line gray clearfix">
+                                    <ul id="payment-list-sell" class="payments sortable">
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>Yandex Money
+                                          <div class="remove"></div>
+                                       </li>
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>Webmoney
+                                          <div class="remove"></div>
+                                       </li>
+                                    </ul>
+                                    <div data-localize="trades.popup.PRIORITY1" class="text"></div>
+                                 </div>
+                                 <div class="line currency clearfix">
+                                    <div class="plus">
+                                       <label class="control-label">
+                                          <select id="currencies-list-sell-filter" class="delay-selector form-control">
+                                             <option value="" data-localize="trades.popup.CUR"></option>
+                                             <option value="EUR">EUR</option>
+                                             <option value="DKK">DKK</option>
+                                             <option value="ZAR">ZAR</option>
+                                             <option value="RON">RON</option>
+                                             <option value="JPY">JPY</option>
+                                             <option value="CNY">CNY</option>
+                                          </select>
+                                       </label>
+                                       <div class="col2">
+                                          <div data-localize="trades.popup.CURTEXT" class="text"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="line currencies gray clearfix">
+                                    <ul id="currencies-list-sell" class="col sortable">
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>RUB
+                                          <div class="remove"></div>
+                                       </li>
+                                       <li class="list-group-item">
+                                          <em class="icon-dashboard text-muted mr-lg"></em>USD
+                                          <div class="remove"></div>
+                                       </li>
+                                    </ul>
+                                    <div class="col2">
+                                       <div data-localize="trades.popup.PRIORITY1" class="text"></div>
+                                    </div>
+                                 </div>
+                                 <div class="line clearfix inputs">
+                                    <div class="col">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL1"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col2">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL2"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL3"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col2">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL4"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL5"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                    <div class="col2">
+                                       <label>
+                                          <span data-localize="trades.popup.LABEL6"></span>
+                                          <input class="form-control input-sm">
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div data-localize="trades.popup.PERCENT" class="line green"></div>
+                                 <div class="line settings clearfix">
+                                    <button href="#" data-localize="trades.CREATE_ORDER" class="col btn btn-orange btn-lg"></button>
+                                    <a href="#" data-localize="trades.popup.SETTINGS" class="arrow"></a>
+                                    <br>
+                                    <a href="#" data-localize="trades.popup.DEFAULTS"></a>
+                                 </div>
+                                 <div style="display:none" class="settings-panel">
+                                    <div class="close-settings">
+                                       <em class="icon-left-arrow"></em>
+                                       <span data-localize="trades.popup.HIDESETTINGS"></span>
+                                    </div>
+                                    <div class="line country clearfix">
+                                       <div class="plus">
+                                          <label>
+                                             <select id="country-list-sell-filter" class="delay-selector">
+                                                <option value="" data-localize="trades.popup.COUNTRY"></option>
+                                                <option value="Россия">Россия</option>
+                                                <option value="Израиль">Израиль</option>
+                                                <option value="Китай">Китай</option>
+                                                <option value="Великобритания">Великобритания</option>
+                                             </select>
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <div class="line countries gray clearfix">
+                                       <ul id="country-list-sell" class="col sortable">
+                                          <li class="list-group-item">
+                                             <em class="icon-dashboard text-muted mr-lg"></em>США
+                                             <div class="remove"></div>
+                                          </li>
+                                          <li class="list-group-item">
+                                             <em class="icon-dashboard text-muted mr-lg"></em>Франция
+                                             <div class="remove"></div>
+                                          </li>
+                                       </ul>
+                                       <div class="col2">
+                                          <div data-localize="trades.popup.PRIORITY1" class="text"></div>
+                                       </div>
+                                    </div>
+                                    <div class="line others clearfix">
+                                       <div class="time-react">
+                                          <select class="delay-selector">
+                                             <option value="" data-localize="trades.popup.TIMEREACT"></option>
+                                             <option value="3600">1 Час</option>
+                                             <option value="7200">2 Часа</option>
+                                          </select>
+                                       </div>
+                                       <div class="time-confirm">
+                                          <select class="delay-selector">
+                                             <option value="" data-localize="trades.popup.TIMEWAIT"></option>
+                                             <option value="3600">1 Час</option>
+                                             <option value="7200">2 Часа</option>
+                                          </select>
+                                       </div>
+                                       <div class="time-buy">
+                                          <select class="delay-selector">
+                                             <option value="" data-localize="trades.popup.TIMEBUY"></option>
+                                             <option value="3600">1 Час</option>
+                                             <option value="7200">2 Часа</option>
+                                          </select>
+                                       </div>
+                                       <div class="main-currency">
+                                          <select class="delay-selector">
+                                             <option value="USD">USD</option>
+                                             <option value="RUB">RUB</option>
+                                             <option value="JPY">JPY</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                         <!-- START buysell popup-->
@@ -662,7 +1013,7 @@
                                           </label>
                                        </div>
                                     </div>
-                                    <a href="#" data-localize="trades.CONFIRMPAYMENT" class="btn btn-orange btn-sm"></a>
+                                    <button href="#" data-localize="trades.CONFIRMPAYMENT" class="btn btn-orange btn-sm"></button>
                                  </div>
                               </div>
                            </div>
@@ -751,7 +1102,7 @@
                                           </label>
                                        </div>
                                     </div>
-                                    <a href="#" data-localize="trades.PAID" class="btn btn-gray btn-sm"></a>
+                                    <button href="#" data-localize="trades.PAID" class="btn btn-gray btn-sm"></button>
                                     <div class="confirm">
                                        <div class="col-xs-12 col-md-4">
                                           <label class="control-label">Загрузите подтверждение</label>
@@ -772,7 +1123,7 @@
                   </div>
                   <!-- END buysell tab        -->
                </div>
-               <div class="col-xs-12 col-md-4 col-lg-3">
+               <div class="col-xs-12 col-md-4 col-lg-3 payment-block">
                   <!-- START payment top panel-->
                   <div id="paymentTop" class="panel panel-transparent remove">
                      <div class="title">
@@ -842,6 +1193,42 @@
                                  <td data-localize="payments.ALPHABANK"></td>
                                  <td>234</td>
                               </tr>
+                              <tr>
+                                 <td data-localize="payments.SBERBANK"></td>
+                                 <td>29 404, 324</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.ALPHABANK"></td>
+                                 <td>24 421, 424</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.WEBMONEY"></td>
+                                 <td>1 842, 424</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.WU"></td>
+                                 <td>1 424, 434</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.VTB"></td>
+                                 <td>242 425</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.PKB"></td>
+                                 <td>2 040</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.ANOTHERBANK"></td>
+                                 <td>1 845</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.SBERBANK"></td>
+                                 <td>2 131</td>
+                              </tr>
+                              <tr>
+                                 <td data-localize="payments.ALPHABANK"></td>
+                                 <td>234</td>
+                              </tr>
                            </tbody>
                         </table>
                         <!-- END table-responsive-->
@@ -853,6 +1240,8 @@
                   </div>
                   <!-- END payment top panel-->
                </div>
+            </div>
+            <div class="row">
                <div class="col-xs-12 col-lg-9">
                   <div id="orders" role="tabpanel" class="panel panel-transparent">
                      <!-- Nav tabs-->
@@ -865,7 +1254,7 @@
                         </li>
                      </ul>
                      <!-- Tab panes-->
-                     <div class="orders-tabs tab-content p0 bg-white">
+                     <div class="orders-tabs tab-content">
                         <div id="orders-buy" role="tabpanel" class="tab-pane active">
                            <div class="container-fluid">
                               <div class="row">
@@ -874,12 +1263,12 @@
                                        <table id="orders-buy-table" class="table">
                                           <thead>
                                              <tr>
-                                                <th style="width:15%" data-localize="trades.PRICE" class="price"></th>
-                                                <th style="width:17%" data-localize="trades.AMOUNTBTC"></th>
-                                                <th style="width:26%" data-localize="trades.PAYMENTSYSTEM"></th>
-                                                <th style="width:23%" data-localize="trades.SELLER"></th>
-                                                <th style="width:10%" data-localize="trades.RATING"></th>
-                                                <th style="width:9%" class="buy_button"></th>
+                                                <th data-localize="trades.PRICE" class="price"></th>
+                                                <th data-localize="trades.AMOUNTBTC"></th>
+                                                <th data-localize="trades.PAYMENTSYSTEM"></th>
+                                                <th data-localize="trades.SELLER"></th>
+                                                <th data-localize="trades.RATING"></th>
+                                                <th class="buy_button"></th>
                                              </tr>
                                           </thead>
                                           <tbody></tbody>
@@ -897,12 +1286,12 @@
                                        <table id="orders-sell-table" class="table">
                                           <thead>
                                              <tr>
-                                                <th style="width:15%" data-localize="trades.PRICE" class="price"></th>
-                                                <th style="width:17%" data-localize="trades.AMOUNTBTC"></th>
-                                                <th style="width:26%" data-localize="trades.PAYMENTSYSTEM"></th>
-                                                <th style="width:23%" data-localize="trades.SELLER"></th>
-                                                <th style="width:10%" data-localize="trades.RATING"></th>
-                                                <th style="width:9%" class="buy_button"></th>
+                                                <th data-localize="trades.PRICE" class="price"></th>
+                                                <th data-localize="trades.AMOUNTBTC"></th>
+                                                <th data-localize="trades.PAYMENTSYSTEM"></th>
+                                                <th data-localize="trades.SELLER"></th>
+                                                <th data-localize="trades.RATING"></th>
+                                                <th class="buy_button"></th>
                                              </tr>
                                           </thead>
                                           <tbody></tbody>
@@ -913,7 +1302,6 @@
                            </div>
                            <div class="panel-footer">
                               <a href="#" data-localize="trades.CREATE_ORDER" class="btn btn-orange btn-lg"></a>
-                              <div id="create_order"></div>
                            </div>
                         </div>
                      </div>
@@ -934,7 +1322,8 @@
       <div class="footer">
          <div class="container">
             <div class="col-xs-6 col-md-4 left">
-               <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="img-responsive">
+               <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
+               <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
                <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
                   with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle.
                   <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
@@ -983,9 +1372,9 @@
       <div class="prefooter">
          <div class="container">
             <div class="col-xs-8 images">
-               <img src="img/bitgo.jpg" alt="BitGO" class="img-responsive">
-               <img src="img/cloudflare.jpg" alt="CloudFlare" class="img-responsive">
-               <img src="img/bitcoinaverage.jpg" alt="BitcoinAverage" class="img-responsive">
+               <img src="img/bitgo.png" alt="BitGO" class="img-responsive">
+               <img src="img/cloudflare.png" alt="CloudFlare" class="img-responsive">
+               <img src="img/bitcoinaverage.png" alt="BitcoinAverage" class="img-responsive">
             </div>
             <div class="col-xs-4 copyright">© "ExAll", 2015</div>
          </div>
@@ -1012,13 +1401,14 @@
    <script src="../vendor/datatables-colvis/js/dataTables.colVis.js"></script>
    <script src="vendor/datatable-bootstrap/js/dataTables.bootstrap.js"></script>
    <script src="vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js"></script>
-   <script src="js/demo/demo-datatable.js"></script>
-   <script src="js/demo/demo-panels.js">
-   </script>
    <!-- SELECT2-->
    <script src="../vendor/select2/dist/js/select2.js"></script>
    <!-- FILESTYLE-->
    <script src="../vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+   <!-- SORTABLE-->
+   <script src="../vendor/html.sortable/dist/html.sortable.js"></script>
+   <!-- MATCH HEIGHT-->
+   <script src="../vendor/jquery-match-height-master/dist/jquery.matchHeight.js"></script>
    <!-- =============== APP SCRIPTS ===============-->
    <script src="js/app.js"></script>
 </body>

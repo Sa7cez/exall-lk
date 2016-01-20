@@ -17,14 +17,14 @@
     $.each( currencies_info, function( i, val ) {
       if(val == 1) {
       	$('#' + i + '_info').show();
-      	$('[role=currencies] input[value="' + i + '"]').prop( "checked", true );
+      	$('.chooser_popup input[value="' + i + '"]').prop( "checked", true );
       } else {
       	$('#' + i + '_info').hide();
-      	$('[role=currencies] input[value="' + i + '"]').prop( "checked", false );
+      	$('.chooser_popup input[value="' + i + '"]').prop( "checked", false );
       }
 	});
 
-    $(document).on('change', '[role=currencies] input', function () {
+  $(document).on('change', '.chooser_popup input', function () {
       var currencies_info = $.localStorage.get(storage_currencies_info) || currencies_info_default;
       if($(this).is(":checked")) {
       	currencies_info[$(this).val()] = '1';
@@ -51,17 +51,100 @@
 
   $('body').on('click', function (e) {
     $('[data-tool=popup-hide]').each(function () {
-        // hide any open popovers when the anywhere else in the body is clicked
         if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.buysell_popup').has(e.target).length === 0) {
             $('.buysell_popup').slideUp();
         }
     });
+    $('#create_order_buy').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('#create_order_buy').has(e.target).length === 0) {
+            $('#create_order_buy').slideUp();
+        }
+    });
+    $('#create_order_sell').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('#create_order_sell').has(e.target).length === 0) {
+            $('#create_order_sell').slideUp();
+        }
+    });
+    $('.offsidebar .profile').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.offsidebar .profile').has(e.target).length === 0) {
+            $('body').removeClass('offsidebar-open');
+        }
+    });
+    $('.chooser').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.chooser').has(e.target).length === 0) {
+            $('.chooser').removeClass('open');
+        }
+    });
   });
+
+  // CHOOSER
+
+  $(document).on('click', '.chooser .icon-down-arrow', function () {
+      $(this).parent().toggleClass('open');
+  });
+
+  // BuySell popup
 
   $(document).on('click', '.buysell_popup .to-open', function () {
       $(this).parent().find('.opened').toggleClass('opened').toggleClass('closed');
       $(this).toggleClass('opened').toggleClass('closed');
   });
+
+  // Sortable
+
+  $('.sortable').sortable({
+    forcePlaceholderSize: true,
+    placeholder: '<div class="box-placeholder p0 m0"><div></div></div>'
+  });
+
+  // Create order
+
+  $('#payment-list-filter').prop("disabled", true);
+  $(document).on('change', '.plus select', function () {
+      var val = $(this).val();
+      var text = $(this).val();
+      if(val != '') {
+        $(this).find("option[value='" + val + "']").remove();
+        $(this).select2('val', '');
+        $('#' + $(this).attr('id').replace('-filter', '')).append('<li class="list-group-item" value="' + val + '"><em class="icon-dashboard text-muted mr-lg"></em>' + text + '<div class="remove"></div></li>').sortable({forcePlaceholderSize: true, placeholder: '<div class="box-placeholder p0 m0"><div></div></div>'});
+      }
+      console.log($(this).find('option').length == 1);
+      if($(this).find('option').length == 1) {
+        $(this).prop("disabled", true);
+      }
+  });
+
+  $(document).on('click', '.sortable li .remove', function (e) {
+    var text = $.trim($(this).parent().text());
+    $('#' + $(this).parent().parent().attr('id') + '-filter').append('<option value="' + text + '">' + text + '</option').select2({minimumResultsForSearch: Infinity}).prop("disabled", false);
+    $(this).parent().remove();
+  });
+
+  $(document).on('click', '[data-action=create_order_buy]', function () {
+      $('#create_order_buy').slideDown();
+      return false;
+  }); 
+
+  $(document).on('click', '[data-action=create_order_sell]', function () {
+      $('#create_order_sell').slideDown();
+      return false;
+  }); 
+
+  $(document).on('click', '#create_order_buy .hide_it', function () {
+      $('#create_order_buy').slideUp();
+  }); 
+
+  $(document).on('click', '#create_order_sell .hide_it', function () {
+      $('#create_order_sell').slideUp();
+  }); 
+
+  $(document).on('click', '.settings-panel .close-settings', function () {
+      $(this).parent().toggle();
+  });   
+  $(document).on('click', '.settings .arrow', function () {
+      $(this).parent().parent().find('.settings-panel').toggle();
+      return false;
+  }); 
 
 	// Something else
 
@@ -99,6 +182,10 @@
       initComplete: function () {
           this.parent().find('.show-closed').append('<button class="button btn btn-transparent"></button>');
           this.parent().find('.show-closed button').attr('data-localize', 'trades.SHOWCLOSED').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+      },
+      fnDrawCallback: function() {
+        this.parent().find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+        $('#paymentTop').matchHeight._update();
       }
   });
 
@@ -188,6 +275,16 @@
                   } );
           });
 
+          $('#paymentTop').matchHeight({
+            byRow: true,
+            property: 'height',
+            target: $('#buysell'),
+            remove: false
+          });
+
+      },
+      fnDrawCallback: function() {
+        this.parent().find('.buy_button').find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
       }
   });
 

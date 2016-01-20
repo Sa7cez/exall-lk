@@ -41,9 +41,9 @@
                   </div>
                   <div class="brand-logo-collapsed">
                      <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-collapsed" class="img-responsive hidden-xs">
+                     <img src="img/small_logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-collapsed" class="img-responsive hidden-xs">
                      <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
-                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="img-responsive visible-xs sidebar-toggle">
+                     <img src="img/small_logo.svg" alt="Exall - Bitcoin everywhere" href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="img-responsive visible-xs sidebar-toggle">
                   </div>
                </a>
             </div>
@@ -64,7 +64,7 @@
                   </li>
                   <!-- Profile icon-->
                   <li>
-                     <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true" class="profile">
+                     <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true" class="profile offsidebar-toggle">
                         <div class="label label-danger">16</div>
                         <img src="img/user/02.jpg" alt="User avatar" class="img-responsive">
                      </a>
@@ -295,8 +295,8 @@
                         </ul>
                      </div>
                      <div class="chooser">
-                        <div data-toggle="dropdown" class="icon-down-arrow"></div>
-                        <form method="get" action="/" role="currencies" class="form dropdown-menu animated fadeIn">
+                        <div data-toggle="open-currencies" class="icon-down-arrow"></div>
+                        <div class="chooser_popup dropdown-menu animated fadeIn">
                            <fieldset>
                               <div class="form-group needsclick">
                                  <div class="checkbox c-checkbox needsclick">
@@ -341,7 +341,7 @@
                                  </div>
                               </div>
                            </fieldset>
-                        </form>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -371,7 +371,7 @@
                   <!-- Iterates over all sidebar items-->
                   <li class=" ">
                      <a href="dashboard.html" title="Dashboard">
-                        <div class="pull-right label label-info">5</div>
+                        <div class="pull-right label label-success">5</div>
                         <em class="icon-dashboard"></em>
                         <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
                      </a>
@@ -428,9 +428,9 @@
          <!-- START Off Sidebar (right)-->
          <nav>
             <div class="profile">
-               <label data-load-css="css/theme-a.css" class="switch switch-sm">
+               <label class="switch switch-sm">
                   <em class="icon-sun"></em>
-                  <input id="chk-fixed" type="checkbox">
+                  <input id="chk-fixed" type="checkbox" data-load-css="css/theme-black.css">
                   <span></span>
                   <em class="icon-moon"></em>
                </label>
@@ -490,7 +490,8 @@
       <div class="footer">
          <div class="container">
             <div class="col-xs-6 col-md-4 left">
-               <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="img-responsive">
+               <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
+               <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
                <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
                   with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle.
                   <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
@@ -539,9 +540,9 @@
       <div class="prefooter">
          <div class="container">
             <div class="col-xs-8 images">
-               <img src="img/bitgo.jpg" alt="BitGO" class="img-responsive">
-               <img src="img/cloudflare.jpg" alt="CloudFlare" class="img-responsive">
-               <img src="img/bitcoinaverage.jpg" alt="BitcoinAverage" class="img-responsive">
+               <img src="img/bitgo.png" alt="BitGO" class="img-responsive">
+               <img src="img/cloudflare.png" alt="CloudFlare" class="img-responsive">
+               <img src="img/bitcoinaverage.png" alt="BitcoinAverage" class="img-responsive">
             </div>
             <div class="col-xs-4 copyright">© "ExAll", 2015</div>
          </div>

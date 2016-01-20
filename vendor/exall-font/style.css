@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'exall';
-    src:    url('fonts/exall.eot?wzbf17');
-    src:    url('fonts/exall.eot?wzbf17#iefix') format('embedded-opentype'),
-        url('fonts/exall.ttf?wzbf17') format('truetype'),
-        url('fonts/exall.woff?wzbf17') format('woff'),
-        url('fonts/exall.svg?wzbf17#exall') format('svg');
+    src:    url('fonts/exall.eot?fjvdr');
+    src:    url('fonts/exall.eot?fjvdr#iefix') format('embedded-opentype'),
+        url('fonts/exall.ttf?fjvdr') format('truetype'),
+        url('fonts/exall.woff?fjvdr') format('woff'),
+        url('fonts/exall.svg?fjvdr#exall') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-plus:before {
+    content: "\e91a";
+}
 .icon-cross:before {
     content: "\e919";
 }

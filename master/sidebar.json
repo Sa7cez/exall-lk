@@ -5,7 +5,6 @@
       "href": "dashboard.html",
       "icon": "icon-dashboard",
       "alert": "5",
-      "label": "label label-info",
       "translate": "sidebar.nav.DASHBOARD"
     },
     {

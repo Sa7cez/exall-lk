@@ -1,1 +1,0 @@
-!function(n,o,$,i){$(function(){})}(window,document,window.jQuery);

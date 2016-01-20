@@ -141,7 +141,7 @@ $scrollbar-wd:                    17px;
           color: $sidebar-item-color-active;
         }
         > a > em {
-          color: $sidebar-icon-color-active;
+          color: lighten($sidebar-item-color-active, 30%);
         }  
       }
 
@@ -224,6 +224,7 @@ $tablet-landscape: 1025px;
         display: inline-block;
         width: 1.8em;
         margin: 0 0 0 -2em;
+        color: $sidebar-item-color-active; 
       }
     }
 
@@ -316,6 +317,7 @@ $tablet-landscape: 1025px;
             background-color: transparent;
             > em { 
               color: inherit; 
+              color: lighten($sidebar-item-color-active, 30%);
             }
           }
         }
