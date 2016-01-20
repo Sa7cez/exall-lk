@@ -644,7 +644,6 @@ $padding-size: 18px;
 		> .message {
 			width: $offset-size;
 			padding-left: 2px;
-
 			em {
 				font-size:17px;
 				margin-left: 2px;
@@ -657,6 +656,9 @@ $padding-size: 18px;
 				padding: .2em 0.59em .2em;	
 				margin-left: 2px;
 				font-size: 10px;
+				@media (max-width: $mq-tablet) {
+					margin-left: -5px !important;
+				}
 			}
 			.label-transparent {
 				color:rgb(0,0,0);
@@ -777,12 +779,12 @@ $padding-size: 18px;
 
 		.functions {
 			float: left;
-			margin-right: 23px;
+			margin-right: 15px;
 			margin-bottom: 18px;
 
 			.clear-all {
 				text-decoration: underline;
-				margin-right: 24px;
+				margin-right: 15px;
 			}
 
 			.field, .dropdown {
@@ -849,18 +851,8 @@ $padding-size: 18px;
 	}
 
 
-	@media (max-width: 490px) {
+	@media (max-width: $mq-tablet) {
 		font-size:10px;
-		
-		.footer {
-			padding-bottom: 0;
-
-			.functions {
-				float: none;
-				margin-right: 0;
-				margin-bottom: 18px;
-			}
-		}	
 	}
 
 	@media only screen and (min-width: $mq-desktop) {
@@ -1074,7 +1066,7 @@ $padding-size: 18px;
 			float:left;
 		}
 		.col2 {
-			
+
 		}
 		&.inputs {
 			span {
@@ -1394,7 +1386,7 @@ $padding-size: 18px;
 		top:121px;
 		bottom:45px;
 		overflow: hidden;
-		@media (max-width: $mq-tablet) {
+		@media (max-width: $mq-desktop - $aside-wd*2) {
 			top:86px;
 		}
 	}

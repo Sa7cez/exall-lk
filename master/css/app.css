@@ -3087,6 +3087,9 @@ div.dataTables_paginate {
         padding: .2em 0.59em .2em;
         margin-left: 2px;
         font-size: 10px; }
+        @media (max-width: 768px) {
+          .buysell_popup .order > .message .label {
+            margin-left: -5px !important; } }
       .buysell_popup .order > .message .label-transparent {
         color: black;
         font-weight: 400;
@@ -3165,11 +3168,11 @@ div.dataTables_paginate {
       line-height: 30px; }
     .buysell_popup .footer .functions {
       float: left;
-      margin-right: 23px;
+      margin-right: 15px;
       margin-bottom: 18px; }
       .buysell_popup .footer .functions .clear-all {
         text-decoration: underline;
-        margin-right: 24px; }
+        margin-right: 15px; }
       .buysell_popup .footer .functions .field, .buysell_popup .footer .functions .dropdown {
         border-color: #dee1e8;
         position: relative;
@@ -3204,15 +3207,9 @@ div.dataTables_paginate {
       .buysell_popup .footer .confirm .file .btn, .buysell_popup .footer .confirm .file .ColVis .ColVis_Button, .ColVis .buysell_popup .footer .confirm .file .ColVis_Button {
         height: 30px;
         line-height: 15px; }
-  @media (max-width: 490px) {
+  @media (max-width: 768px) {
     .buysell_popup {
-      font-size: 10px; }
-      .buysell_popup .footer {
-        padding-bottom: 0; }
-        .buysell_popup .footer .functions {
-          float: none;
-          margin-right: 0;
-          margin-bottom: 18px; } }
+      font-size: 10px; } }
   @media only screen and (min-width: 992px) {
     .buysell_popup {
       min-width: 660px; } }
@@ -3662,7 +3659,7 @@ div.dataTables_paginate {
     top: 121px;
     bottom: 45px;
     overflow: hidden; }
-    @media (max-width: 768px) {
+    @media (max-width: 572px) {
       #paymentTop .table-responsive {
         top: 86px; } }
   #paymentTop .other {
