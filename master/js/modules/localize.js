@@ -39,6 +39,12 @@
         setLanguage(opts);
 
         //activateDropdown($(this));
+
+        $('.delay-selector').select2({
+          minimumResultsForSearch: Infinity
+        });
+        $('.favorite-selector').select2({});
+        $('.payment-selector').select2({});
       }
 
     });

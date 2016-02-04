@@ -21,17 +21,18 @@ nav.navbar.topnavbar(role='navigation')
         li
           .wallet(data-toggle="dropdown")
             em.icon-wallet
-            span 2.43567823
-          .wallet-dropdown.dropdown-menu.animated.fadeInUpShort
-            span(data-localize="topbar.confirmation")
-            | :     0.23646723
-            span(data-localize="topbar.deposited")
-            | :     1.34756234
+            .main 2.43567823
+            .wallet-dropdown
+              | 0.23646723
+              span(data-localize="topbar.confirmation")
+              br
+              | 1.34756234
+              span(data-localize="topbar.deposited")
 
         // Profile icon
         li
-          a(href='#', data-toggle-state="offsidebar-open", data-no-persist="true").profile.offsidebar-toggle
-            .label.label-danger 16
+          .profile.offsidebar-toggle(data-toggle-state="offsidebar-open", data-no-persist="true")
+            a.label.label-danger 16
             img.img-responsive(src="img/user/02.jpg", alt="User avatar")
 
         // START Language list
@@ -58,18 +59,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 USD (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down
                   span 24 605 RUB
@@ -78,18 +81,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 CNY (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 CNY (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 CNY (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-up
                   span 150 CNY
@@ -98,18 +103,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 ZAR (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 ZAR (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 ZAR (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down
                   span 150 ZAR
@@ -118,18 +125,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 RON (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 RON (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 RON (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down 
                   span 140 RON
@@ -139,18 +148,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 USD (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-up
                   span 250 USD
@@ -159,18 +170,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 EUR (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 EUR (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 EUR (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down
                   span 220 EUR
@@ -179,18 +192,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 JPY (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 JPY (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 JPY (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-up 
                   span 220 JPY
@@ -199,18 +214,20 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td Текущий
-                      td 220
-                    tr
-                      td за последний час
-                      td 
-                        em.icon-small-arrow-down
-                        | 230 (-10) 
-                    tr
-                      td за последние 24 ч.
+                      td За час
                       td 
                         em.icon-small-arrow-up
-                        | 253 (-33)
+                        | $0.79 DKK (0.18%)
+                    tr
+                      td За 24 часа
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 DKK (1.48%)
+                    tr
+                      td За 7 дней
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 DKK (5.67%)
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down 
                   span 223 DKK

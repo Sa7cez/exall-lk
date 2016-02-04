@@ -62,6 +62,9 @@ label {
 				margin: -4px 5px 0;
 				@include box-shadow(none);
 			}
+			input:checked + span:after {
+				left: 53%;
+			}
 		}
 
 		.content {
@@ -98,7 +101,7 @@ label {
 						margin-bottom: 4px;
 					}
 
-					&.bold {
+					&:hover {
 						text-align: center;
 						.circle {
 							background-color: rgb(248, 160, 53);
@@ -253,8 +256,9 @@ label {
 	.panel-footer {
 		border-top:1px solid #e0e3e7;
 		padding: 18px 44px;
-		.btn-orange {
-		   width: 159px;
+		> .btn-orange {
+		   width: 300px;
+		   font-size: 25px;
 		}
 	}
 
@@ -269,8 +273,8 @@ label {
 	.dataTables_filter {
 		label {
 			i {
-				opacity: 0.4;
-				color:rgb(98, 111, 133);
+				opacity: 0.9;
+				color:rgb(199, 203, 211);
 			}
 			float: none;
 			text-align: left;
@@ -302,11 +306,11 @@ label {
 		label {
 			i {
 				font-size: 13px;
-				color: rgb(199, 203, 211);
 				margin-right: 10px;
 			}
 			position: relative;
 			margin-left: -6px;
+			margin-top: 29px;
 			
 			@media (max-width: $mq-tablet) {
 				margin-left: 5px;
@@ -387,8 +391,23 @@ label {
 					&.sorting:after, &.sorting_asc:after, &.sorting_desc:after {
 						line-height: 33px;
 					}
+					&.price {
+
+					}
+					&.amount {
+
+					}
 					&.payment {
 						min-width: 100px;
+					}
+					&.seller {
+
+					}
+					&.rating {
+
+					}
+					&.buy_button {
+
 					}
 				}
 			}
@@ -549,6 +568,7 @@ div.dataTables_paginate {
 }
 
 .form-control {background-color: transparent; }
+.form-control:focus {border-color: rgb(199, 203, 211)}
 
 // Buysell popup
 
@@ -625,18 +645,32 @@ $padding-size: 18px;
 		}
 		&.opened {
 			background-color: #f5f7fa;
+			.close-order,
 			.footer,
 			.payment_methods {
 				display: block;
 			}
 		}
 		.order-name {
-			float: none;
-			width: 100%;
 			line-height: 24px;
 			font-size:10px;
 			opacity: .4;
-			padding-bottom: 2px;
+			padding-bottom: 10px;
+		}
+		.close-order {
+			cursor: pointer;
+			display: none;
+			line-height: 24px;
+			font-size:10px;
+			opacity: .3;
+			padding-right:$offset-size;
+			margin-right:-15px;
+			em {
+				margin-right: 10px;
+			}
+			&:hover {
+				opacity: .8;
+			}
 		}
 		.adds {
 			font-size:10px;
@@ -905,7 +939,7 @@ $padding-size: 18px;
 		}
 		.plus {
 			line-height: 40px;
-			margin:12px 0 0px;
+			margin:0;
 			font-size:14px;
 
 			.select2-container--default.select2-container--disabled .select2-selection--single {
@@ -941,14 +975,16 @@ $padding-size: 18px;
 				}
 			}
 		}
+		&.payments {
+			.select2-container {
+				width: 210px !important;	
+			}
+		}
 		.payments {
 			float: left;
 			width: 186px;
 			min-height: 70px;
 			padding-bottom: 8px;
-			.select2-container {
-				width: 210px !important;	
-			}
 		}
 		.text {
 			margin-top: 14px;
@@ -984,7 +1020,7 @@ $padding-size: 18px;
 				    opacity: 0.45;
 				    width: 15px;
 				    line-height: 15px;
-				    color: rgb(98, 111, 133);
+				    color: #7A7A7A;
 				    font-size: 10px;
 				    line-height: 30px;
 				    cursor: pointer;
@@ -1031,7 +1067,7 @@ $padding-size: 18px;
 			}
 		}
 		&.country {
-			padding-left: 61px;
+			/* padding-left: 61px; */
 			li {
 				width: 120px;
 			}
@@ -1040,7 +1076,7 @@ $padding-size: 18px;
 			}
 		}
 		&.countries {
-			padding-left: 61px;
+			/* padding-left: 61px; */
 			.col {
 				width: 170px;
 			}
@@ -1332,7 +1368,6 @@ $padding-size: 18px;
 	}
 	> .active > a {
 		border-bottom-color:transparent;
-		border-right: 1px solid rgba(98, 111, 133, 0.2);
 		border-top-right-radius: 2px;
 	}
 }
@@ -1341,17 +1376,19 @@ $padding-size: 18px;
 
 #paymentTop {
 	position: relative;
-	padding:13px 20px;
+	padding:13px 5px 13px 20px;
 	height: 100%;
 	.title {
 		font-size: 16px;
 		padding-bottom: 14px;
 	}
 	.icon-cross {
+		font-size:13px;
 		font-weight: 600;
 		cursor: pointer;
 		color:rgba(0,0,0,.5);
 		opacity: .8;
+		margin-right: 6px;
 
 		&:hover {
 			opacity: 1;
@@ -1383,10 +1420,12 @@ $padding-size: 18px;
 	}
 	.table-responsive {
 		position: absolute;
-		top:121px;
-		bottom:45px;
-		overflow: hidden;
-		@media (max-width: $mq-desktop - $aside-wd*2) {
+		top:125px;
+		bottom:15px;
+	    right: -20px;
+    	left: 25px;
+		overflow: scroll-y;
+		@media (max-width: 990px) {
 			top:86px;
 		}
 	}
@@ -1493,10 +1532,12 @@ footer {
 		.social {
 			padding-top: 107px;
 			padding-bottom: 42px;
+			margin: 0;
 
-			@media (max-width: $mq-tablet) {
+			@media (max-width: $mq-desktop) {
 				border-top:1px solid #e0e2e7;
-				padding: 42px 0;
+				margin:0 -30px;
+				padding:42px 30px;
 		    }
 
 			span,a {

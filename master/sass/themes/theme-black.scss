@@ -203,7 +203,9 @@ footer {
 
 .form-control {
   border-color:#484848;
+  color: rgba(255,255,255,.4);
 }
+.form-control:focus {border-color: rgba(255,255,255,.4);}
 
 .form-control::-moz-placeholder {
   color: rgba(255,255,255,.4);

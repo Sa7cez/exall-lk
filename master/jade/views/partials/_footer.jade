@@ -1,10 +1,10 @@
-.footer
-	.container
-		.col-xs-6.col-md-4.left
+.footer.clearfix
+	.container-fluid
+		.col-xs-6.col-md-4.col-lg-3.left
 			img.light_version.img-responsive(src="img/logo_gray.svg", alt="Exall - Bitcoin everywhere")
 			img.dark_version.img-responsive(src="img/logo.svg", alt="Exall - Bitcoin everywhere")
 			p DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle. <br> The decision to trade crypto currencies rests entirely on the users own independent judgement.
-		.col-xs-6.col-md-5
+		.col-xs-6.col-md-5.col-lg-5
 			ul
 				li
 					a About
@@ -30,18 +30,17 @@
 					a Partnership
 				li
 					a Login
-
-		.col-xs-12.col-md-3
+		.col-xs-12.col-md-3.col-lg-2
 			.social
-				<span class="icon-youtube"></span>
-				<span class="icon-twitter"></span>
-				<span class="icon-facebook"></span>
+				span.icon-youtube
+				span.icon-twitter
+				span.icon-facebook
 			form
 				label(for="subscribe") Subscribe for a newsletter:
 				input(id="subscribe" type="email" placeholder="Your email")
 
-.prefooter
-	.container
+.prefooter.clearfix
+	.container-fluid
 		.col-xs-8.images
 			img.img-responsive(src="img/bitgo.png", alt="BitGO")
 			img.img-responsive(src="img/cloudflare.png", alt="CloudFlare")

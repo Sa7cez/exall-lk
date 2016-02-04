@@ -953,6 +953,7 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
 .topnavbar .navbar-header .brand-logo-collapsed > img {
   margin: 0 auto;
   width: 110px;
+  height: 30px;
 }
 .topnavbar .navbar-header .brand-logo {
   display: block;
@@ -961,6 +962,7 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
 .topnavbar .navbar-header .brand-logo-collapsed {
   display: none;
   padding: 21px 15px;
+  height: 28px;
 }
 .topnavbar .navbar-header .brand-logo-collapsed:hover {
   opacity: .9;
@@ -1053,16 +1055,15 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
   color: #fff;
 }
 .topnavbar .currencies ul li .popover_cur {
-  width: 165px;
-  min-width: 165px;
+  min-width: 205px;
   padding: 10px;
   border-color: #eee;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 28px;
-  margin-left: -56px;
+  margin-left: -20px;
   top: auto;
 }
 .topnavbar .currencies ul li .popover_cur table {
@@ -1070,9 +1071,10 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
 }
 .topnavbar .currencies ul li .popover_cur table tr td em {
   margin-left: -8px;
+  margin-right: 3px;
 }
 .topnavbar .currencies ul li .popover_cur table tr td:last-child {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .topnavbar .currencies ul li .popover_cur .arrow {
   position: absolute;
@@ -1082,7 +1084,7 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
   border-color: transparent;
   border-style: solid;
   border-width: 11px;
-  left: 50%;
+  left: 20%;
   margin-left: -11px;
   border-top-width: 0;
   border-bottom-color: #999999;
@@ -1167,13 +1169,13 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
 }
 .topnavbar .wallet {
   cursor: pointer;
-  padding: 25px 0;
+  padding: 14px 0 0;
   margin-right: 29px;
   color: white;
 }
 @media only screen and (min-width: 768px) {
   .topnavbar .wallet {
-    margin-right: 59px;
+    margin-right: 25px;
   }
 }
 .topnavbar .wallet:hover {
@@ -1182,32 +1184,27 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
 .topnavbar .wallet em {
   font-size: 15px;
   margin-right: 15px;
-  vertical-align: top;
 }
-.topnavbar .wallet span {
+.topnavbar .wallet .main {
+  display: inline-block;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.030em;
 }
-.topnavbar .wallet-dropdown {
-  min-width: 239px;
+.topnavbar .wallet .wallet-dropdown {
   max-width: 250px;
-  border: 1px solid rgba(98, 111, 133, 0.5);
   -webkit-border-radius: 3px !important;
   -moz-border-radius: 3px !important;
   border-radius: 3px !important;
-  padding: 6px 12px;
-  margin-top: 5px !important;
-  text-align: right;
-  font-size: 12px;
+  padding: 0 0 0 33px;
+  font-size: 10px;
   font-weight: 300;
-  line-height: 16px;
+  line-height: 12px;
   letter-spacing: 0.003em;
-  left: 0 !important;
-  right: auto !important;
-  background-color: #f5f7fa;
+  color: white;
 }
 .topnavbar .profile {
+  position: relative;
   padding: 12px 16px;
   width: 80px;
   border-left: 1px solid #4d5d79;
@@ -1219,7 +1216,7 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
   left: 0;
   width: 22px;
   margin-left: -11px;
-  padding: .2em 0;
+  padding: .2em 0 !important;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -1359,15 +1356,11 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
   }
   .topnavbar .navbar-nav > a {
     box-shadow: 0 0 0 #000 inset;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    /* @include transition(all .2s); */
   }
   .topnavbar .navbar-nav > .open > a, .topnavbar .navbar-nav > .open > a:hover, .topnavbar .navbar-nav > .open > a:focus {
     box-shadow: 0 -3px 0 #000 inset;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    /* @include transition(all .2s); */
   }
   .topnavbar .navbar-nav > li > a,
   .topnavbar .navbar-nav > .open > a {
@@ -1412,10 +1405,10 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
   }
 
   .topnavbar .currencies-wrapper {
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    margin: 0 390px 0 195px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    margin: 0 417px 0 152px;
     float: none !important;
   }
 
@@ -1432,7 +1425,7 @@ _:-ms-lang(x), .layout-fixed .wrapper > .aside > .aside-inner {
     left: 70px;
   }
   .aside-collapsed .topnavbar .currencies-wrapper {
-    margin-left: 55px;
+    margin-left: 11px;
   }
 }
 @media (max-width: 768px) {
@@ -3349,6 +3342,9 @@ label {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.offsidebar .profile .switch input:checked + span:after {
+  left: 53%;
+}
 .offsidebar .profile .content {
   padding: 28px 48px 16px;
 }
@@ -3383,10 +3379,10 @@ label {
   font-weight: 400;
   margin-bottom: 4px;
 }
-.offsidebar .profile .content .circles li.bold {
+.offsidebar .profile .content .circles li:hover {
   text-align: center;
 }
-.offsidebar .profile .content .circles li.bold .circle {
+.offsidebar .profile .content .circles li:hover .circle {
   background-color: #f8a035;
   border: 1px solid #f8a035;
   color: white;
@@ -3532,9 +3528,10 @@ label {
   border-top: 1px solid #e0e3e7;
   padding: 18px 44px;
 }
-#orders .panel-footer .btn-orange,
-#buysell .panel-footer .btn-orange {
-  width: 159px;
+#orders .panel-footer > .btn-orange,
+#buysell .panel-footer > .btn-orange {
+  width: 300px;
+  font-size: 25px;
 }
 
 #orders {
@@ -3551,8 +3548,8 @@ label {
   margin-left: 5px;
 }
 #orders .dataTables_filter label i {
-  opacity: 0.4;
-  color: #626f85;
+  opacity: 0.9;
+  color: #c7cbd3;
 }
 @media (max-width: 768px) {
   #orders .dataTables_filter label {
@@ -3575,10 +3572,10 @@ label {
 #orders .fav label {
   position: relative;
   margin-left: -6px;
+  margin-top: 29px;
 }
 #orders .fav label i {
   font-size: 13px;
-  color: #c7cbd3;
   margin-right: 10px;
 }
 @media (max-width: 768px) {
@@ -3807,6 +3804,10 @@ div.dataTables_paginate ul.pagination li a {
   background-color: transparent;
 }
 
+.form-control:focus {
+  border-color: #c7cbd3;
+}
+
 .buysell_popup {
   position: absolute;
   left: 0;
@@ -3878,17 +3879,31 @@ div.dataTables_paginate ul.pagination li a {
 .buysell_popup .order.opened {
   background-color: #f5f7fa;
 }
+.buysell_popup .order.opened .close-order,
 .buysell_popup .order.opened .footer,
 .buysell_popup .order.opened .payment_methods {
   display: block;
 }
 .buysell_popup .order .order-name {
-  float: none;
-  width: 100%;
   line-height: 24px;
   font-size: 10px;
   opacity: .4;
-  padding-bottom: 2px;
+  padding-bottom: 10px;
+}
+.buysell_popup .order .close-order {
+  cursor: pointer;
+  display: none;
+  line-height: 24px;
+  font-size: 10px;
+  opacity: .3;
+  padding-right: 6.5%;
+  margin-right: -15px;
+}
+.buysell_popup .order .close-order em {
+  margin-right: 10px;
+}
+.buysell_popup .order .close-order:hover {
+  opacity: .8;
 }
 .buysell_popup .order .adds {
   font-size: 10px;
@@ -4131,7 +4146,7 @@ div.dataTables_paginate ul.pagination li a {
 #create_order_buy .line .plus,
 #create_order_sell .line .plus {
   line-height: 40px;
-  margin: 12px 0 0px;
+  margin: 0;
   font-size: 14px;
 }
 #create_order_buy .line .plus .select2-container--default.select2-container--disabled .select2-selection--single,
@@ -4172,16 +4187,16 @@ div.dataTables_paginate ul.pagination li a {
   font-size: 10px;
   line-height: 1.5;
 }
+#create_order_buy .line.payments .select2-container,
+#create_order_sell .line.payments .select2-container {
+  width: 210px !important;
+}
 #create_order_buy .line .payments,
 #create_order_sell .line .payments {
   float: left;
   width: 186px;
   min-height: 70px;
   padding-bottom: 8px;
-}
-#create_order_buy .line .payments .select2-container,
-#create_order_sell .line .payments .select2-container {
-  width: 210px !important;
 }
 #create_order_buy .line .text,
 #create_order_sell .line .text {
@@ -4223,7 +4238,7 @@ div.dataTables_paginate ul.pagination li a {
   opacity: 0.45;
   width: 15px;
   line-height: 15px;
-  color: #626f85;
+  color: #7A7A7A;
   font-size: 10px;
   line-height: 30px;
   cursor: pointer;
@@ -4275,7 +4290,7 @@ div.dataTables_paginate ul.pagination li a {
 }
 #create_order_buy .line.country,
 #create_order_sell .line.country {
-  padding-left: 61px;
+  /* padding-left: 61px; */
 }
 #create_order_buy .line.country li,
 #create_order_sell .line.country li {
@@ -4287,7 +4302,7 @@ div.dataTables_paginate ul.pagination li a {
 }
 #create_order_buy .line.countries,
 #create_order_sell .line.countries {
-  padding-left: 61px;
+  /* padding-left: 61px; */
 }
 #create_order_buy .line.countries .col,
 #create_order_sell .line.countries .col {
@@ -4575,13 +4590,12 @@ div.dataTables_paginate ul.pagination li a {
 .nav-tabs-justified > .active > a,
 .nav-tabs.nav-justified > .active > a {
   border-bottom-color: transparent;
-  border-right: 1px solid rgba(98, 111, 133, 0.2);
   border-top-right-radius: 2px;
 }
 
 #paymentTop {
   position: relative;
-  padding: 13px 20px;
+  padding: 13px 5px 13px 20px;
   height: 100%;
 }
 #paymentTop .title {
@@ -4589,10 +4603,12 @@ div.dataTables_paginate ul.pagination li a {
   padding-bottom: 14px;
 }
 #paymentTop .icon-cross {
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.5);
   opacity: .8;
+  margin-right: 6px;
 }
 #paymentTop .icon-cross:hover {
   opacity: 1;
@@ -4620,11 +4636,13 @@ div.dataTables_paginate ul.pagination li a {
 }
 #paymentTop .table-responsive {
   position: absolute;
-  top: 121px;
-  bottom: 45px;
-  overflow: hidden;
+  top: 125px;
+  bottom: 15px;
+  right: -20px;
+  left: 25px;
+  overflow: scroll-y;
 }
-@media (max-width: 572px) {
+@media (max-width: 990px) {
   #paymentTop .table-responsive {
     top: 86px;
   }
@@ -4817,11 +4835,13 @@ footer .footer ul li a:hover {
 footer .footer .social {
   padding-top: 107px;
   padding-bottom: 42px;
+  margin: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   footer .footer .social {
     border-top: 1px solid #e0e2e7;
-    padding: 42px 0;
+    margin: 0 -30px;
+    padding: 42px 30px;
   }
 }
 footer .footer .social span, footer .footer .social a {

@@ -155,6 +155,11 @@ footer .footer ul li a {
 
 .form-control {
   border-color: #484848;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-control:focus {
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .form-control::-moz-placeholder {
