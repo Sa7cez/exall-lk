@@ -455,26 +455,42 @@ footer {
    Component: offsidebar
  ========================================================================== */
 
+.switch {
+  .icon-sun {
+    color: rgb(248, 160, 53);
+  }
+  span {
+    background-color: rgb(33, 33, 33);
+    border: 1px solid rgba(86, 86, 86, 0.3);
+
+    &:after {
+      background-color: rgb(71, 71, 71);
+      border-color: rgb(71, 71, 71);
+    }
+  }
+}
+
+.notification {
+  em {
+    color: #c7cbd3 !important;
+    &.active {
+      color:#f8a035 !important;
+    }
+  }
+  li {
+    border-bottom:1px solid $nav-border-color !important;
+    a {
+      color: rgba(255,255,255,.4);
+    }
+  }
+}
+
 .offsidebar {
   border:none;
   background-color: $offsidebar-bg;
   color: $offsidebar-color;
   .profile {
     background-color: #262626;
-    .switch {
-      .icon-sun {
-        color: rgb(248, 160, 53);
-      }
-      span {
-        background-color: rgb(33, 33, 33);
-        border: 1px solid rgba(86, 86, 86, 0.3);
-
-        &:after {
-          background-color: rgb(71, 71, 71);
-          border-color: rgb(71, 71, 71);
-        }
-      }
-    }
     a {
       color: $offsidebar-color;
     }

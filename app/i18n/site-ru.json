@@ -88,6 +88,9 @@
     "ANOTHERBANK":"Еще банк"
   },
   "topbar": {
+    "for_hour": "За час",
+    "for_day": "За 24 часа",
+    "for_week": "За 7 дней",
     "current_lenguage":"RU",
     "confirmation":"Ожидает подтверждения",
     "deposited":"Депонировано"

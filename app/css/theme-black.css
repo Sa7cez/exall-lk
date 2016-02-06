@@ -394,6 +394,31 @@ footer .footer ul li a {
 /* ========================================================================
    Component: offsidebar
  ========================================================================== */
+.switch .icon-sun {
+  color: #f8a035;
+}
+.switch span {
+  background-color: #212121;
+  border: 1px solid rgba(86, 86, 86, 0.3);
+}
+.switch span:after {
+  background-color: #474747;
+  border-color: #474747;
+}
+
+.notification em {
+  color: #c7cbd3 !important;
+}
+.notification em.active {
+  color: #f8a035 !important;
+}
+.notification li {
+  border-bottom: 1px solid #494949 !important;
+}
+.notification li a {
+  color: rgba(255, 255, 255, 0.4);
+}
+
 .offsidebar {
   border: none;
   background-color: transparent;
@@ -401,17 +426,6 @@ footer .footer ul li a {
 }
 .offsidebar .profile {
   background-color: #262626;
-}
-.offsidebar .profile .switch .icon-sun {
-  color: #f8a035;
-}
-.offsidebar .profile .switch span {
-  background-color: #212121;
-  border: 1px solid rgba(86, 86, 86, 0.3);
-}
-.offsidebar .profile .switch span:after {
-  background-color: #474747;
-  border-color: #474747;
 }
 .offsidebar .profile a {
   color: #969696;

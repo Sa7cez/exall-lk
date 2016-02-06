@@ -18,25 +18,51 @@ nav.navbar.topnavbar(role='navigation')
       // START Right Navbar
       ul.nav.navbar-nav.navbar-right
         // Wallet icon
-        li
-          .wallet(data-toggle="dropdown")
+        li.wallet-opener
+          .wallet
             em.icon-wallet
-            .main 2.43567823
-            .wallet-dropdown
+            | 2.43567823
+          .wallet-dropdown.dropdown-menu.dropdown-menu-right.animated.fadeIn
+            .line
               | 0.23646723
-              span(data-localize="topbar.confirmation")
-              br
-              | 1.34756234
+              span(data-localize="topbar.confirmation") 
+            .line
+              | 0.23646723
               span(data-localize="topbar.deposited")
-
+        // Notification icon
+        li.notification
+          .label.label-danger 16
+          .dropdown-menu.animated.fadeIn
+            ul
+              li
+                a(href="#") Уведомление о чем-то интересном
+                em.icon-cross
+              li
+                a(href="#") Уведомление о чем-то
+                em.icon-cross
+              li
+                a(href="#") Уведомление о чем-то интересном и длинное такое
+                em.icon-cross
+              li
+                a(href="#") Уведомление о чем-то интересном
+                em.icon-cross
+            .footer.clearfix
+              .pull-left
+                label.switch.switch-sm
+                  em.icon-sound-on.active
+                  input#chk-sound(type='checkbox')
+                  span
+                  em.icon-sound-off
+              .pull-right
+                em.icon-up-arrow
+                span(data-localize="trades.HIDE")
         // Profile icon
         li
           .profile.offsidebar-toggle(data-toggle-state="offsidebar-open", data-no-persist="true")
-            a.label.label-danger 16
             img.img-responsive(src="img/user/02.jpg", alt="User avatar")
 
         // START Language list
-        li
+        li.leng
           .lenguage_changer(data-toggle="dropdown")
               span.lang(data-localize="topbar.current_lenguage")
               span.icon-down-arrow
@@ -59,17 +85,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 USD (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 USD (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 USD (5.67%)
@@ -81,17 +107,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 CNY (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 CNY (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 CNY (5.67%)
@@ -103,17 +129,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 ZAR (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 ZAR (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 ZAR (5.67%)
@@ -125,17 +151,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 RON (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 RON (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 RON (5.67%)
@@ -148,17 +174,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 USD (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 USD (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 USD (5.67%)
@@ -170,17 +196,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 EUR (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 EUR (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 EUR (5.67%)
@@ -192,17 +218,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 JPY (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 JPY (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 JPY (5.67%)
@@ -214,17 +240,17 @@ nav.navbar.topnavbar(role='navigation')
                   .arrow
                   table
                     tr
-                      td За час
+                      td(data-localize="topbar.for_hour")
                       td 
                         em.icon-small-arrow-up
                         | $0.79 DKK (0.18%)
                     tr
-                      td За 24 часа
+                      td(data-localize="topbar.for_day")
                       td 
                         em.icon-small-arrow-up
                         | $5.79 DKK (1.48%)
                     tr
-                      td За 7 дней
+                      td(data-localize="topbar.for_week")
                       td 
                         em.icon-small-arrow-up
                         | $15.79 DKK (5.67%)

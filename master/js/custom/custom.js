@@ -6,23 +6,23 @@
 
   $(function(){
 
-    // Currency changer
+  // Currency changer
 
-    var currencies_info_default = {'RUB':'1','CNY':'1','ZAR':'1','RON':'1','USD':'1','EUR':'1','JPR':'1','DKK':'1'};
-    var storage_currencies_info = 'jq-appCurInfo';
-    var currencies_info = $.localStorage.get(storage_currencies_info) || currencies_info_default;
+  var currencies_info_default = {'RUB':'1','CNY':'1','ZAR':'1','RON':'1','USD':'1','EUR':'1','JPR':'1','DKK':'1'};
+  var storage_currencies_info = 'jq-appCurInfo';
+  var currencies_info = $.localStorage.get(storage_currencies_info) || currencies_info_default;
 
-    $.localStorage.set(storage_currencies_info, currencies_info);
+  $.localStorage.set(storage_currencies_info, currencies_info);
 
-    $.each( currencies_info, function( i, val ) {
-      if(val == 1) {
-      	$('#' + i + '_info').show();
-      	$('.chooser_popup input[value="' + i + '"]').prop( "checked", true );
-      } else {
-      	$('#' + i + '_info').hide();
-      	$('.chooser_popup input[value="' + i + '"]').prop( "checked", false );
-      }
-	});
+  $.each( currencies_info, function( i, val ) {
+    if(val == 1) {
+    	$('#' + i + '_info').show();
+    	$('.chooser_popup input[value="' + i + '"]').prop( "checked", true );
+    } else {
+    	$('#' + i + '_info').hide();
+    	$('.chooser_popup input[value="' + i + '"]').prop( "checked", false );
+    }
+  });
 
   $(document).on('change', '.chooser_popup input', function () {
       var currencies_info = $.localStorage.get(storage_currencies_info) || currencies_info_default;
@@ -36,6 +36,16 @@
       	$('#' + $(this).val() + '_info').hide();
       }
 	});
+
+  $(".topnavbar .wallet-opener").on({
+    mouseenter: function () {
+        $('.topnavbar .open').removeClass('open');
+        $(this).addClass('open');
+    },
+    mouseleave: function () {
+      $(this).removeClass('open');
+    }
+  });
 
   //** SCROLL ANIMATION
 
@@ -119,6 +129,11 @@
     $('.chooser').each(function () {
         if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.chooser').has(e.target).length === 0) {
             $('.chooser').removeClass('open');
+        }
+    });
+    $('.notification .dropdown-menu').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.chooser').has(e.target).length === 0) {
+            $('.notification').removeClass('open');
         }
     });
   });
@@ -274,6 +289,7 @@
 
   /* Closers for popups */
 
+
   $(document).on('click', '[data-action=create_order_buy]', function () {
       $('#create_order_buy').slideDown().animatescroll();
       return false;
@@ -295,6 +311,7 @@
   $(document).on('click', '.settings-panel .close-settings', function () {
       $(this).parent().toggle();
   });   
+
   $(document).on('click', '.settings .arrow', function () {
       $(this).parent().parent().find('.settings-panel').toggle();
       return false;
@@ -304,6 +321,23 @@
 
   $(document).on('click', '#orders .nav li', function () {
       $(this).parent().parent().find('.favorite-selector, .payment-selector').select2({});
+  });
+
+  $('#chk-sound').on('change', function (e) {  
+    $(this).parent().find('em').toggleClass('active');
+  });
+
+  $(document).on('click', '.notification .label', function () {
+    $(this).parent().addClass('open');
+  });
+
+  $(document).on('click', '.notification .icon-cross', function () {
+    $(this).parent().slideUp();
+  });
+
+  $(document).on('click', '.notification .footer .pull-right', function () {
+    $(this).parent().parent().find('ul').remove();
+    $(this).fadeOut();
   });
 
   // 

@@ -258,7 +258,8 @@ label {
 		padding: 18px 44px;
 		> .btn-orange {
 		   width: 300px;
-		   font-size: 25px;
+		   font-size: 18px;
+		   font-weight: bold;
 		}
 	}
 
@@ -1381,6 +1382,7 @@ $padding-size: 18px;
 	.title {
 		font-size: 16px;
 		padding-bottom: 14px;
+		white-space: nowrap;
 	}
 	.icon-cross {
 		font-size:13px;

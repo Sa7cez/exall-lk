@@ -7,6 +7,28 @@
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
    <title>Exall - Bitcoin Everywhere</title>
+   <!-- =============== FAVICON ===============-->
+   <link rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-touch-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="img/fav/apple-touch-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="img/fav/apple-touch-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="img/fav/apple-touch-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="img/fav/apple-touch-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="img/fav/apple-touch-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="img/fav/apple-touch-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="img/fav/apple-touch-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon-180x180.png">
+   <link rel="icon" type="image/png" href="img/fav/favicon-32x32.png" sizes="32x32">
+   <link rel="icon" type="image/png" href="img/fav/android-chrome-192x192.png" sizes="192x192">
+   <link rel="icon" type="image/png" href="img/fav/favicon-96x96.png" sizes="96x96">
+   <link rel="icon" type="image/png" href="img/fav/favicon-16x16.png" sizes="16x16">
+   <link rel="manifest" href="img/fav/manifest.json">
+   <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#555555">
+   <link rel="shortcut icon" href="img/fav/favicon.ico">
+   <meta name="apple-mobile-web-app-title" content="Exall">
+   <meta name="application-name" content="Exall">
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="msapplication-TileImage" content="img/fav/mstile-144x144.png">
+   <meta name="msapplication-config" content="img/fav/browserconfig.xml">
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
    <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
@@ -53,25 +75,60 @@
                <!-- START Right Navbar-->
                <ul class="nav navbar-nav navbar-right">
                   <!-- Wallet icon-->
-                  <li>
-                     <div data-toggle="dropdown" class="wallet">
-                        <em class="icon-wallet"></em>
-                        <div class="main">2.43567823</div>
-                        <div class="wallet-dropdown">0.23646723
+                  <li class="wallet-opener">
+                     <div class="wallet">
+                        <em class="icon-wallet"></em>2.43567823</div>
+                     <div class="wallet-dropdown dropdown-menu dropdown-menu-right animated fadeIn">
+                        <div class="line">0.23646723
                            <span data-localize="topbar.confirmation"></span>
-                           <br>1.34756234
+                        </div>
+                        <div class="line">0.23646723
                            <span data-localize="topbar.deposited"></span>
+                        </div>
+                     </div>
+                  </li>
+                  <!-- Notification icon-->
+                  <li class="notification">
+                     <div class="label label-danger">16</div>
+                     <div class="dropdown-menu animated fadeIn">
+                        <ul>
+                           <li><a href="#">Уведомление о чем-то интересном</a>
+                              <em class="icon-cross"></em>
+                           </li>
+                           <li><a href="#">Уведомление о чем-то</a>
+                              <em class="icon-cross"></em>
+                           </li>
+                           <li><a href="#">Уведомление о чем-то интересном и длинное такое</a>
+                              <em class="icon-cross"></em>
+                           </li>
+                           <li><a href="#">Уведомление о чем-то интересном</a>
+                              <em class="icon-cross"></em>
+                           </li>
+                        </ul>
+                        <div class="footer clearfix">
+                           <div class="pull-left">
+                              <label class="switch switch-sm">
+                                 <em class="icon-sound-on active"></em>
+                                 <input id="chk-sound" type="checkbox">
+                                 <span></span>
+                                 <em class="icon-sound-off"></em>
+                              </label>
+                           </div>
+                           <div class="pull-right">
+                              <em class="icon-up-arrow"></em>
+                              <span data-localize="trades.HIDE"></span>
+                           </div>
                         </div>
                      </div>
                   </li>
                   <!-- Profile icon-->
                   <li>
-                     <div data-toggle-state="offsidebar-open" data-no-persist="true" class="profile offsidebar-toggle"><a class="label label-danger">16</a>
+                     <div data-toggle-state="offsidebar-open" data-no-persist="true" class="profile offsidebar-toggle">
                         <img src="img/user/02.jpg" alt="User avatar" class="img-responsive">
                      </div>
                   </li>
                   <!-- START Language list-->
-                  <li>
+                  <li class="leng">
                      <div data-toggle="dropdown" class="lenguage_changer">
                         <span data-localize="topbar.current_lenguage" class="lang"></span>
                         <span class="icon-down-arrow"></span>
@@ -96,17 +153,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
                                     </tr>
@@ -122,17 +179,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 CNY (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 CNY (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 CNY (5.67%)</td>
                                     </tr>
@@ -148,17 +205,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 ZAR (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 ZAR (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 ZAR (5.67%)</td>
                                     </tr>
@@ -174,17 +231,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 RON (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 RON (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 RON (5.67%)</td>
                                     </tr>
@@ -202,17 +259,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
                                     </tr>
@@ -228,17 +285,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 EUR (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 EUR (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 EUR (5.67%)</td>
                                     </tr>
@@ -254,17 +311,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 JPY (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 JPY (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 JPY (5.67%)</td>
                                     </tr>
@@ -280,17 +337,17 @@
                                  <div class="arrow"></div>
                                  <table>
                                     <tr>
-                                       <td>За час</td>
+                                       <td data-localize="topbar.for_hour"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$0.79 DKK (0.18%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 24 часа</td>
+                                       <td data-localize="topbar.for_day"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$5.79 DKK (1.48%)</td>
                                     </tr>
                                     <tr>
-                                       <td>За 7 дней</td>
+                                       <td data-localize="topbar.for_week"></td>
                                        <td>
                                           <em class="icon-small-arrow-up"></em>$15.79 DKK (5.67%)</td>
                                     </tr>
@@ -504,14 +561,14 @@
    <footer>
       <div class="footer clearfix">
          <div class="container-fluid">
-            <div class="col-xs-6 col-md-4 col-lg-3 left">
+            <div class="col-xs-5 col-md-4 col-lg-3 left">
                <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
                <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
                <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
                   with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle.
                   <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
             </div>
-            <div class="col-xs-6 col-md-5 col-lg-5">
+            <div class="col-xs-7 col-md-5 col-lg-5">
                <ul>
                   <li><a>About</a>
                   </li>

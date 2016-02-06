@@ -88,6 +88,9 @@
     "ANOTHERBANK":"Another bank"
   },
   "topbar": {
+    "for_hour": "For hour",
+    "for_day": "For 24 hours",
+    "for_week": "For 7 days",
     "current_lenguage":"EN",
     "confirmation":"Awaiting Confirmation",
     "deposited":"Deposited"

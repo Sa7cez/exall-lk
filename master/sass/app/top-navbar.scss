@@ -47,6 +47,7 @@ $nav-border-color:              #4d5d79;
 
   .navbar-nav {
     margin: 0;
+    position: relative;
   }
 
   @media only screen and (min-width: $mq-tablet) {
@@ -67,6 +68,10 @@ $nav-border-color:              #4d5d79;
 .topnavbar {
   @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
   position: relative;
+
+  .dropdown-menu {
+    margin-top: 1px;
+  }
 
   .navbar-header {
     background-color: $nav-header-bg;
@@ -189,7 +194,7 @@ $nav-border-color:              #4d5d79;
         }
 
         span {
-          font-size: 10px;
+          font-size: 12px;
           font-weight: 300;
           letter-spacing: .03em;
           color: $nav-top-item-desktop;
@@ -322,55 +327,139 @@ $nav-border-color:              #4d5d79;
 
   .wallet {
     cursor: pointer;
-    padding:14px 0 0;
-    margin-right: 29px;
-    color: rgb(255,255,255);
-
-    @media only screen and (min-width: $mq-tablet) {
-      margin-right: 25px;
-    }
+    padding: 24.5px 0 24.5px;
+    margin-right: 20px;
+    color: white;
 
     &:hover {
       opacity: .9;
     }
+    
     em {
       font-size: 15px;
       margin-right: 15px;
+      vertical-align: top;
     }
-    .main {
-      display: inline-block;
+    span {
       font-size: 14px;
       font-weight: 300;
       letter-spacing: 0.030em;
     }
-    .wallet-dropdown {
-      max-width: 250px;
-      @include border-radius(3px !important);
-      padding: 0 0 0 33px;
-      font-size: 10px;
-      font-weight: 300;
-      line-height: 12px;
-      letter-spacing: 0.003em;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .wallet {
+      margin-right: 63px;
+    }
+  }
+
+  .open .wallet-dropdown {
+    border: 1px solid #4d5d79;
+    padding: 6px 12px;
+    margin-top: -1px !important;
+    text-align: left;
+    left: 16px !important;
+    right: auto !important;
+    background-color: #0F3276;
+    border-top: 0;
+    
+    .line {
       color: white;
+      font-size: 14px;
+      line-height: 22px;
+      white-space: nowrap;
+      letter-spacing: 0.003em;
+
+      span {
+        padding-left: 10px;
+      }
+    }
+  }
+  
+  .notification {
+    cursor: pointer;
+    height: 70px;
+    padding-top: 24px;
+    .label {
+      position: relative;
+      z-index:5;
+      margin-right:-10.5px;
+      padding: .2em .6em !important;
+      @include border-radius(2px);
+    }
+    .dropdown-menu {
+      right: -15px !important;
+      width: 289px;
+      background-color: white;
+      -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+      box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+      ul {
+        padding-left: 0;
+        list-style:none;
+
+        li {
+          position: relative;
+          padding:13px 35px 12px 30px;
+          font-size:14px;
+          line-height: 22px;
+          border-bottom: 1px solid #ced3dc;
+
+          em {
+            position: absolute;
+            right: 10px;
+            top:0;
+            bottom:0;
+            height: 14px;
+            margin:auto 0;
+            color:#626f85;
+            opacity: .4;
+
+            &:hover {
+              opacity: .8;
+            }
+          }
+        }
+      }
+      .footer {
+        padding:20px 15px 15px;
+
+        .switch {
+          em {
+            color:#626f85;
+            font-size:12px;
+            margin:0 5px;
+          }
+          .active {
+            color:#f8a035 !important;
+          }
+        }
+
+        .pull-right {
+          margin-top: 5px;
+          margin-right: 5px;
+          font-size:10px;
+          opacity: .4;
+          em {
+            margin-right: 11px;
+          }
+          em,span {
+            cursor: pointer;
+          }
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
     }
   }
 
   .profile {
+    z-index:4;
     position: relative;
     padding:12px 16px;
     width: 80px;
     border-left:1px solid $nav-border-color;
     border-right:1px solid $nav-border-color;
-    
-    .label {
-      position: absolute;
-      top:28px;
-      left:0;
-      width: 22px;
-      margin-left:-11px;
-      padding: .2em 0 !important;
-      @include border-radius(2px);
-    }
 
     img {
       width: 46px;
@@ -378,42 +467,45 @@ $nav-border-color:              #4d5d79;
       @include border-radius(50%);
     }
   }
+  .leng {
+    position: relative;
+    .lenguage_changer {
+      cursor: pointer;
+      width: 60px;
+      height: 30px;
+      border: 1px solid $nav-border-color;
+      @include border-radius(3px);
+      margin:18px 15px 0 20px;
+      font-size: 12px;
+      color: $nav-top-item-desktop;
+      padding:5px 9px;
 
-  .lenguage_changer {
-    cursor: pointer;
-    width: 60px;
-    height: 30px;
-    border: 1px solid $nav-border-color;
-    @include border-radius(3px);
-    margin:18px 15px 0 20px;
-    font-size: 12px;
-    color: $nav-top-item-desktop;
-    padding:5px 9px;
+      .lang {
+        text-transform: uppercase;
+      }
 
-    .lang {
-      text-transform: uppercase;
-    }
-
-    .icon-down-arrow {
-      float: right;
-      font-size: 8px;
-      line-height: 20px;
-      color: rgba(255,255,255,.4);
-      @include transition(all .3s);
-    }
-
-    &:hover {
       .icon-down-arrow {
-        color: $nav-top-item-desktop;
+        float: right;
+        font-size: 8px;
+        line-height: 20px;
+        color: rgba(255,255,255,.4);
+        @include transition(all .3s);
+      }
+
+      &:hover {
+        .icon-down-arrow {
+          color: $nav-top-item-desktop;
+        }
       }
     }
+    .dropdown-menu {
+        right: -15px !important;
+        min-width: 110px;
+        background-color: white;
+        -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+        box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+    }
   }
-
-  .dropdown-menu {
-    margin-top: -1px;
-    margin-right: 15px;
-  }
-  
 }
 
 @media only screen and (max-width: $mq-up-to-tablet) {
@@ -564,7 +656,7 @@ $nav-border-color:              #4d5d79;
 
     // restore nav items positions
     .nav > li {
-      position: relative;
+      //position: relative;
     }
 
     // restore opened dropdown 
@@ -615,12 +707,12 @@ $nav-border-color:              #4d5d79;
     .open {
       .dropdown-menu {
         position: absolute;
-        border: 1px solid rgba(98, 111, 133, 0.5);
+        /* border: 1px solid rgba(98, 111, 133, 0.5);
         @include border-radius(3px !important);
         margin: 5px 15px !important;
         right: 0 !important;
         left: auto !important;
-        background-color: #fff;
+        background-color: #fff; */
       }
     }
   }
