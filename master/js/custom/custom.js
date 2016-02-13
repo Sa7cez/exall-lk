@@ -37,6 +37,18 @@
       }
 	});
 
+  
+
+  $(".currencies ul li").on({
+    mouseenter: function () {
+        $('.currencies ul li.open').removeClass('open');
+        $(this).addClass('open');
+    },
+    mouseleave: function () {
+      //$(this).removeClass('open');
+    }
+  });
+
   $(".topnavbar .wallet-opener").on({
     mouseenter: function () {
         $('.topnavbar .open').removeClass('open');
@@ -45,6 +57,10 @@
     mouseleave: function () {
       $(this).removeClass('open');
     }
+  });
+
+  $( window ).resize(function() {
+    $('.favorite-selector, .payment-selector').select2({});
   });
 
   //** SCROLL ANIMATION
@@ -98,16 +114,31 @@
   $('.buysell_popup').slideUp(1);
 
   $(document).on('click', '#buysell tbody [role=row]', function () {
-    $('.buysell_popup').css('top',$(this).position().top + 47).slideDown(delay);
+    //$('.buysell_popup').clone().appendTo('#buysell .tab-content').css('top',$(this).position().top + 47).slideDown(delay);
+
+    position = $(this).position().top + 47;
+    row_id = $(this).attr('id');
+    $('.buysell_popup').slideUp(delay);
+
+    if($('#' + row_id + '-popup').length != '1') {
+      $('.buysell_popup.template').clone().removeClass('template').appendTo('#buysell .tab-content').attr('id', row_id + '-popup');
+      $('#' + row_id + '-popup').css('top',position).addClass('opened').slideDown(delay);
+    } else {
+      if($('#' + row_id + '-popup').hasClass('opened')) {
+        $('#' + row_id + '-popup').css('top',position).removeClass('opened').slideUp(delay);
+      } else {
+        $('#' + row_id + '-popup').css('top',position).addClass('opened').slideDown(delay);
+      }
+    }
   });
 
   $(document).on('click', '[data-tool=popup-hide]', function () {
-    $('.buysell_popup').slideUp(delay);
+    $(this).parent().removeClass('opened').slideUp(delay);
   });
 
   $('body').on('click', function (e) {
-    $('[data-tool=popup-hide]').each(function () {
-        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.buysell_popup').has(e.target).length === 0) {
+    $('.buysell_popup').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('#buysell').has(e.target).length === 0) {
             $('.buysell_popup').slideUp(delay);
         }
     });
@@ -138,6 +169,33 @@
     });
   });
 
+  $.fn.scrollTo = function( target, options, callback ){
+    if(typeof options == 'function' && arguments.length == 2){ callback = options; options = target; }
+    var settings = $.extend({
+      scrollTarget  : target,
+      offsetTop     : 50,
+      duration      : 500,
+      easing        : 'swing'
+    }, options);
+    return this.each(function(){
+      var scrollPane = $(this);
+      var scrollTarget = (typeof settings.scrollTarget == "number") ? settings.scrollTarget : $(settings.scrollTarget);
+      var scrollY = (typeof scrollTarget == "number") ? scrollTarget : scrollTarget.offset().top + scrollPane.scrollTop() - parseInt(settings.offsetTop);
+      scrollPane.animate({scrollTop : scrollY }, parseInt(settings.duration), settings.easing, function(){
+        if (typeof callback == 'function') { callback.call(this); }
+      });
+    });
+  }
+
+  $(document).on('click', '#paymentTop .other', function () {
+      $('#paymentTop .table-responsive').scrollTo(500, {duration:'slow'});
+  });
+
+  $(document).on('click', '#fav-cross', function () {
+      $(this).parent().find('.favorite-selector').select2("val", "");
+      $(this).fadeOut();
+  });
+
   // CHOOSER
 
   $(document).on('click', '.chooser .icon-down-arrow', function () {
@@ -151,8 +209,8 @@
       $(this).toggleClass('opened').toggleClass('closed');
   });
 
-  $(document).on('click', '.buysell_popup .opened .close-order', function () {
-      $(this).parent().parent().removeClass('opened').addClass('closed');
+  $(document).on('click', '.buysell_popup .opened .close-line', function () {
+      $(this).parent().removeClass('opened').addClass('closed');
   });
 
   // Sortable
@@ -172,7 +230,7 @@
         $(this).select2('val', '');
         $('#' + $(this).attr('id').replace('-filter', '')).append('<li class="list-group-item" value="' + val + '"><em class="icon-dashboard text-muted mr-lg"></em>' + text + '<div class="remove"></div></li>').sortable({forcePlaceholderSize: true, placeholder: '<div class="box-placeholder p0 m0"><div></div></div>'}).parent().fadeIn();
         $('#' + $(this).attr('id').replace('filter', 'inputs'))
-          .append('<div class="' + val + '-field clearfix"><div class="col"><span><span data-localize="trades.popup.LABEL2">Cost in </span> <span> '+ text +'</span></span><input class="form-control input-sm" type="number" name="'+ val +'-cost"></div><div class="col2"><span><span data-localize="trades.popup.LABEL_FEE">With fee </span> (<span class="percent">0.26</span> <span>'+ text +')</span></span><input class="form-control input-sm with-fee" type="number" name="'+ val +'-cost-with-fee"></label></div></div>').find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+          .append('<div class="' + val + '-field clearfix"><div class="col"><span><span data-localize="trades.popup.LABEL2">Cost in </span> <span> '+ text +'</span></span><input class="form-control input-sm" type="text" name="'+ val +'-cost"></div><div class="col2 fee"><div data-localize="trades.popup.LABEL_FEE">With fee </div><div><span class="percent">0.26</span> <span>'+ text +'</span></div></label></div></div>').find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
       }
       if($(this).find('option').length == 1) {
         $(this).prop("disabled", true);
@@ -213,13 +271,19 @@
     };
   })();
 
+  function myFixed(x, d) {
+      if (!d) return x.toFixed(d); // don't go wrong if no decimal
+      return x.toFixed(d).replace(/\.?0+$/, '');
+  }
+
   $(document).on('change input keyup mouseup', '.inputs input', function (e) {
+    this.value = this.value.replace(/[^0-9\.]/g,'');
     if($(this).hasClass('with_fee')) {
       new_value = parseFloat($(this).val() / fee_field );
     } else {
       new_value = parseFloat($(this).val());
     }
-    if(new_value == '' || new_value < 0) {
+    if(new_value == '' || new_value < 0 || new_value == 'NaN') {
       new_value = 0;
     }
     field = $(this).parent().parent();
@@ -245,11 +309,15 @@
         var inBTC = new_value / BTC_JPY; break;
       case 'CNY': 
         var inBTC = new_value / BTC_CNY; break;
-      default: break;
+      default: 
+        var inBTC = 0; break;
     }
     //console.log('new_value:' + new_value + ' | currency: ' +  currency_changed + ' | inBTC: ' + inBTC);
     delay(function(){
       $(container).find('.clearfix').each(function () {
+        if(inBTC < 0 || inBTC == '') {
+          inBTC = 0;
+        }
         currency = $(this).attr('class').split(' ')[0].replace('-field', '');
         round = 2;
         switch (currency) {
@@ -274,13 +342,13 @@
           default: break;
         }
         if(currency != currency_changed) {
-          $(this).find('.col input').val(value.toFixed(round));
-          $(this).find('.col2 .percent').text((value * fee).toFixed(2));
-          $(this).find('.col2 input').val((value * fee_field).toFixed(round));  
+          $(this).find('.col input').val(myFixed(value, round));
+          $(this).find('.col2 .percent').text(myFixed(value * fee, 2));
+          $(this).find('.col2 input').val(myFixed(value * fee_field, round));  
         } else {
           $(this).find('.col input').val(new_value);
-          $(this).find('.col2 .percent').text((new_value * fee).toFixed(2));
-          $(this).find('.col2 input').val((new_value * fee_field).toFixed(round));
+          $(this).find('.col2 .percent').text(myFixed(new_value * fee, 2));
+          $(this).find('.col2 input').val(myFixed(new_value * fee_field, round));
         }
         
       });
@@ -332,12 +400,26 @@
   });
 
   $(document).on('click', '.notification .icon-cross', function () {
-    $(this).parent().slideUp();
+    $(this).parent().slideUp().remove();
+    count = $('ul.notifications li').length;
+    $('#notification_label').text(count);
+    if(count == 0) {
+      $('ul.default').fadeIn();
+      $('ul.notifications').parent().find('.footer .hide_all').hide();
+      $('ul.notifications').parent().find('.footer .hide_panel').show();
+    }
   });
 
-  $(document).on('click', '.notification .footer .pull-right', function () {
-    $(this).parent().parent().find('ul').remove();
+  $(document).on('click', '.notification .footer .hide_all', function () {
+    $(this).parent().parent().find('ul.notifications').remove();
+    $(this).parent().parent().find('ul.default').fadeIn();
+    $(this).parent().find('.hide_panel').show();
     $(this).fadeOut();
+  });
+
+  $(document).on('click', '.notification .footer .hide_panel', function () {
+    $(this).parent().parent().parent().removeClass('open');
+
   });
 
   // 
@@ -366,7 +448,7 @@
         { sClass: 'message', mData: 'message' },
         { mData: 'order_name' },
         { mData: 'btc' },
-        { mData: 'amount' },
+        { sType: 'formatted-num', mData: 'amount' },
         { mData: 'status' },
         { mData: 'date' },
         { sClass: 'arrow', bSortable: false, sDefaultContent: '<span class="icon-down-arrow"></span>', mData: null }
@@ -381,13 +463,42 @@
       }
   });
 
+  jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+      "signed-num-pre": function ( a ) {
+          return (a=="-" || a==="") ? 0 : a.replace('+','')*1;
+      },
+   
+      "signed-num-asc": function ( a, b ) {
+          return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+      },
+   
+      "signed-num-desc": function ( a, b ) {
+          return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+      }
+  } );
+
+  jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+      "formatted-num-pre": function ( a ) {
+          a = (a === "-" || a === "") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+          return parseFloat( a );
+      },
+   
+      "formatted-num-asc": function ( a, b ) {
+          return a - b;
+      },
+   
+      "formatted-num-desc": function ( a, b ) {
+          return b - a;
+      }
+  } );
+
   $('#orders-buy-table, #orders-sell-table').dataTable({
       'paging':   true,  // Table pagination
       'searching': true,
       'lengthChange': false,
       'bInfo': false,
       "sDom":
-      "<'row'<'col-xs-6 col-md-7'f><'col-xs-6 col-md-5'<'fav dataTables_filter'>>r><'row'<'col-xs-12'<'currencies'>>>"+"t"+
+      "<'row'<'col-xs-6 col-md-6'f><'col-xs-6 col-md-6'<'fav dataTables_filter'>>r><'row'<'col-xs-12'<'currencies'>>>"+"t"+
       "<'row'p>",
       language: {
         paginate: {
@@ -402,17 +513,17 @@
       pagingType: 'simple_numbers',
       sAjaxSource: '../server/orders.json',
       aoColumns: [
-        { sClass: 'price', mData: 'price' },
+        { sType: 'formatted-num', sClass: 'price', mData: 'price' },
         { mData: 'amount' },
         { sClass: 'payment', bSortable: false, mData: 'payment' },
         { sClass: 'seller', mData: 'seller' },
-        { sType: 'numeric', sClass: 'rating', mData: 'rating' },
+        { sType: 'signed-num', sClass: 'rating', mData: 'rating' },
         { sClass: 'buy_button', bSortable: false, sDefaultContent: '<a href="#" data-localize="trades.BUY" class="btn btn-orange btn-sm"></a>', mData: null }
       ],
       initComplete: function () {
           this.parent().find('[type=search]').attr('data-localize', 'trades.SEARCH').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
 
-          this.parent().find('.fav').append('<label class="control-label mb"><i class="icon-favorite"></i><select id="fav-'+ this.attr('id') +'" class="favorite-selector form-control" name="favorite" value=""><option class="default" value="" data-localize="trades.FAVORITE"></option><option value="Константин Константинопольский">Константин Константинопольский</option><option value="Александридис Константинопулос">Александридис Константинопулос</option><option value="Валерий Панфилов">Валерий Панфилов</option><option value="Александр Валерьев">Александр Валерьев</option></select></label>');
+          this.parent().find('.fav').append('<label class="control-label mb"><i class="icon-favorite"></i><select id="fav-'+ this.attr('id') +'" class="favorite-selector form-control" name="favorite" value=""><option class="default" value="" data-localize="trades.FAVORITE"></option><option value="Константин Константинопольский">Константин Константинопольский</option><option value="Александридис Константинопулос">Александридис Константинопулос</option><option value="Валерий Панфилов">Валерий Панфилов</option><option value="Александр Валерьев">Александр Валерьев</option></select><i id="fav-cross" class="icon-cross" style="display:none"></label>');
           var favid = 'fav-'+ this.attr('id');
 
           this.parent().find('.currencies').append('<a href="#" class="active">RUB</a><a href="#">USD</a><a href="#">EUR</a>');
@@ -463,6 +574,7 @@
                       if(val == '') {
                         $('#' + favid).parent().find('.select2-selection__rendered').css('color','#B8BBCA');
                       } else {
+                        $('#fav-cross').fadeIn();
                         $('#' + favid).parent().find('.select2-selection__rendered').css('color','#000');
                       }
                   } )

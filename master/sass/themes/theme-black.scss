@@ -355,6 +355,15 @@ footer {
    Component: sidebar
  ========================================================================== */
 
+.tooltip-inner {
+  color: #000;
+  background-color: #fff;
+}
+
+.tooltip.right .tooltip-arrow {
+  border-right-color: #fff;
+}
+
 .sidebar {
   background-color: $sidebar-bg; 
 
@@ -517,6 +526,11 @@ footer {
   }
   .order.opened {
     background-color: #2B2B2B;
+  }
+  .order.closed {
+    &:hover {
+      background-color: #2B2B2B;
+    }
   }
   .line {
     background-color: #484848;

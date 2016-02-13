@@ -38,7 +38,7 @@ block content
             .panel-footer
               button.btn.btn-orange.btn-lg(href='#', data-localize="trades.CREATE_ORDER" data-action="create_order_buy")
               #create_order_buy(style="display:none")
-                .pull-right.hide_it(data-tool="popup-hide")
+                .pull-right.hide_it
                   em.icon-up-arrow
                   span(data-localize="trades.HIDE")
                 .line.title(data-localize="trades.popup.BUY")
@@ -95,13 +95,14 @@ block content
                   .BTC-field.clearfix
                     .col
                       span(data-localize="trades.popup.LABEL1")
-                      input.form-control.input-sm(value='1', type="number")
+                      input.form-control.input-sm(value='1', type="text")
                     .col2
                       span
-                        span(data-localize="trades.popup.LABEL_FEE")
-                        span.percent (0.02
+                        span(data-localize="trades.popup.LABEL_FEE2")
+                        span (
+                        span.percent 0.02
                         span BTC)
-                      input.form-control.input-sm.with_fee(value='0.98', type="number")
+                      input.form-control.input-sm.with_fee(value='0.98', type="text")
 
                 .line.green(data-localize="trades.popup.PERCENT")
                 .line.settings.clearfix
@@ -255,22 +256,30 @@ block content
                         option(value='JPY') JPY
           
           // START buysell popup
-          .buysell_popup.clearfix(role='buysellpopup' style="display:none")
-            .clearfix
-              .pull-left.hide_it(data-tool="popup-hide")
+          .buysell_popup.template.clearfix(role='buysellpopup' style="display:none")
+            .clearfix(data-tool="popup-hide")
+              .pull-left.hide_it
                 em.icon-up-arrow
                 span(data-localize="trades.HIDE")
               .pull-right
-                em.icon-cross(data-tool="popup-hide")
-            .offset.title Заявка на покупку B-8658765
+                em.icon-cross
+            .offset.title Заявка на покупку B8655
             .order.clearfix
               .column.message
+                .th
                 em.icon-message
               .column.date
+                .th(data-localize="trades.DATE")
                 .day 12.07.15
-              .column.btc 300 BTC
-              .column.amount 123 130 000 USD
-              .column.status(data-localize="trades.statuses.WAITCOMPLETE")
+              .column.btc
+                .th(data-localize="trades.AMOUNT_BUY")
+                | 300 BTC
+              .column.amount
+                .th(data-localize="trades.AMOUNT_PAY")
+                | 123 130 000 USD
+              .column.status
+                .th(data-localize="trades.STATUS")
+                span(data-localize="trades.statuses.WAITCOMPLETE")
               .column.author
               .column.payment
 
@@ -279,24 +288,36 @@ block content
             .line
 
             .order.to-open.closed.clearfix
-              .clearfix
-                .pull-left.column.offset.order-name О–284734743
+              .clearfix.close-line
+                .pull-left.column.offset
+                  .order-name О284734743
+                  .tip Нажмите на заявку для подробного описания
                 .pull-right.close-order
                   em.icon-up-arrow
                   span(data-localize="trades.HIDE_ORDER")
               .column.message
+                .th
                 .label.label-transparent 10
               .column.date
+                .th(data-localize="trades.DATE")
                 .day 12.07.15
                 span.adds Еще 15 минут
-              .column.btc + 100
-              .column.amount 382 325 USD
-              .column.status(data-localize="trades.statuses.SENDED")
+              .column.btc
+                .th(data-localize="trades.AMOUNT_BUY")
+                | + 100
+              .column.amount
+                .th(data-localize="trades.AMOUNT_PAY")
+                | 382 325 USD
+              .column.status
+                .th(data-localize="trades.STATUS")
+                span(data-localize="trades.statuses.SENDED")
               .column.author
+                .th(data-localize="trades.AUTHOR")
                 .status.online
                 .name Steve Collins
                 .rating (30+,  100,  A+)
               .column.payment
+                .th(data-localize="trades.PAYMENT_METHOD")
                 em.icon-shield.green
                 span(data-localize="payments.types.BANK")
               .payment_methods.clearfix
@@ -344,25 +365,37 @@ block content
             .line
             
             .order.to-open.closed.clearfix
-              .clearfix
-                .pull-left.column.offset.order-name О–284734743
+              .clearfix.close-line
+                .pull-left.column.offset
+                  .order-name О284734743
+                  .tip Нажмите на заявку для подробного описания
                 .pull-right.close-order
                   em.icon-up-arrow
                   span(data-localize="trades.HIDE_ORDER")
               .column.message
+                .th
                 .label.label-danger 2
               .column.date
+                .th(data-localize="trades.DATE")
                 .day 12.07.15
                 span.adds Еще 15 минут
-              .column.btc + 200
-              .column.amount 586 923 USD
-              .column.status(data-localize="trades.statuses.WAITPAYMENT")
+              .column.btc
+                .th(data-localize="trades.AMOUNT_BUY")
+                | + 200
+              .column.amount
+                .th(data-localize="trades.AMOUNT_PAY")
+                | 586 923 USD
+              .column.status
+                .th(data-localize="trades.STATUS")
+                span(data-localize="trades.statuses.WAITPAYMENT")
                 a.adds(href="#", data-localize="trades.DONTSEND")
               .column.author
+                .th(data-localize="trades.AUTHOR")
                 .status.offline
                 .name Иванов Сергей
                 .rating (3,  15,  B-)
               .column.payment
+                .th(data-localize="trades.PAYMENT_METHOD")
                 em.icon-shield.gray
                 span(data-localize="payments.types.BANK")
               .payment_methods.clearfix
@@ -417,25 +450,37 @@ block content
             .line
             
             .order.to-open.closed.clearfix
-              .clearfix
-                .pull-left.column.offset.order-name О–284734743
+              .clearfix.close-line
+                .pull-left.column.offset
+                  .order-name О284734743
+                  .tip Нажмите на заявку для подробного описания
                 .pull-right.close-order
                   em.icon-up-arrow
                   span(data-localize="trades.HIDE_ORDER")
               .column.message
+                .th
                 .label.label-danger 2
               .column.date
+                .th(data-localize="trades.DATE")
                 .day 12.07.15
                 span.adds Еще 15 минут
-              .column.btc + 200
-              .column.amount 586 923 USD
-              .column.status(data-localize="trades.statuses.WAITPAYMENT")
+              .column.btc
+                .th(data-localize="trades.AMOUNT_BUY")
+                | + 200
+              .column.amount
+                .th(data-localize="trades.AMOUNT_PAY")
+                | 586 923 USD
+              .column.status
+                .th(data-localize="trades.STATUS")
+                span(data-localize="trades.statuses.WAITPAYMENT")
                 a.adds(href="#", data-localize="trades.DONTSEND")
               .column.author
+                .th(data-localize="trades.AUTHOR")
                 .status.offline
                 .name Иванов Сергей
                 .rating (3,  15,  B-)
               .column.payment
+                .th(data-localize="trades.PAYMENT_METHOD")
                 em.icon-shield.gray
                 span(data-localize="payments.types.BANK")
               .payment_methods.clearfix
@@ -575,6 +620,9 @@ block content
                   td(data-localize="payments.ALPHABANK")
                   td 234
             // END table-responsive
+          .other
+            span.icon-down-arrow
+            span(data-localize="payments.OTHER")
         // END payment top panel
   
   .row

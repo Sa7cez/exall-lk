@@ -306,6 +306,15 @@ footer .footer ul li a {
 /* ========================================================================
    Component: sidebar
  ========================================================================== */
+.tooltip-inner {
+  color: #000;
+  background-color: #fff;
+}
+
+.tooltip.right .tooltip-arrow {
+  border-right-color: #fff;
+}
+
 .sidebar {
   background-color: #262626;
 }
@@ -449,6 +458,9 @@ footer .footer ul li a {
   color: rgba(255, 255, 255, 0.4);
 }
 .buysell_popup .order.opened {
+  background-color: #2B2B2B;
+}
+.buysell_popup .order.closed:hover {
   background-color: #2B2B2B;
 }
 .buysell_popup .line {

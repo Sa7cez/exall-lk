@@ -89,9 +89,9 @@
                   </li>
                   <!-- Notification icon-->
                   <li class="notification">
-                     <div class="label label-danger">16</div>
+                     <div id="notification_label" class="label">4</div>
                      <div class="dropdown-menu animated fadeIn">
-                        <ul>
+                        <ul class="notifications">
                            <li><a href="#">Уведомление о чем-то интересном</a>
                               <em class="icon-cross"></em>
                            </li>
@@ -105,6 +105,9 @@
                               <em class="icon-cross"></em>
                            </li>
                         </ul>
+                        <ul style="display:none" class="default">
+                           <li data-localize="topbar.no_notifications"></li>
+                        </ul>
                         <div class="footer clearfix">
                            <div class="pull-left">
                               <label class="switch switch-sm">
@@ -114,9 +117,13 @@
                                  <em class="icon-sound-off"></em>
                               </label>
                            </div>
-                           <div class="pull-right">
+                           <div class="pull-right hide_all">
                               <em class="icon-up-arrow"></em>
-                              <span data-localize="trades.HIDE"></span>
+                              <span data-localize="topbar.hide_notifications"></span>
+                           </div>
+                           <div style="display:none" class="pull-right hide_panel">
+                              <em class="icon-up-arrow"></em>
+                              <span data-localize="topbar.hide_notifications_panel"></span>
                            </div>
                         </div>
                      </div>
@@ -422,7 +429,7 @@
          <!-- START Sidebar (left)-->
          <div class="aside-inner">
             <nav data-sidebar-anyclick-close="" class="sidebar">
-               <div class="hamburger">
+               <div data-toggle="tooltip" data-placement="right" title="Collapse menu" class="hamburger">
                   <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
                   <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
                      <em class="icon-left-arrow"></em>
@@ -436,47 +443,47 @@
                <ul class="nav">
                   <!-- Iterates over all sidebar items-->
                   <li class=" ">
-                     <a href="dashboard.html" title="Dashboard">
+                     <a href="dashboard.html">
                         <div class="pull-right label label-success">5</div>
-                        <em class="icon-dashboard"></em>
+                        <em data-toggle="tooltip" data-placement="right" title="Dashboard" class="icon-dashboard"></em>
                         <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="wallet.html" title="Wallet">
-                        <em class="icon-wallet"></em>
+                     <a href="wallet.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Wallet" class="icon-wallet"></em>
                         <span data-localize="sidebar.nav.WALLET">Wallet</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="trades.html" title="Trades">
+                     <a href="trades.html">
                         <div class="pull-right label label-success">30</div>
-                        <em class="icon-trades"></em>
+                        <em data-toggle="tooltip" data-placement="right" title="Trades" class="icon-trades"></em>
                         <span data-localize="sidebar.nav.TRADES">Trades</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="referral.html" title="Partner Program">
-                        <em class="icon-partner"></em>
+                     <a href="referral.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Partner Program" class="icon-partner"></em>
                         <span data-localize="sidebar.nav.REFERRAL">Partner Program</span>
                      </a>
                   </li>
                   <li class=" active">
-                     <a href="help.html" title="Help">
-                        <em class="icon-help"></em>
+                     <a href="help.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Help" class="icon-help"></em>
                         <span data-localize="sidebar.nav.HELP">Help</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="news.html" title="News">
-                        <em class="icon-news"></em>
+                     <a href="news.html">
+                        <em data-toggle="tooltip" data-placement="right" title="News" class="icon-news"></em>
                         <span data-localize="sidebar.nav.NEWS">News</span>
                      </a>
                   </li>
                </ul>
                <!-- END sidebar nav-->
                <ul class="news_block">
-                  <li><a href="#">English kerning must be better</a>
+                  <li><a href="#">English news</a>
                   </li>
                   <li><a href="#">Заголовок новости 1 длинный заголовок, в 3 строки.</a>
                   </li>
@@ -565,7 +572,7 @@
                <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
                <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
                <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
-                  with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle.
+                  with these activities. ExAll does not solicit nor make any representation that crypto currencies are an investment vehicle.
                   <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
             </div>
             <div class="col-xs-7 col-md-5 col-lg-5">
@@ -616,7 +623,7 @@
                <img src="img/cloudflare.png" alt="CloudFlare" class="img-responsive">
                <img src="img/bitcoinaverage.png" alt="BitcoinAverage" class="img-responsive">
             </div>
-            <div class="col-xs-4 copyright">© "ExAll", 2015</div>
+            <div class="col-xs-4 copyright">© "ExAll", 2016</div>
          </div>
       </div>
    </footer>

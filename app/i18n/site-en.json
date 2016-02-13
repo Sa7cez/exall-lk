@@ -35,7 +35,8 @@
       "CURTEXT": " Add convenient payment currency",
       "LABEL1":"BTC to purchase",
       "LABEL2":"Cost in ",
-      "LABEL_FEE" : "With fee ",
+      "LABEL_FEE" : "Fee ",
+      "LABEL_FEE2" : "With fee ",
       "PERCENT":"The fee - 0,2% <br> Increase rating - reduce commission! <br> You would save if your rating was 100",
       "SETTINGS":"Settings",
       "DEFAULTS":"All default",
@@ -60,7 +61,13 @@
     "2HOURS": "2 hour",
     "3HOURS": "3 hours",
     "4HOURS": "4 hours",
-    "DAY": "For day"
+    "DAY": "For day",
+    "DATE": "Date",
+    "AMOUNT_BUY":"Amount (buy)",
+    "AMOUNT_PAY":"Amount (pay)",
+    "STATUS":"Status",
+    "AUTHOR":"User",
+    "PAYMENT_METHOD":"Payment method"
   },
   "countries": {
     "ALL": "All country",
@@ -93,7 +100,10 @@
     "for_week": "For 7 days",
     "current_lenguage":"EN",
     "confirmation":"Awaiting Confirmation",
-    "deposited":"Deposited"
+    "deposited":"Deposited",
+    "hide_notifications":"mark as read",
+    "hide_notifications_panel":"hide panel",
+    "no_notifications":"No new notifications"
   },
   "sidebar": {
     "nav": {

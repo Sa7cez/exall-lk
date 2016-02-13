@@ -7,19 +7,19 @@
     "rating": "10"
   }, {
     "price": "583",
-    "amount": "1.01207051",
+    "amount": "1.01207054",
     "payment": "Sberbank",
     "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
     "rating": "100"
   }, {
     "price": "7 583",
-    "amount": "1.01207051",
+    "amount": "13.01207051",
     "payment": "Bank of America",
     "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
     "rating": "75"
   }, {
     "price": "1 583",
-    "amount": "1.01207051",
+    "amount": "1.01207053",
     "payment": "Сбербанк",
     "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
     "rating": "35"
@@ -30,7 +30,7 @@
     "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
     "rating": "-25"
   }, {
-    "price": "4 583",
+    "price": "4 583.1",
     "amount": "1.01207051",
     "payment": "Bank of America",
     "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
@@ -49,52 +49,10 @@
     "rating": "100"
   }, {
     "price": "7 583",
-    "amount": "1.01207051",
+    "amount": "1.01207059",
     "payment": "Bank of America",
     "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
     "rating": "75"
-  }, {
-    "price": "583",
-    "amount": "1.01207051",
-    "payment": "Sberbank",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
-    "rating": "100"
-  }, {
-    "price": "7 583",
-    "amount": "1.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
-    "rating": "75"
-  }, {
-    "price": "1 583",
-    "amount": "1.01207051",
-    "payment": "Сбербанк",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
-    "rating": "35"
-  }, {
-    "price": "137 583",
-    "amount": "1.01207051",
-    "payment": "Альфа-Банк",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
-    "rating": "-25"
-  }, {
-    "price": "4 583",
-    "amount": "1.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
-    "rating": "-10"
-  }, {
-    "price": "1 583",
-    "amount": "1.01207051",
-    "payment": "Western Union",
-    "seller": "<a href=\"#\">Иванов Андрейка</a>",
-    "rating": "20"
-  }, {
-    "price": "1 583",
-    "amount": "1.01207051",
-    "payment": "Сбербанк",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
-    "rating": "35"
   }, {
     "price": "583",
     "amount": "1.01207051",
@@ -115,13 +73,13 @@
     "rating": "35"
   }, {
     "price": "137 583",
-    "amount": "1.01207051",
+    "amount": "1.01207031",
     "payment": "Альфа-Банк",
     "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
     "rating": "-25"
   }, {
     "price": "4 583",
-    "amount": "1.01207051",
+    "amount": "14.01207051",
     "payment": "Bank of America",
     "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
     "rating": "-10"
@@ -132,28 +90,70 @@
     "seller": "<a href=\"#\">Иванов Андрейка</a>",
     "rating": "20"
   }, {
-    "price": "137 583",
+    "price": "1 583",
     "amount": "1.01207051",
+    "payment": "Сбербанк",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
+    "rating": "35"
+  }, {
+    "price": "583",
+    "amount": "1.01207051",
+    "payment": "Sberbank",
+    "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
+    "rating": "100"
+  }, {
+    "price": "7 583",
+    "amount": "1.01207051",
+    "payment": "Bank of America",
+    "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
+    "rating": "75"
+  }, {
+    "price": "1 583",
+    "amount": "1.01207051",
+    "payment": "Сбербанк",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
+    "rating": "35"
+  }, {
+    "price": "137 583",
+    "amount": "1.01207011",
     "payment": "Альфа-Банк",
     "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
     "rating": "-25"
   }, {
-    "price": "4 583",
-    "amount": "1.01207051",
+    "price": "4 583.5",
+    "amount": "11.01207051",
     "payment": "Bank of America",
     "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
     "rating": "-10"
   }, {
     "price": "1 583",
+    "amount": "11.11207051",
+    "payment": "Western Union",
+    "seller": "<a href=\"#\">Иванов Андрейка</a>",
+    "rating": "20"
+  }, {
+    "price": "137 583",
     "amount": "1.01207051",
+    "payment": "Альфа-Банк",
+    "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
+    "rating": "-15"
+  }, {
+    "price": "4 583.11",
+    "amount": "14.01207051",
+    "payment": "Bank of America",
+    "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
+    "rating": "-30"
+  }, {
+    "price": "1 583",
+    "amount": "1.01203251",
     "payment": "Western Union",
     "seller": "<a href=\"#\">Иванов Андрейка</a>",
     "rating": "20"
   }, {
     "price": "2 583",
-    "amount": "1.01207051",
+    "amount": "0.01212051",
     "payment": "Western Union",
     "seller": "<a href=\"#\">Boobsman</a>",
-    "rating": "25"
+    "rating": "45"
   }]
 }

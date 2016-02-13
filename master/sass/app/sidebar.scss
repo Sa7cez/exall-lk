@@ -40,6 +40,10 @@ $scrollbar-wd:                    17px;
     -webkit-border-radius: 50%;
     border-radius: 50%;
     z-index:100;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
     
     a {
       position: absolute;
@@ -313,10 +317,10 @@ $tablet-landscape: 1025px;
             font-size: 1.6em; // increase icons size
             width: auto;
           }
+          &:hover,
           &:focus { // accessibility
             background-color: transparent;
-            > em { 
-              color: inherit; 
+            > em {
               color: lighten($sidebar-item-color-active, 30%);
             }
           }

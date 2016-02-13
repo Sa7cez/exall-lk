@@ -9,6 +9,42 @@ label {
 	font-weight:normal;
 }
 
+.tooltip {
+  position: absolute;
+}
+.tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.tooltip.right {
+  margin-left: 15px;
+  padding: 0 5px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: white;
+  text-align: center;
+  background-color: #113781;
+  border-radius: 4px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #113781;
+}
+
 // Statuses
 
 .author,
@@ -274,13 +310,12 @@ label {
 	.dataTables_filter {
 		label {
 			i {
-				opacity: 0.9;
-				color:rgb(199, 203, 211);
+				color:#707070;
 			}
 			float: none;
 			text-align: left;
 			width: 90%;
-		    margin-top: 32px;
+		    margin-top: 29px;
 		    font-size: 14px;
 		    line-height: 40px;
 		    margin-left: 5px;
@@ -306,8 +341,13 @@ label {
 	.fav {
 		label {
 			i {
+				opacity: .8;
 				font-size: 13px;
 				margin-right: 10px;
+				&.icon-cross {
+					cursor: pointer;
+					margin-left: 10px;
+				}
 			}
 			position: relative;
 			margin-left: -6px;
@@ -319,12 +359,13 @@ label {
 
 			select,
 			input {
-				width: 75%;
+				width: 78%;
 			}
 
 			.select2-container {
-				max-width: 75%;
+				max-width: 80%;
 				min-width: 170px;
+				margin-top: -3px;
 			}
 
 			.select2-container--default {
@@ -393,22 +434,22 @@ label {
 						line-height: 33px;
 					}
 					&.price {
-
+					
 					}
 					&.amount {
 
 					}
 					&.payment {
-						min-width: 100px;
+						min-width: 150px;
 					}
 					&.seller {
-
+					
 					}
 					&.rating {
-
+					
 					}
 					&.buy_button {
-
+					
 					}
 				}
 			}
@@ -640,6 +681,28 @@ $padding-size: 18px;
 
 		.column {
 			float: left;
+
+			.th {
+				height: 34px;
+				line-height: 12px;
+			    font-size: 10px;
+			    opacity: .4;
+			    padding-bottom: 10px;
+			}
+		}
+		.tip {
+			display: none;
+			margin-left: 20px;
+			font-size:10px;
+			opacity: .6;
+		}
+		&.closed {
+			&:hover {
+				background-color: #F3F5F8;
+				.tip {
+					display: inline-block;
+				}
+			}
 		}
 		&.to-open {
 			cursor: pointer;
@@ -653,6 +716,7 @@ $padding-size: 18px;
 			}
 		}
 		.order-name {
+			display: inline-block;
 			line-height: 24px;
 			font-size:10px;
 			opacity: .4;
@@ -675,6 +739,7 @@ $padding-size: 18px;
 		}
 		.adds {
 			font-size:10px;
+			display: block;
 		}
 		> .message {
 			width: $offset-size;
@@ -711,10 +776,11 @@ $padding-size: 18px;
 			}
 		}
 		> .btc {
-			width: 12%;
+			width: 13%;
 		}
 		> .amount {
-			width: 15%;
+			width: 14%;
+			padding-right: 10px;
 		}
 		> .status {
 			width: 20.2%;
@@ -725,7 +791,8 @@ $padding-size: 18px;
 			padding-right: 18px;
 	
 			.status {
-				top:6px;
+				top:initial;
+				margin-top:6px;
 			}
 
 			.name {
@@ -743,7 +810,7 @@ $padding-size: 18px;
 			em {
 				position: absolute;
 				left:-15px;
-				top:3px;
+				margin-top:3px;
 
 				&.green {
 					color: rgb(7, 185, 16);
@@ -816,6 +883,10 @@ $padding-size: 18px;
 			float: left;
 			margin-right: 15px;
 			margin-bottom: 18px;
+
+			@media (max-width: 600px) {
+				margin-right: 5px;
+			}
 
 			.clear-all {
 				text-decoration: underline;
@@ -1102,8 +1173,8 @@ $padding-size: 18px;
 			width: 130px;
 			float:left;
 		}
-		.col2 {
-
+		.col2.fee {
+			padding-top: 25px;
 		}
 		&.inputs {
 			span {
@@ -1423,7 +1494,7 @@ $padding-size: 18px;
 	.table-responsive {
 		position: absolute;
 		top:125px;
-		bottom:15px;
+		bottom:40px;
 	    right: -20px;
     	left: 25px;
 		overflow: scroll-y;

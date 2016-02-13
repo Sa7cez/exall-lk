@@ -94,9 +94,9 @@
                   </li>
                   <!-- Notification icon-->
                   <li class="notification">
-                     <div class="label label-danger">16</div>
+                     <div id="notification_label" class="label">4</div>
                      <div class="dropdown-menu animated fadeIn">
-                        <ul>
+                        <ul class="notifications">
                            <li><a href="#">Уведомление о чем-то интересном</a>
                               <em class="icon-cross"></em>
                            </li>
@@ -110,6 +110,9 @@
                               <em class="icon-cross"></em>
                            </li>
                         </ul>
+                        <ul style="display:none" class="default">
+                           <li data-localize="topbar.no_notifications"></li>
+                        </ul>
                         <div class="footer clearfix">
                            <div class="pull-left">
                               <label class="switch switch-sm">
@@ -119,9 +122,13 @@
                                  <em class="icon-sound-off"></em>
                               </label>
                            </div>
-                           <div class="pull-right">
+                           <div class="pull-right hide_all">
                               <em class="icon-up-arrow"></em>
-                              <span data-localize="trades.HIDE"></span>
+                              <span data-localize="topbar.hide_notifications"></span>
+                           </div>
+                           <div style="display:none" class="pull-right hide_panel">
+                              <em class="icon-up-arrow"></em>
+                              <span data-localize="topbar.hide_notifications_panel"></span>
                            </div>
                         </div>
                      </div>
@@ -427,7 +434,7 @@
          <!-- START Sidebar (left)-->
          <div class="aside-inner">
             <nav data-sidebar-anyclick-close="" class="sidebar">
-               <div class="hamburger">
+               <div data-toggle="tooltip" data-placement="right" title="Collapse menu" class="hamburger">
                   <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
                   <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
                      <em class="icon-left-arrow"></em>
@@ -441,47 +448,47 @@
                <ul class="nav">
                   <!-- Iterates over all sidebar items-->
                   <li class=" ">
-                     <a href="dashboard.html" title="Dashboard">
+                     <a href="dashboard.html">
                         <div class="pull-right label label-success">5</div>
-                        <em class="icon-dashboard"></em>
+                        <em data-toggle="tooltip" data-placement="right" title="Dashboard" class="icon-dashboard"></em>
                         <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="wallet.html" title="Wallet">
-                        <em class="icon-wallet"></em>
+                     <a href="wallet.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Wallet" class="icon-wallet"></em>
                         <span data-localize="sidebar.nav.WALLET">Wallet</span>
                      </a>
                   </li>
                   <li class=" active">
-                     <a href="trades.html" title="Trades">
+                     <a href="trades.html">
                         <div class="pull-right label label-success">30</div>
-                        <em class="icon-trades"></em>
+                        <em data-toggle="tooltip" data-placement="right" title="Trades" class="icon-trades"></em>
                         <span data-localize="sidebar.nav.TRADES">Trades</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="referral.html" title="Partner Program">
-                        <em class="icon-partner"></em>
+                     <a href="referral.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Partner Program" class="icon-partner"></em>
                         <span data-localize="sidebar.nav.REFERRAL">Partner Program</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="help.html" title="Help">
-                        <em class="icon-help"></em>
+                     <a href="help.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Help" class="icon-help"></em>
                         <span data-localize="sidebar.nav.HELP">Help</span>
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="news.html" title="News">
-                        <em class="icon-news"></em>
+                     <a href="news.html">
+                        <em data-toggle="tooltip" data-placement="right" title="News" class="icon-news"></em>
                         <span data-localize="sidebar.nav.NEWS">News</span>
                      </a>
                   </li>
                </ul>
                <!-- END sidebar nav-->
                <ul class="news_block">
-                  <li><a href="#">English kerning must be better</a>
+                  <li><a href="#">English news</a>
                   </li>
                   <li><a href="#">Заголовок новости 1 длинный заголовок, в 3 строки.</a>
                   </li>
@@ -594,7 +601,7 @@
                            <div class="panel-footer">
                               <button href="#" data-localize="trades.CREATE_ORDER" data-action="create_order_buy" class="btn btn-orange btn-lg"></button>
                               <div id="create_order_buy" style="display:none">
-                                 <div data-tool="popup-hide" class="pull-right hide_it">
+                                 <div class="pull-right hide_it">
                                     <em class="icon-up-arrow"></em>
                                     <span data-localize="trades.HIDE"></span>
                                  </div>
@@ -670,15 +677,16 @@
                                     <div class="BTC-field clearfix">
                                        <div class="col">
                                           <span data-localize="trades.popup.LABEL1"></span>
-                                          <input value="1" type="number" class="form-control input-sm">
+                                          <input value="1" type="text" class="form-control input-sm">
                                        </div>
                                        <div class="col2">
                                           <span>
-                                             <span data-localize="trades.popup.LABEL_FEE"></span>
-                                             <span class="percent">(0.02</span>
+                                             <span data-localize="trades.popup.LABEL_FEE2"></span>
+                                             <span>(</span>
+                                             <span class="percent">0.02</span>
                                              <span>BTC)</span>
                                           </span>
-                                          <input value="0.98" type="number" class="form-control input-sm with_fee">
+                                          <input value="0.98" type="text" class="form-control input-sm with_fee">
                                        </div>
                                     </div>
                                  </div>
@@ -895,56 +903,75 @@
                            </div>
                         </div>
                         <!-- START buysell popup-->
-                        <div role="buysellpopup" style="display:none" class="buysell_popup clearfix">
-                           <div class="clearfix">
-                              <div data-tool="popup-hide" class="pull-left hide_it">
+                        <div role="buysellpopup" style="display:none" class="buysell_popup template clearfix">
+                           <div data-tool="popup-hide" class="clearfix">
+                              <div class="pull-left hide_it">
                                  <em class="icon-up-arrow"></em>
                                  <span data-localize="trades.HIDE"></span>
                               </div>
                               <div class="pull-right">
-                                 <em data-tool="popup-hide" class="icon-cross"></em>
+                                 <em class="icon-cross"></em>
                               </div>
                            </div>
-                           <div class="offset title">Заявка на покупку B-8658765</div>
+                           <div class="offset title">Заявка на покупку B8655</div>
                            <div class="order clearfix">
                               <div class="column message">
+                                 <div class="th"></div>
                                  <em class="icon-message"></em>
                               </div>
                               <div class="column date">
+                                 <div data-localize="trades.DATE" class="th"></div>
                                  <div class="day">12.07.15</div>
                               </div>
-                              <div class="column btc">300 BTC</div>
-                              <div class="column amount">123 130 000 USD</div>
-                              <div data-localize="trades.statuses.WAITCOMPLETE" class="column status"></div>
+                              <div class="column btc">
+                                 <div data-localize="trades.AMOUNT_BUY" class="th"></div>300 BTC</div>
+                              <div class="column amount">
+                                 <div data-localize="trades.AMOUNT_PAY" class="th"></div>123 130 000 USD</div>
+                              <div class="column status">
+                                 <div data-localize="trades.STATUS" class="th"></div>
+                                 <span data-localize="trades.statuses.WAITCOMPLETE"></span>
+                              </div>
                               <div class="column author"></div>
                               <div class="column payment"></div>
                            </div>
                            <div data-localize="trades.ORDERSBUY" class="offset pretitle"></div>
                            <div class="line"></div>
                            <div class="order to-open closed clearfix">
-                              <div class="clearfix">
-                                 <div class="pull-left column offset order-name">О–284734743</div>
+                              <div class="clearfix close-line">
+                                 <div class="pull-left column offset">
+                                    <div class="order-name">О284734743</div>
+                                    <div class="tip">Нажмите на заявку для подробного описания</div>
+                                 </div>
                                  <div class="pull-right close-order">
                                     <em class="icon-up-arrow"></em>
                                     <span data-localize="trades.HIDE_ORDER"></span>
                                  </div>
                               </div>
                               <div class="column message">
+                                 <div class="th"></div>
                                  <div class="label label-transparent">10</div>
                               </div>
                               <div class="column date">
+                                 <div data-localize="trades.DATE" class="th"></div>
                                  <div class="day">12.07.15</div>
                                  <span class="adds">Еще 15 минут</span>
                               </div>
-                              <div class="column btc">+ 100</div>
-                              <div class="column amount">382 325 USD</div>
-                              <div data-localize="trades.statuses.SENDED" class="column status"></div>
+                              <div class="column btc">
+                                 <div data-localize="trades.AMOUNT_BUY" class="th"></div>+ 100</div>
+                              <div class="column amount">
+                                 <div data-localize="trades.AMOUNT_PAY" class="th"></div>382 325 USD</div>
+                              <div class="column status">
+                                 <div data-localize="trades.STATUS" class="th"></div>
+                                 <span data-localize="trades.statuses.SENDED"></span>
+                              </div>
                               <div class="column author">
+                                 <div data-localize="trades.AUTHOR" class="th"></div>
                                  <div class="status online"></div>
                                  <div class="name">Steve Collins</div>
                                  <div class="rating">(30+, 100, A+)</div>
                               </div>
                               <div class="column payment">
+                                 <div data-localize="trades.PAYMENT_METHOD" class="th"></div>
                                  <em class="icon-shield green"></em>
                                  <span data-localize="payments.types.BANK"></span>
                               </div>
@@ -1015,31 +1042,42 @@
                            </div>
                            <div class="line"></div>
                            <div class="order to-open closed clearfix">
-                              <div class="clearfix">
-                                 <div class="pull-left column offset order-name">О–284734743</div>
+                              <div class="clearfix close-line">
+                                 <div class="pull-left column offset">
+                                    <div class="order-name">О284734743</div>
+                                    <div class="tip">Нажмите на заявку для подробного описания</div>
+                                 </div>
                                  <div class="pull-right close-order">
                                     <em class="icon-up-arrow"></em>
                                     <span data-localize="trades.HIDE_ORDER"></span>
                                  </div>
                               </div>
                               <div class="column message">
+                                 <div class="th"></div>
                                  <div class="label label-danger">2</div>
                               </div>
                               <div class="column date">
+                                 <div data-localize="trades.DATE" class="th"></div>
                                  <div class="day">12.07.15</div>
                                  <span class="adds">Еще 15 минут</span>
                               </div>
-                              <div class="column btc">+ 200</div>
-                              <div class="column amount">586 923 USD</div>
-                              <div data-localize="trades.statuses.WAITPAYMENT" class="column status">
+                              <div class="column btc">
+                                 <div data-localize="trades.AMOUNT_BUY" class="th"></div>+ 200</div>
+                              <div class="column amount">
+                                 <div data-localize="trades.AMOUNT_PAY" class="th"></div>586 923 USD</div>
+                              <div class="column status">
+                                 <div data-localize="trades.STATUS" class="th"></div>
+                                 <span data-localize="trades.statuses.WAITPAYMENT"></span>
                                  <a href="#" data-localize="trades.DONTSEND" class="adds"></a>
                               </div>
                               <div class="column author">
+                                 <div data-localize="trades.AUTHOR" class="th"></div>
                                  <div class="status offline"></div>
                                  <div class="name">Иванов Сергей</div>
                                  <div class="rating">(3, 15, B-)</div>
                               </div>
                               <div class="column payment">
+                                 <div data-localize="trades.PAYMENT_METHOD" class="th"></div>
                                  <em class="icon-shield gray"></em>
                                  <span data-localize="payments.types.BANK"></span>
                               </div>
@@ -1121,31 +1159,42 @@
                            </div>
                            <div class="line"></div>
                            <div class="order to-open closed clearfix">
-                              <div class="clearfix">
-                                 <div class="pull-left column offset order-name">О–284734743</div>
+                              <div class="clearfix close-line">
+                                 <div class="pull-left column offset">
+                                    <div class="order-name">О284734743</div>
+                                    <div class="tip">Нажмите на заявку для подробного описания</div>
+                                 </div>
                                  <div class="pull-right close-order">
                                     <em class="icon-up-arrow"></em>
                                     <span data-localize="trades.HIDE_ORDER"></span>
                                  </div>
                               </div>
                               <div class="column message">
+                                 <div class="th"></div>
                                  <div class="label label-danger">2</div>
                               </div>
                               <div class="column date">
+                                 <div data-localize="trades.DATE" class="th"></div>
                                  <div class="day">12.07.15</div>
                                  <span class="adds">Еще 15 минут</span>
                               </div>
-                              <div class="column btc">+ 200</div>
-                              <div class="column amount">586 923 USD</div>
-                              <div data-localize="trades.statuses.WAITPAYMENT" class="column status">
+                              <div class="column btc">
+                                 <div data-localize="trades.AMOUNT_BUY" class="th"></div>+ 200</div>
+                              <div class="column amount">
+                                 <div data-localize="trades.AMOUNT_PAY" class="th"></div>586 923 USD</div>
+                              <div class="column status">
+                                 <div data-localize="trades.STATUS" class="th"></div>
+                                 <span data-localize="trades.statuses.WAITPAYMENT"></span>
                                  <a href="#" data-localize="trades.DONTSEND" class="adds"></a>
                               </div>
                               <div class="column author">
+                                 <div data-localize="trades.AUTHOR" class="th"></div>
                                  <div class="status offline"></div>
                                  <div class="name">Иванов Сергей</div>
                                  <div class="rating">(3, 15, B-)</div>
                               </div>
                               <div class="column payment">
+                                 <div data-localize="trades.PAYMENT_METHOD" class="th"></div>
                                  <em class="icon-shield gray"></em>
                                  <span data-localize="payments.types.BANK"></span>
                               </div>
@@ -1341,6 +1390,10 @@
                         </table>
                         <!-- END table-responsive-->
                      </div>
+                     <div class="other">
+                        <span class="icon-down-arrow"></span>
+                        <span data-localize="payments.OTHER"></span>
+                     </div>
                   </div>
                   <!-- END payment top panel-->
                </div>
@@ -1429,7 +1482,7 @@
                <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
                <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
                <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
-                  with these activities. ANX does not solicit nor make any representation that crypto currencies are an investment vehicle.
+                  with these activities. ExAll does not solicit nor make any representation that crypto currencies are an investment vehicle.
                   <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
             </div>
             <div class="col-xs-7 col-md-5 col-lg-5">
@@ -1480,7 +1533,7 @@
                <img src="img/cloudflare.png" alt="CloudFlare" class="img-responsive">
                <img src="img/bitcoinaverage.png" alt="BitcoinAverage" class="img-responsive">
             </div>
-            <div class="col-xs-4 copyright">© "ExAll", 2015</div>
+            <div class="col-xs-4 copyright">© "ExAll", 2016</div>
          </div>
       </div>
    </footer>

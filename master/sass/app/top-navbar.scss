@@ -288,7 +288,7 @@ $nav-border-color:              #4d5d79;
 
     .chooser_popup {
       top:10px;
-      right: -86px !important;
+      right: -72px !important;
       width: 87px;
       min-width: 87px;
       z-index:4;
@@ -386,8 +386,11 @@ $nav-border-color:              #4d5d79;
       margin-right:-10.5px;
       padding: .2em .6em !important;
       @include border-radius(2px);
+      background-color: black;
+      color:white;
     }
     .dropdown-menu {
+      padding:0;
       right: -15px !important;
       width: 289px;
       background-color: white;
@@ -399,7 +402,7 @@ $nav-border-color:              #4d5d79;
 
         li {
           position: relative;
-          padding:13px 35px 12px 30px;
+          padding:13px 35px 13px 30px;
           font-size:14px;
           line-height: 22px;
           border-bottom: 1px solid #ced3dc;

@@ -31,9 +31,9 @@ nav.navbar.topnavbar(role='navigation')
               span(data-localize="topbar.deposited")
         // Notification icon
         li.notification
-          .label.label-danger 16
+          #notification_label.label 4
           .dropdown-menu.animated.fadeIn
-            ul
+            ul.notifications
               li
                 a(href="#") Уведомление о чем-то интересном
                 em.icon-cross
@@ -46,6 +46,9 @@ nav.navbar.topnavbar(role='navigation')
               li
                 a(href="#") Уведомление о чем-то интересном
                 em.icon-cross
+            ul.default(style="display:none")
+              li(data-localize="topbar.no_notifications")
+
             .footer.clearfix
               .pull-left
                 label.switch.switch-sm
@@ -53,9 +56,12 @@ nav.navbar.topnavbar(role='navigation')
                   input#chk-sound(type='checkbox')
                   span
                   em.icon-sound-off
-              .pull-right
+              .pull-right.hide_all
                 em.icon-up-arrow
-                span(data-localize="trades.HIDE")
+                span(data-localize="topbar.hide_notifications")
+              .pull-right.hide_panel(style="display:none")
+                em.icon-up-arrow
+                span(data-localize="topbar.hide_notifications_panel")
         // Profile icon
         li
           .profile.offsidebar-toggle(data-toggle-state="offsidebar-open", data-no-persist="true")
