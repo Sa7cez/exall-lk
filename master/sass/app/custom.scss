@@ -310,6 +310,8 @@ label {
 	.dataTables_filter {
 		label {
 			i {
+				font-size:13px;
+				opacity: .9;
 				color:#707070;
 			}
 			float: none;
@@ -341,8 +343,7 @@ label {
 	.fav {
 		label {
 			i {
-				opacity: .8;
-				font-size: 13px;
+				font-size: 14px;
 				margin-right: 10px;
 				&.icon-cross {
 					cursor: pointer;

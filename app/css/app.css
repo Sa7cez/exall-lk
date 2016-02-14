@@ -3667,6 +3667,8 @@ label {
   margin-left: 5px;
 }
 #orders .dataTables_filter label i {
+  font-size: 13px;
+  opacity: .9;
   color: #707070;
 }
 @media (max-width: 768px) {
@@ -3693,8 +3695,7 @@ label {
   margin-top: 29px;
 }
 #orders .fav label i {
-  opacity: .8;
-  font-size: 13px;
+  font-size: 14px;
   margin-right: 10px;
 }
 #orders .fav label i.icon-cross {
