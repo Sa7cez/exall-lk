@@ -1,0 +1,69 @@
+{
+  "aaData": [{
+    "name": "<span data-localize='payments.SBERBANK'></span>",
+    "count": "29 404, 324"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "24 421, 424"
+  }, {
+    "name": "<span data-localize='payments.WEBMONEY'></span>",
+    "count": "1 842, 424"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 424, 434"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "242 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 403"
+  }, {
+    "name": "<span data-localize='payments.ANOTHERBANK'></span>",
+    "count": "343"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "24 21, 424"
+  }, {
+    "name": "<span data-localize='payments.WEBMONEY'></span>",
+    "count": "1 842, 424"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 424, 434"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "242 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 43"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 24, 434"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "22 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 403"
+  }, {
+    "name": "<span data-localize='payments.ANOTHERBANK'></span>",
+    "count": "343"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "4 421, 424"
+  }, {
+    "name": "<span data-localize='payments.WEBMONEY'></span>",
+    "count": "1 82, 424"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 42, 434"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "242 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 403"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "343"
+  }]
+}

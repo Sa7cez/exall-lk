@@ -31,6 +31,7 @@ block content
                             th(data-localize="trades.ORDER").order_name
                             th.btc BTC
                             th(data-localize="trades.AMOUNT").amount
+                            th(data-localize="trades.COUNTRY").country
                             th(data-localize="trades.STATUS").status
                             th(data-localize="trades.DATE").date 
                             th.full-info  
@@ -149,6 +150,7 @@ block content
                             th(data-localize="trades.ORDER").order_name
                             th.btc BTC
                             th(data-localize="trades.AMOUNT").amount
+                            th(data-localize="trades.COUNTRY").country
                             th(data-localize="trades.STATUS").status
                             th(data-localize="trades.DATE").date 
                             th(style='width:7%').full-info  
@@ -542,18 +544,19 @@ block content
         #paymentTop.panel.panel-transparent.remove
           .title
             span(data-localize="payments.TITLE")
-            em(href="#", data-tool="panel-dismiss").pull-right.icon-cross.hidden-lg.hidden-md
+            em(href="#", data-tool="panel-dismiss").pull-right.close-panel.icon-cross.hidden-lg.hidden-md
           .box-placeholder
             label.control-label
               select.delay-selector.form-control(name="top_country")
-                option(value='all' data-localize="countries.ALL")
+                option(value='' data-localize="countries.ALL")
                 option(value='england' data-localize="countries.ENGLAND")
                 option(value='usa' data-localize="countries.USA")
                 option(value='russia' data-localize="countries.RUSSIA")
                 option(value='china' data-localize="countries.CHINA")
+              em.icon-cross(style="display:none")
             label.control-label
               select.delay-selector.form-control(name="top_payment")
-                option(value='all' data-localize="payments.ALL")
+                option(value='' data-localize="payments.ALL")
                 option(value='sberbank' data-localize="payments.SBERBANK")
                 option(value='alphabank' data-localize="payments.ALPHABANK")
                 option(value='webmoney' data-localize="payments.WEBMONEY")
@@ -561,64 +564,14 @@ block content
                 option(value='vtb' data-localize="payments.VTB")
                 option(value='pkb' data-localize="payments.PKB")
                 option(value='anotherbank' data-localize="payments.ANOTHERBANK")
+              em.icon-cross(style="display:none")
           // START table-responsive
           .table-responsive
             table.table
               tbody
                 tr
-                  td(data-localize="payments.SBERBANK")
-                  td 29 404, 324
-                tr
-                  td(data-localize="payments.ALPHABANK")
-                  td 24 421, 424
-                tr
-                  td(data-localize="payments.WEBMONEY")
-                  td 1 842, 424
-                tr
-                  td(data-localize="payments.WU")
-                  td 1 424, 434
-                tr
-                  td(data-localize="payments.VTB")
-                  td 242 425
-                tr
-                  td(data-localize="payments.PKB")
-                  td 2 040
-                tr
-                  td(data-localize="payments.ANOTHERBANK")
-                  td 1 845
-                tr
-                  td(data-localize="payments.SBERBANK")
-                  td 2 131
-                tr
-                  td(data-localize="payments.ALPHABANK")
-                  td 234
-                tr
-                  td(data-localize="payments.SBERBANK")
-                  td 29 404, 324
-                tr
-                  td(data-localize="payments.ALPHABANK")
-                  td 24 421, 424
-                tr
-                  td(data-localize="payments.WEBMONEY")
-                  td 1 842, 424
-                tr
-                  td(data-localize="payments.WU")
-                  td 1 424, 434
-                tr
-                  td(data-localize="payments.VTB")
-                  td 242 425
-                tr
-                  td(data-localize="payments.PKB")
-                  td 2 040
-                tr
-                  td(data-localize="payments.ANOTHERBANK")
-                  td 1 845
-                tr
-                  td(data-localize="payments.SBERBANK")
-                  td 2 131
-                tr
-                  td(data-localize="payments.ALPHABANK")
-                  td 234
+                  td
+                  td
             // END table-responsive
           .other
             span.icon-down-arrow

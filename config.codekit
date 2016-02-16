@@ -2823,6 +2823,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/server\/newTop.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/server\/newTop.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/server\/newTop-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/server\/orders.json": {
 		"fileType": 524288,
 		"ignore": 1,
@@ -2830,6 +2841,17 @@
 		"inputAbbreviatedPath": "\/server\/orders.json",
 		"orderOutput": 0,
 		"outputAbbreviatedPath": "\/server\/orders-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/server\/payment_top.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/server\/payment_top.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/server\/payment_top-min.json",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1

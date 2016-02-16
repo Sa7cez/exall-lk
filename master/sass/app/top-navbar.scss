@@ -386,8 +386,10 @@ $nav-border-color:              #4d5d79;
       margin-right:-10.5px;
       padding: .2em .6em !important;
       @include border-radius(2px);
-      background-color: black;
-      color:white;
+      &.zero {
+        background-color: #0F3070;
+        border: 1px solid #4D5D79;
+      }
     }
     .dropdown-menu {
       padding:0;

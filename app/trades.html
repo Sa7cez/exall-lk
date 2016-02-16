@@ -94,7 +94,7 @@
                   </li>
                   <!-- Notification icon-->
                   <li class="notification">
-                     <div id="notification_label" class="label">4</div>
+                     <div id="notification_label" class="label label-danger">4</div>
                      <div class="dropdown-menu animated fadeIn">
                         <ul class="notifications">
                            <li><a href="#">Уведомление о чем-то интересном</a>
@@ -587,6 +587,7 @@
                                                 <th data-localize="trades.ORDER" class="order_name"></th>
                                                 <th class="btc">BTC</th>
                                                 <th data-localize="trades.AMOUNT" class="amount"></th>
+                                                <th data-localize="trades.COUNTRY" class="country"></th>
                                                 <th data-localize="trades.STATUS" class="status"></th>
                                                 <th data-localize="trades.DATE" class="date"></th>
                                                 <th class="full-info"></th>
@@ -750,6 +751,7 @@
                                                 <th data-localize="trades.ORDER" class="order_name"></th>
                                                 <th class="btc">BTC</th>
                                                 <th data-localize="trades.AMOUNT" class="amount"></th>
+                                                <th data-localize="trades.COUNTRY" class="country"></th>
                                                 <th data-localize="trades.STATUS" class="status"></th>
                                                 <th data-localize="trades.DATE" class="date"></th>
                                                 <th style="width:7%" class="full-info"></th>
@@ -1285,21 +1287,22 @@
                   <div id="paymentTop" class="panel panel-transparent remove">
                      <div class="title">
                         <span data-localize="payments.TITLE"></span>
-                        <em href="#" data-tool="panel-dismiss" class="pull-right icon-cross hidden-lg hidden-md"></em>
+                        <em href="#" data-tool="panel-dismiss" class="pull-right close-panel icon-cross hidden-lg hidden-md"></em>
                      </div>
                      <div class="box-placeholder">
                         <label class="control-label">
                            <select name="top_country" class="delay-selector form-control">
-                              <option value="all" data-localize="countries.ALL"></option>
+                              <option value="" data-localize="countries.ALL"></option>
                               <option value="england" data-localize="countries.ENGLAND"></option>
                               <option value="usa" data-localize="countries.USA"></option>
                               <option value="russia" data-localize="countries.RUSSIA"></option>
                               <option value="china" data-localize="countries.CHINA"></option>
                            </select>
+                           <em style="display:none" class="icon-cross"></em>
                         </label>
                         <label class="control-label">
                            <select name="top_payment" class="delay-selector form-control">
-                              <option value="all" data-localize="payments.ALL"></option>
+                              <option value="" data-localize="payments.ALL"></option>
                               <option value="sberbank" data-localize="payments.SBERBANK"></option>
                               <option value="alphabank" data-localize="payments.ALPHABANK"></option>
                               <option value="webmoney" data-localize="payments.WEBMONEY"></option>
@@ -1308,6 +1311,7 @@
                               <option value="pkb" data-localize="payments.PKB"></option>
                               <option value="anotherbank" data-localize="payments.ANOTHERBANK"></option>
                            </select>
+                           <em style="display:none" class="icon-cross"></em>
                         </label>
                      </div>
                      <!-- START table-responsive-->
@@ -1315,76 +1319,8 @@
                         <table class="table">
                            <tbody>
                               <tr>
-                                 <td data-localize="payments.SBERBANK"></td>
-                                 <td>29 404, 324</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.ALPHABANK"></td>
-                                 <td>24 421, 424</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.WEBMONEY"></td>
-                                 <td>1 842, 424</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.WU"></td>
-                                 <td>1 424, 434</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.VTB"></td>
-                                 <td>242 425</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.PKB"></td>
-                                 <td>2 040</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.ANOTHERBANK"></td>
-                                 <td>1 845</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.SBERBANK"></td>
-                                 <td>2 131</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.ALPHABANK"></td>
-                                 <td>234</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.SBERBANK"></td>
-                                 <td>29 404, 324</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.ALPHABANK"></td>
-                                 <td>24 421, 424</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.WEBMONEY"></td>
-                                 <td>1 842, 424</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.WU"></td>
-                                 <td>1 424, 434</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.VTB"></td>
-                                 <td>242 425</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.PKB"></td>
-                                 <td>2 040</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.ANOTHERBANK"></td>
-                                 <td>1 845</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.SBERBANK"></td>
-                                 <td>2 131</td>
-                              </tr>
-                              <tr>
-                                 <td data-localize="payments.ALPHABANK"></td>
-                                 <td>234</td>
+                                 <td></td>
+                                 <td></td>
                               </tr>
                            </tbody>
                         </table>

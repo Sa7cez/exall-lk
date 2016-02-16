@@ -1,0 +1,72 @@
+{
+  "aaData": [{
+    "name": "Сгенерированный",
+    "count": "1 424 432, 434"
+  }, {
+    "name": "По фильтрам",
+    "count": "1 142 231, 424"
+  }, {
+    "name": "топ платежных",
+    "count": "1 124 443, 434"
+  }, {
+    "name": "систем",
+    "count": "1 042 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 44"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 424"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "242 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "35 403"
+  }, {
+    "name": "<span data-localize='payments.SBERBANK'></span>",
+    "count": "29 404, 324"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "24 1, 424"
+  }, {
+    "name": "<span data-localize='payments.WEBMONEY'></span>",
+    "count": "1 842, 424"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 424, 434"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "242 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 403"
+  }, {
+    "name": "<span data-localize='payments.ANOTHERBANK'></span>",
+    "count": "343"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "24 21, 424"
+  }, {
+    "name": "<span data-localize='payments.ANOTHERBANK'></span>",
+    "count": "343"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "24 421, 424"
+  }, {
+    "name": "<span data-localize='payments.WEBMONEY'></span>",
+    "count": "1 842, 424"
+  }, {
+    "name": "<span data-localize='payments.WU'></span>",
+    "count": "1 424, 434"
+  }, {
+    "name": "<span data-localize='payments.VTB'></span>",
+    "count": "242 425"
+  }, {
+    "name": "<span data-localize='payments.PKB'></span>",
+    "count": "3 403"
+  }, {
+    "name": "<span data-localize='payments.ALPHABANK'></span>",
+    "count": "343"
+  }]
+}

@@ -1434,8 +1434,11 @@ _:-ms-lang(x),
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background-color: black;
-  color: white;
+}
+
+.topnavbar .notification .label.zero {
+  background-color: #0F3070;
+  border: 1px solid #4D5D79;
 }
 
 .topnavbar .notification .dropdown-menu {
@@ -4103,22 +4106,27 @@ label {
 
 #orders .table thead tr th.order_name,
 #buysell .table thead tr th.order_name {
-  width: 18.5% !important;
+  width: 16.5% !important;
 }
 
 #orders .table thead tr th.btc,
 #buysell .table thead tr th.btc {
-  width: 14% !important;
+  width: 9% !important;
 }
 
 #orders .table thead tr th.amount,
 #buysell .table thead tr th.amount {
-  width: 20% !important;
+  width: 16% !important;
+}
+
+#orders .table thead tr th.country,
+#buysell .table thead tr th.country {
+  width: 15% !important;
 }
 
 #orders .table thead tr th.status,
 #buysell .table thead tr th.status {
-  width: 20% !important;
+  width: 16% !important;
 }
 
 #orders .table thead tr th.date,
@@ -4135,6 +4143,13 @@ label {
 #buysell .table tbody tr td {
   padding: 9px;
   border-top: 0;
+}
+
+@media (max-width: 768px) {
+  #orders .table tbody tr td,
+  #buysell .table tbody tr td {
+    padding: 5px;
+  }
 }
 
 #orders .table tbody tr td.message,
@@ -4163,6 +4178,11 @@ label {
     display: block;
     opacity: 1;
   }
+}
+
+#orders .table tbody tr td.country,
+#buysell .table tbody tr td.country {
+  white-space: nowrap;
 }
 
 #orders .table tbody tr:hover .arrow span,
@@ -4446,7 +4466,15 @@ table.dataTable thead th.sorting_desc:after {
   opacity: .5;
   font-family: 'exall';
   cursor: pointer;
-  margin-right: 8px;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  table.dataTable thead th.sorting:after,
+  table.dataTable thead th.sorting_asc:after,
+  table.dataTable thead th.sorting_desc:after {
+    margin-right: 4px;
+  }
 }
 
 table.dataTable thead th.sorting:after {
@@ -4542,6 +4570,20 @@ div.dataTables_paginate ul.pagination li a {
   .select-wrapper .select2-container {
     width: 97% !important;
   }
+}
+
+.select-wrapper .payment-cross {
+  display: inline-block;
+  vertical-align: -3px;
+  font-size: 10px;
+  color: #0b2454;
+  opacity: .45;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.select-wrapper .payment-cross:hover {
+  opacity: .6;
 }
 
 .form-control {
@@ -5530,6 +5572,7 @@ div.dataTables_paginate ul.pagination li a {
   position: relative;
   padding: 13px 20px 13px 5px;
   height: 100%;
+  min-height: 130px;
 }
 
 #paymentTop .title {
@@ -5538,7 +5581,7 @@ div.dataTables_paginate ul.pagination li a {
   white-space: nowrap;
 }
 
-#paymentTop .icon-cross {
+#paymentTop .close-panel {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -5547,17 +5590,35 @@ div.dataTables_paginate ul.pagination li a {
   margin-left: 6px;
 }
 
-#paymentTop .icon-cross:hover {
+#paymentTop .close-panel:hover {
   opacity: 1;
 }
 
 #paymentTop .select2-container {
   width: 150px !important;
-  margin-left: 20px;
 }
 
 #paymentTop .select2-selection--single {
   font-size: 13px;
+}
+
+#paymentTop .control-label {
+  position: relative;
+  padding-left: 30px;
+}
+
+#paymentTop .control-label .icon-cross {
+  position: absolute;
+  left: 15px;
+  top: 11px;
+  font-size: 10px;
+  color: #0b2454;
+  opacity: .45;
+  cursor: pointer;
+}
+
+#paymentTop .control-label .icon-cross:hover {
+  opacity: .6;
 }
 
 #paymentTop .table {
@@ -5567,6 +5628,12 @@ div.dataTables_paginate ul.pagination li a {
 #paymentTop .table tr td {
   border-top: 0;
   padding: 6px 9px;
+}
+
+@media (max-width: 768px) {
+  #paymentTop .table tr td {
+    padding: 3px 6px;
+  }
 }
 
 #paymentTop .table tr td:first-child {
@@ -5580,6 +5647,8 @@ div.dataTables_paginate ul.pagination li a {
 
 #paymentTop .table-responsive {
   position: absolute;
+  min-width: 100%;
+  min-height: 30px;
   top: 125px;
   bottom: 40px;
   left: -20px;

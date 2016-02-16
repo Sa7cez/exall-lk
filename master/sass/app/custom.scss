@@ -218,16 +218,19 @@ label {
 						}
 					}
 					&.order_name {
-						width: 18.5% !important;
+						width: 16.5% !important;
 					}
 					&.btc {
-						width: 14% !important;
+						width: 9% !important;
 					}
 					&.amount {
-						width: 20% !important;
+						width: 16% !important;
+					}
+					&.country {
+						width: 15% !important;
 					}
 					&.status {
-						width: 20% !important;
+						width: 16% !important;
 					}
 					&.date {
 						width: 10% !important;
@@ -243,6 +246,10 @@ label {
 				td {
 					padding: 9px;
 					border-top: 0;
+
+					@media (max-width: $mq-tablet) {
+						padding: 5px;
+					}
 
 					&.message {
 						text-align: center;
@@ -261,6 +268,9 @@ label {
 							}
 						}
 
+					}
+					&.country {
+						white-space: nowrap;
 					}
 				}
 				&:hover {
@@ -519,7 +529,10 @@ table.dataTable {
 		    opacity: .5;
 		    font-family: 'exall';
 		    cursor: pointer;
-		    margin-left: 8px;
+		    margin-left: 6px;
+		    @media (max-width: $mq-tablet) {
+				margin-left: 4px;
+		    }
 		}
 		&.sorting:after {
 		    content: "\e902";
@@ -602,11 +615,25 @@ div.dataTables_paginate {
 	margin-top: 0 !important;
 }
 
-.select-wrapper .select2-container { 
-	min-width: 100px; 
-	max-width:145px;
-	@media (min-width: $mq-tablet) {
-		width: 97% !important;
+.select-wrapper {
+	.select2-container { 
+		min-width: 100px; 
+		max-width:145px;
+		@media (min-width: $mq-tablet) {
+			width: 97% !important;
+		}
+	}
+	.payment-cross {
+	    display: inline-block;
+	    vertical-align: -3px;
+	    font-size: 10px;
+	    color: rgb(11, 36, 84);
+	    opacity: .45;
+	    margin-left: 6px;
+	    cursor: pointer;
+	    &:hover {
+	    	opacity: .6;
+	    }
 	}
 }
 
@@ -1451,12 +1478,13 @@ $padding-size: 18px;
 	position: relative;
 	padding:13px 5px 13px 20px;
 	height: 100%;
+	min-height: 130px;
 	.title {
 		font-size: 16px;
 		padding-bottom: 14px;
 		white-space: nowrap;
 	}
-	.icon-cross {
+	.close-panel {
 		font-size:13px;
 		font-weight: 600;
 		cursor: pointer;
@@ -1470,10 +1498,26 @@ $padding-size: 18px;
 	}
 	.select2-container {
 		width: 150px !important;
-		margin-right: 20px;
 	}
 	.select2-selection--single {
 		font-size:13px;
+	}
+	.control-label {
+		position: relative;
+		padding-right: 30px;
+		.icon-cross {
+			    position: absolute;
+			    right: 15px;
+			    top:11px;
+			    font-size: 10px;
+			    color: rgb(11, 36, 84);
+			    opacity: .45;
+			    cursor: pointer;
+
+			    &:hover {
+			    	opacity: .6;
+			    }
+		}
 	}
 	.table {
 		font-size: 12px;
@@ -1481,6 +1525,10 @@ $padding-size: 18px;
 		tr td {
 			border-top: 0;
 	    	padding: 6px 9px;
+
+	    	@media (max-width: $mq-tablet) {
+				padding: 3px 6px;
+			}
 
 			&:first-child {
 				text-align: right;
@@ -1494,6 +1542,8 @@ $padding-size: 18px;
 	}
 	.table-responsive {
 		position: absolute;
+		min-width: 100%;
+		min-height: 30px;
 		top:125px;
 		bottom:40px;
 	    right: -20px;

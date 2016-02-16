@@ -191,10 +191,29 @@
       $('#paymentTop .table-responsive').scrollTo(500, {duration:'slow'});
   });
 
-  $(document).on('click', '#fav-cross', function () {
+  $(document).on('click', '.fav-cross', function () {
       $(this).parent().find('.favorite-selector').select2("val", "");
       $(this).fadeOut();
   });
+
+  $(document).on('click', '.payment-cross', function () {
+      $(this).parent().find('.payment-selector').select2("val", "");
+      $(this).fadeOut();
+  });
+
+  $(document).on('click', '#paymentTop .control-label .icon-cross', function () {
+      paymentTop.api().ajax.url( '../server/payment_top.json' ).load();
+      $(this).parent().find('.delay-selector').select2("val", "");
+      $(this).fadeOut();
+  });
+
+  $('#paymentTop .delay-selector').on( 'change', function () {
+        var val = $(this).val();
+
+        if(val != '') {
+          $(this).parent().find('.icon-cross').fadeIn();
+        }
+    } );
 
   // CHOOSER
 
@@ -404,9 +423,12 @@
     count = $('ul.notifications li').length;
     $('#notification_label').text(count);
     if(count == 0) {
+      $('#notification_label').text('0').addClass('zero');
       $('ul.default').fadeIn();
       $('ul.notifications').parent().find('.footer .hide_all').hide();
       $('ul.notifications').parent().find('.footer .hide_panel').show();
+    } else {
+      $('#notification_label').text(count).removeClass('zero');
     }
   });
 
@@ -414,6 +436,7 @@
     $(this).parent().parent().find('ul.notifications').remove();
     $(this).parent().parent().find('ul.default').fadeIn();
     $(this).parent().find('.hide_panel').show();
+    $('#notification_label').text(0).addClass('zero');
     $(this).fadeOut();
   });
 
@@ -425,43 +448,6 @@
   // 
   // AJAX
   // 
-
-  $('#ordersBuy, #ordersSell').dataTable({
-      'paging':   true,  // Table pagination
-      'searching': false,
-      'lengthChange': false,
-      'bInfo': false,
-      "sDom":
-      "<'row'<'col-xs-6'l><'col-xs-6'f>r>"+"t"+
-      "<'row'p<'show-closed'>>",
-      language: {
-      paginate: {
-          first:    '«',
-          previous: '«',
-          next:     '»',
-          last:     '»'
-      }},
-      pageLength: 7,
-      pagingType: 'simple_numbers',
-      sAjaxSource: '../server/manage_orders.json',
-      aoColumns: [
-        { sClass: 'message', mData: 'message' },
-        { mData: 'order_name' },
-        { mData: 'btc' },
-        { sType: 'formatted-num', mData: 'amount' },
-        { mData: 'status' },
-        { mData: 'date' },
-        { sClass: 'arrow', bSortable: false, sDefaultContent: '<span class="icon-down-arrow"></span>', mData: null }
-      ],
-      initComplete: function () {
-          this.parent().find('.show-closed').append('<button class="button btn btn-transparent"></button>');
-          this.parent().find('.show-closed button').attr('data-localize', 'trades.SHOWCLOSED').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
-      },
-      fnDrawCallback: function() {
-        this.parent().find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
-        $('#paymentTop').matchHeight._update();
-      }
-  });
 
   jQuery.extend( jQuery.fn.dataTableExt.oSort, {
       "signed-num-pre": function ( a ) {
@@ -491,6 +477,69 @@
           return b - a;
       }
   } );
+
+  var paymentTop = $('#paymentTop .table-responsive table').dataTable({
+      'paging':   false,  // Table pagination
+      'searching': false,
+      'lengthChange': false,
+      'bInfo': false,
+      "sDom": 'rt',
+      sAjaxSource: '../server/payment_top.json',
+      aoColumns: [
+        { mData: 'name'},
+        { sType: 'formatted-num', mData: 'count' }
+      ],
+      "order": [[ 1, "desc" ]],
+      initComplete: function () {
+
+      },
+      fnDrawCallback: function() {
+        $("#paymentTop .table-responsive table thead").remove()
+        this.parent().find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+      }
+  });
+
+  $('#paymentTop select').on('change', function (e) {  
+    paymentTop.api().ajax.url( '../server/newTop.json' ).load();
+  });
+
+  $('#ordersBuy, #ordersSell').dataTable({
+      'paging':   true,  // Table pagination
+      'searching': false,
+      'lengthChange': false,
+      'bInfo': false,
+      "sDom":
+      "<'row'<'col-xs-6'l><'col-xs-6'f>r>"+"t"+
+      "<'row'p<'show-closed'>>",
+      language: {
+      paginate: {
+          first:    '«',
+          previous: '«',
+          next:     '»',
+          last:     '»'
+      }},
+      pageLength: 7,
+      pagingType: 'simple_numbers',
+      sAjaxSource: '../server/manage_orders.json',
+      aoColumns: [
+        { sClass: 'message', mData: 'message' },
+        { mData: 'order_name' },
+        { mData: 'btc' },
+        { sType: 'formatted-num', mData: 'amount' },
+        { mData: 'country'},
+        { mData: 'status' },
+        { mData: 'date' },
+        { sClass: 'arrow', bSortable: false, sDefaultContent: '<span class="icon-down-arrow"></span>', mData: null }
+      ],
+      initComplete: function () {
+          this.parent().find('.show-closed').append('<button class="button btn btn-transparent"></button>');
+          this.parent().find('.show-closed button').attr('data-localize', 'trades.SHOWCLOSED').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+      },
+      fnDrawCallback: function() {
+        this.parent().find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
+        $('#paymentTop').matchHeight._update();
+      }
+  });
 
   $('#orders-buy-table, #orders-sell-table').dataTable({
       'paging':   true,  // Table pagination
@@ -523,7 +572,7 @@
       initComplete: function () {
           this.parent().find('[type=search]').attr('data-localize', 'trades.SEARCH').localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
 
-          this.parent().find('.fav').append('<label class="control-label mb"><i class="icon-favorite"></i><select id="fav-'+ this.attr('id') +'" class="favorite-selector form-control" name="favorite" value=""><option class="default" value="" data-localize="trades.FAVORITE"></option><option value="Константин Константинопольский">Константин Константинопольский</option><option value="Александридис Константинопулос">Александридис Константинопулос</option><option value="Валерий Панфилов">Валерий Панфилов</option><option value="Александр Валерьев">Александр Валерьев</option></select><i id="fav-cross" class="icon-cross" style="display:none"></label>');
+          this.parent().find('.fav').append('<label class="control-label mb"><i class="icon-favorite"></i><select id="fav-'+ this.attr('id') +'" class="favorite-selector form-control" name="favorite" value=""><option class="default" value="" data-localize="trades.FAVORITE"></option><option value="Константин Константинопольский">Константин Константинопольский</option><option value="Александридис Константинопулос">Александридис Константинопулос</option><option value="Валерий Панфилов">Валерий Панфилов</option><option value="Александр Валерьев">Александр Валерьев</option></select><i class="fav-cross icon-cross" style="display:none"></label>');
           var favid = 'fav-'+ this.attr('id');
 
           this.parent().find('.currencies').append('<a href="#" class="active">RUB</a><a href="#">USD</a><a href="#">EUR</a>');
@@ -540,13 +589,17 @@
                       column
                           .search( val ? '^'+val+'$' : '', true, false )
                           .draw();
+
+                      if(val != '') {
+                        $('.payment-cross').fadeIn();
+                      }
                   } );
 
               column.data().unique().sort().each( function ( d, j ) {
                   select.append( '<option value="'+d+'">'+d+'</option>' );
               } );
 
-              select.wrap("<div class='select-wrapper'></div>").find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')})
+              select.wrap("<div class='select-wrapper'></div>").find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
           } );
 
           this.parent().find('.fav, .buy_button').find("[data-localize]").localize('site', { pathPrefix: 'i18n', language: $.localStorage.get('jq-appLang')});
@@ -554,6 +607,8 @@
           $('.favorite-selector').select2({});
 
           $('.payment-selector').select2({});
+
+          $('<i class="payment-cross icon-cross" style="display:none">').appendTo($(this).find('.select-wrapper'));
 
           this.api().column('.seller').every( function () {
               var val = '';
@@ -574,7 +629,7 @@
                       if(val == '') {
                         $('#' + favid).parent().find('.select2-selection__rendered').css('color','#B8BBCA');
                       } else {
-                        $('#fav-cross').fadeIn();
+                        $('.fav-cross').fadeIn();
                         $('#' + favid).parent().find('.select2-selection__rendered').css('color','#000');
                       }
                   } )

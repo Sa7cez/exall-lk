@@ -4,6 +4,7 @@
     "SELL": "Sell bitcoin",
     "ORDER": "Order",
     "AMOUNT": "Amount",
+    "COUNTRY": "Country",
     "STATUS": "Status",
     "DATE": "Date",
     "SHOWCLOSED": "Show payed/canceled",
