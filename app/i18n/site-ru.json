@@ -113,7 +113,16 @@
       "TRADES": "Торги",
       "REFERRAL": "Партнерская программа",
       "HELP": "Помощь",
-      "NEWS": "Новости"
+      "BALANS":"Баланс BTC",
+      "PAYMENTS":"Банковские счета",
+      "HISTORY":"История операций",
+      "ORDERS":"Заявки/поручения",
+      "CASHIN":"Ввод/вывод BTC",
+      "BLOCKCHAIN":"Проверка по Blockchain",
+      "FAQ":"FAQ",
+      "INSTRUCTIONS":"Инструкции",
+      "SUPPORT":"Тех Поддержка",
+      "CONTACTUS":"Свяжитесь с нами"
     }
   }
 }

@@ -201,6 +201,7 @@ $tablet-landscape: 1025px;
 // Sub Levels
 .sidebar-subnav {
   background-color: $sidebar-bg;
+  margin-bottom: 15px;
   
   > .sidebar-subnav-header {
     color: $sidebar-item-color;
@@ -215,13 +216,14 @@ $tablet-landscape: 1025px;
     > .nav-item {
       display: block;
       position: relative;
-      padding: 10px 20px;
+      padding: 5px 20px;
       padding-left: 53px;
+      font-size:12px;
       font-weight: normal;
       background-color: transparent !important;
       color: $sidebar-item-color;
       &:focus, &:hover {
-        color: $sidebar-item-color-active;
+        color: $sidebar-item-color-hover;
       }
       // submenu icons
       > em {

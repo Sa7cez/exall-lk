@@ -37,6 +37,12 @@
       }
 	});
 
+
+  $(document).on('click', '[data-toggle=collapse]', function () {
+    console.log('data-toggle=collapse');
+    $(this).toggleClass('collapsed');
+    $(this).parent().find('.collapse').toggleClass('in');
+  });
   
 
   $(".currencies ul li").on({

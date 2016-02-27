@@ -8,17 +8,25 @@
       "translate": "sidebar.nav.DASHBOARD"
     },
     {
-      "text": "Wallet",
-      "href": "wallet.html",
-      "icon": "icon-wallet",
-      "translate": "sidebar.nav.WALLET"
-    },
-    {
       "text": "Trades",
       "href": "trades.html",
       "icon": "icon-trades",
       "alert": "30",
       "translate": "sidebar.nav.TRADES"
+    },  
+    {
+      "text": "Wallet",
+      "href": "wallet.html",
+      "icon": "icon-wallet",
+      "submenu": [
+        {"text": "Баланс BTC", "href": "balans.html", "translate": "sidebar.nav.BALANS" },
+        {"text": "Банковские счета", "href": "payments.html", "translate": "sidebar.nav.PAYMENTS" },
+        {"text": "История операций", "href": "history.html", "translate": "sidebar.nav.HISTORY" },
+        {"text": "Заявки/поручения", "href": "orders.html", "translate": "sidebar.nav.ORDERS" },
+        {"text": "Ввод/вывод BTC", "href": "cashin.html", "translate": "sidebar.nav.CASHIN" },
+        {"text": "Проверка по Blockchain", "href": "blockchain-check.html", "translate": "sidebar.nav.BLOCKCHAIN" }
+      ],
+      "translate": "sidebar.nav.WALLET"
     },
     {
       "text": "Partner Program",
@@ -30,13 +38,13 @@
       "text": "Help",
       "href": "help.html",
       "icon": "icon-help",
+      "submenu": [
+        {"text": "FAQ", "href": "faq.html", "translate": "sidebar.nav.FAQ" },
+        {"text": "Инструкции", "href": "instructions.html", "translate": "sidebar.nav.INSTRUCTIONS" },
+        {"text": "Тех Поддержка",   "href": "support.html", "translate": "sidebar.nav.SUPPORT" },
+        {"text": "Свяжитесь с нами", "href": "contact_us.html", "translate": "sidebar.nav.CONTACTUS" }
+      ],
       "translate": "sidebar.nav.HELP"
-    },
-    {
-      "text": "News",
-      "href": "news.html",
-      "icon": "icon-news",
-      "translate": "sidebar.nav.NEWS"
     }
   ]
 }

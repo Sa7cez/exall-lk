@@ -196,7 +196,7 @@ footer {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF212121', endColorstr='#FF212121', GradientType=1); }
   .topnavbar .currencies .border {
     border-color: #494949; }
-  .topnavbar .lenguage_changer,
+  .offsidebar .lenguage_changer,
   .topnavbar .profile {
     border-color: #494949;
     color: rgba(255, 255, 255, 0.4); }
@@ -237,7 +237,7 @@ footer {
         color: black; } }
 /* ========================================================================
    Component: sidebar
- ========================================================================== */
+ ======================================================================= */
 .sidebar {
   background-color: #262626; }
   .sidebar .nav-heading {
@@ -306,25 +306,28 @@ footer {
    Component: offsidebar
  ========================================================================== */
 .offsidebar {
-  border: none;
-  background-color: transparent;
-  color: #969696; }
-  .offsidebar .profile {
-    background-color: #262626; }
-    .offsidebar .profile .switch .icon-sun {
-      color: #f8a035; }
-    .offsidebar .profile .switch span {
-      background-color: #212121;
-      border: 1px solid rgba(86, 86, 86, 0.3); }
-      .offsidebar .profile .switch span:after {
-        background-color: #474747;
-        border-color: #474747; }
-    .offsidebar .profile a {
-      color: #969696; }
-    .offsidebar .profile .line {
-      background-color: #494949; }
-    .offsidebar .profile .content .circles li {
-      color: #969696; }
+border: none;
+background-color: transparent;
+color: #969696; }
+.offsidebar .profile {
+background-color: #262626; }
+.offsidebar .profile .switch .icon-sun {
+color: #f8a035; }
+.offsidebar .profile .switch span {
+background-color: #212121;
+border: 1px solid rgba(86, 86, 86, 0.3); }
+.offsidebar .profile .switch span:after {
+background-color: #474747;
+border-color: #474747; }
+.offsidebar .profile a {
+color: #969696; }
+.offsidebar .profile .line {
+background-color: #494949; }
+.offsidebar .profile .content .circles li {
+color: #969696; }
+.offsidebar .profile .lang {
+color: #969696 !important;
+}
 
 .buysell_popup {
   background-color: #262626;

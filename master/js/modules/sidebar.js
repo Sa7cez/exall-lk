@@ -22,8 +22,7 @@
     // ----------------------------------- 
 
     var sidebarCollapse = $sidebar.find('.collapse');
-    sidebarCollapse.on('show.bs.collapse', function(event){
-
+    sidebarCollapse.on('click', function(event){
       event.stopPropagation();
       if ( $(this).parents('.collapse').length === 0 )
         sidebarCollapse.filter('.in').collapse('hide');
@@ -55,7 +54,6 @@
     var eventName = isTouch() ? 'click' : 'mouseenter' ;
     var subNav = $();
     $sidebar.on( eventName, '.nav > li', function() {
-
       if( isSidebarCollapsed() || useAsideHover() ) {
 
         subNav.trigger('mouseleave');
@@ -73,6 +71,7 @@
     if ( typeof sidebarAnyclickClose !== 'undefined' ) {
 
       $('.wrapper').on('click.sidebar', function(e){
+
         // don't check if sidebar not visible
         if( ! $body.hasClass('aside-toggled')) return;
 

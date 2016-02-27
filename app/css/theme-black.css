@@ -26,11 +26,8 @@ footer {
 footer .prefooter {
   border-color: #323539;
 }
-footer .footer .social {
-  opacity: .2;
-}
 footer .footer .social a, footer .footer .social span {
-  color: #FFF;
+  color: rgba(255, 255, 255, 0.3);
 }
 footer .footer .left {
   border-right: 1px solid #323539;
@@ -42,6 +39,9 @@ footer .footer .left .dark_version {
   display: block !important;
 }
 footer .footer ul li a {
+  color: rgba(255, 255, 255, 0.3);
+}
+footer .footer label {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -442,8 +442,9 @@ footer .footer ul li a {
 .offsidebar .profile .line {
   background-color: #494949;
 }
+.offsidebar .profile .leng, .offsidebar .profile .lang, .offsidebar .profile .icon-down-arrow,
 .offsidebar .profile .content .circles li {
-  color: #969696;
+  color: #969696 !important;
 }
 
 .buysell_popup {

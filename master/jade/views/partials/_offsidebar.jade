@@ -27,9 +27,6 @@ nav
         em.icon-edit
         a(href="#") Мои данные
       li 
-        em.icon-partner
-        a(href="#") Партнерская программа
-      li 
         em.icon-favorite
         a(href="#") Избранное
       li 
@@ -39,7 +36,20 @@ nav
 
     ul.menu
       li
-        em.icon-exit
-        a(href="") Выйти
+        .clearfix
+          .pull-left
+            em.icon-exit
+            a(href="") Выйти
+          .pull-right
+            .leng
+              .lenguage_changer(data-toggle="dropdown")
+                span.lang(data-localize="topbar.current_lenguage")
+                span.icon-down-arrow
+              ul.dropdown-menu.dropdown-menu-right.animated.fadeInUpShort(role='menu')
+                li
+                  a(href='#', data-set-lang="en") English
+                li
+                  a(href='#', data-set-lang="ru") Russian
+
 
 // END Off Sidebar (right)

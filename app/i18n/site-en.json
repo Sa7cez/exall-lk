@@ -113,7 +113,17 @@
       "TRADES": "Trades",
       "REFERRAL": "Partner Program",
       "HELP": "Help",
-      "NEWS": "News"
+      "NEWS": "News",
+      "BALANS":"Balans BTC",
+      "PAYMENTS":"Payments",
+      "HISTORY":"History",
+      "ORDERS":"Заявки/поручения",
+      "CASHIN":"Cash in/out",
+      "BLOCKCHAIN":"Blockchain check",
+      "FAQ":"FAQ",
+      "INSTRUCTIONS":"Instructions",
+      "SUPPORT":"Support",
+      "CONTACTUS":"Contact us"
     }
   }
 }

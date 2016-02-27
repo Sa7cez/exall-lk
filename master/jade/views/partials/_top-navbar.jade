@@ -4,7 +4,7 @@ nav.navbar.topnavbar(role='navigation')
     .navbar-header
       a.navbar-brand(href='#', data-toggle-state="aside-collapsed aside-toggled", data-no-persist="true") 
         .brand-logo
-          img.img-responsive(src="img/logo.svg", alt="Exall - Bitcoin everywhere")
+          img.img-responsive(src="img/exall_beta_white.svg", alt="Exall - Bitcoin everywhere")
         .brand-logo-collapsed
           // Button used to collapse the left sidebar. Only visible on tablet and desktops
           img.img-responsive(src="img/small_logo.svg", alt="Exall - Bitcoin everywhere", href='#', data-toggle-state="aside-collapsed").hidden-xs
@@ -33,6 +33,8 @@ nav.navbar.topnavbar(role='navigation')
         li.notification
           #notification_label.label.label-danger 4
           .dropdown-menu.animated.fadeIn
+            .archive
+              a(href="") Архив уведомлений
             ul.notifications
               li
                 a(href="#") Уведомление о чем-то интересном
@@ -68,15 +70,7 @@ nav.navbar.topnavbar(role='navigation')
             img.img-responsive(src="img/user/02.jpg", alt="User avatar")
 
         // START Language list
-        li.leng
-          .lenguage_changer(data-toggle="dropdown")
-              span.lang(data-localize="topbar.current_lenguage")
-              span.icon-down-arrow
-            ul.dropdown-menu.dropdown-menu-right.animated.fadeInUpShort(role='menu')
-              li
-                a(href='#', data-set-lang="en") English
-              li
-                a(href='#', data-set-lang="ru") Russian
+        
         // END Language list  
 
       // END Right Navbar

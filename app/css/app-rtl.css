@@ -1418,6 +1418,7 @@ _:-ms-lang(x),
 
 .topnavbar .open .wallet-dropdown .line span {
   padding-right: 10px;
+  font-size: 12px;
 }
 
 .topnavbar .notification {
@@ -1448,6 +1449,14 @@ _:-ms-lang(x),
   background-color: white;
   -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
   box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+}
+
+.topnavbar .notification .dropdown-menu .archive {
+  padding: 13px 30px 13px 35px;
+  line-height: 22px;
+  border-bottom: 1px solid #ced3dc;
+  font-size: 12px;
+  opacity: .4;
 }
 
 .topnavbar .notification .dropdown-menu ul {
@@ -1527,50 +1536,6 @@ _:-ms-lang(x),
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-}
-
-.topnavbar .leng {
-  position: relative;
-}
-
-.topnavbar .leng .lenguage_changer {
-  cursor: pointer;
-  width: 60px;
-  height: 30px;
-  border: 1px solid #4d5d79;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin: 18px 20px 0 15px;
-  font-size: 12px;
-  color: #fff;
-  padding: 5px 9px;
-}
-
-.topnavbar .leng .lenguage_changer .lang {
-  text-transform: uppercase;
-}
-
-.topnavbar .leng .lenguage_changer .icon-down-arrow {
-  float: left;
-  font-size: 8px;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.4);
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.topnavbar .leng .lenguage_changer:hover .icon-down-arrow {
-  color: #fff;
-}
-
-.topnavbar .leng .dropdown-menu {
-  left: -15px !important;
-  min-width: 110px;
-  background-color: white;
-  -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
-  box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
 }
 
 @media only screen and (max-width: 767px) {
@@ -1967,6 +1932,7 @@ $tablet-landscape: 1025px;
 
 .sidebar-subnav {
   background-color: #fff;
+  margin-bottom: 15px;
 }
 
 .sidebar-subnav > .sidebar-subnav-header {
@@ -1984,8 +1950,9 @@ $tablet-landscape: 1025px;
 .sidebar-subnav > li > .nav-item {
   display: block;
   position: relative;
-  padding: 10px 20px;
+  padding: 5px 20px;
   padding-right: 53px;
+  font-size: 12px;
   font-weight: normal;
   background-color: transparent !important;
   color: #000;
@@ -1995,7 +1962,7 @@ $tablet-landscape: 1025px;
 .sidebar-subnav > li > a:hover,
 .sidebar-subnav > li > .nav-item:focus,
 .sidebar-subnav > li > .nav-item:hover {
-  color: #000;
+  color: #acacac;
 }
 
 .sidebar-subnav > li > a > em,
@@ -4014,6 +3981,10 @@ label {
   font-size: 12px;
 }
 
+.offsidebar .profile .content .circles li a {
+  text-decoration: underline;
+}
+
 .offsidebar .profile .content .circles li .circle {
   display: inline-block;
   border: 1px solid rgba(98, 111, 133, 0.2);
@@ -4030,6 +4001,10 @@ label {
 
 .offsidebar .profile .content .circles li:hover {
   text-align: center;
+}
+
+.offsidebar .profile .content .circles li:hover a {
+  text-decoration: none;
 }
 
 .offsidebar .profile .content .circles li:hover .circle {
@@ -4051,6 +4026,51 @@ label {
   line-height: 35px;
   padding: 15px 19px;
   margin: 0;
+}
+
+.offsidebar .profile .menu .pull-right .leng {
+  position: relative;
+}
+
+.offsidebar .profile .menu .pull-right .leng .lenguage_changer {
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  border: 1px solid rgba(98, 111, 133, 0.2);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 3px 20px 0 15px;
+  font-size: 12px;
+  line-height: 17px;
+  color: black;
+  padding: 5px 9px;
+}
+
+.offsidebar .profile .menu .pull-right .leng .lenguage_changer .lang {
+  text-transform: uppercase;
+}
+
+.offsidebar .profile .menu .pull-right .leng .lenguage_changer .icon-down-arrow {
+  float: left;
+  font-size: 8px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.offsidebar .profile .menu .pull-right .leng .lenguage_changer:hover .icon-down-arrow {
+  color: black;
+}
+
+.offsidebar .profile .menu .pull-right .leng .dropdown-menu {
+  left: -15px !important;
+  min-width: 110px;
+  background-color: white;
+  -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+  box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
 }
 
 .offsidebar .profile .menu li {
@@ -5576,8 +5596,8 @@ div.dataTables_paginate ul.pagination li a {
 }
 
 #paymentTop .title {
-  font-size: 16px;
-  padding-bottom: 14px;
+  font-size: 15px;
+  padding-bottom: 15px;
   white-space: nowrap;
 }
 
@@ -5931,14 +5951,14 @@ footer .footer .left img {
   opacity: 0.3;
   width: 189px;
   height: 93px;
-  margin: 55px 0 3px;
+  margin: 55px 0 13px;
 }
 
 footer .footer .left img.dark_version {
   display: none;
-  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id…0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
-  filter: gray;
-  -webkit-filter: grayscale(100%);
+  /* filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id…0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+	        filter: gray;
+	        -webkit-filter: grayscale(100%); */
 }
 
 footer .footer .left p {
@@ -5950,20 +5970,29 @@ footer .footer .left p {
 }
 
 footer .footer ul {
-  float: right;
-  margin: 97px 0 0 0;
-  padding-right: 18%;
-  width: 44%;
+  margin: 0;
+  padding-right: 4%;
+  margin-bottom: 30px;
 }
 
 footer .footer ul li {
   list-style: none;
   line-height: 19px;
   padding: 8px 0;
+  white-space: nowrap;
+}
+
+footer .footer ul li.title {
+  font-weight: 500;
+  min-height: 35px;
+}
+
+footer .footer ul li.title a {
+  white-space: normal;
 }
 
 footer .footer ul li a {
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -5972,14 +6001,14 @@ footer .footer ul li a:hover {
 }
 
 footer .footer .social {
-  padding-top: 107px;
+  padding-top: 45px;
   padding-bottom: 42px;
+  padding-right: 6%;
   margin: 0;
 }
 
 @media (max-width: 992px) {
   footer .footer .social {
-    border-top: 1px solid #e0e2e7;
     margin: 0 -30px;
     padding: 42px 30px;
   }
@@ -6002,14 +6031,19 @@ footer .footer .social a:hover {
 footer .footer label {
   font-size: 14px;
   font-weight: 400;
-  margin-right: 19px;
   margin-bottom: 14px;
+  display: block;
 }
 
-footer .footer input {
+footer .footer form {
+  padding-top: 45px;
+}
+
+footer .footer form input {
   padding-right: 19px;
   height: 40px;
   width: 100%;
+  max-width: 250px;
   line-height: 40px;
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(98, 111, 133, 0.2);

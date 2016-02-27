@@ -76,9 +76,8 @@ footer {
   }
   .footer {
     .social {
-      opacity: .2;
       a, span {
-        color: #FFF;
+        color: rgba(255,255,255,.3);
       }
     }
     .left {
@@ -92,6 +91,9 @@ footer {
     }
 
     ul li a {
+      color:rgba(255,255,255,.3);
+    }
+    label {
       color:rgba(255,255,255,.3);
     }
   }
@@ -506,8 +508,9 @@ footer {
     .line {
       background-color: $nav-border-color;
     }
+    .leng, .lang, .icon-down-arrow,
     .content .circles li {
-      color: $offsidebar-color;
+      color: $offsidebar-color !important;
     }
   }
 }

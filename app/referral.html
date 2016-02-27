@@ -59,7 +59,7 @@
             <div class="navbar-header">
                <a href="#" data-toggle-state="aside-collapsed aside-toggled" data-no-persist="true" class="navbar-brand">
                   <div class="brand-logo">
-                     <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="img-responsive">
+                     <img src="img/exall_beta_white.svg" alt="Exall - Bitcoin everywhere" class="img-responsive">
                   </div>
                   <div class="brand-logo-collapsed">
                      <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
@@ -91,6 +91,8 @@
                   <li class="notification">
                      <div id="notification_label" class="label label-danger">4</div>
                      <div class="dropdown-menu animated fadeIn">
+                        <div class="archive"><a href="">Архив уведомлений</a>
+                        </div>
                         <ul class="notifications">
                            <li><a href="#">Уведомление о чем-то интересном</a>
                               <em class="icon-cross"></em>
@@ -135,18 +137,6 @@
                      </div>
                   </li>
                   <!-- START Language list-->
-                  <li class="leng">
-                     <div data-toggle="dropdown" class="lenguage_changer">
-                        <span data-localize="topbar.current_lenguage" class="lang"></span>
-                        <span class="icon-down-arrow"></span>
-                     </div>
-                     <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
-                        <li><a href="#" data-set-lang="en">English</a>
-                        </li>
-                        <li><a href="#" data-set-lang="ru">Russian</a>
-                        </li>
-                     </ul>
-                  </li>
                   <!-- END Language list  -->
                </ul>
                <!-- END Right Navbar-->
@@ -450,10 +440,43 @@
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="wallet.html">
-                        <em data-toggle="tooltip" data-placement="right" title="Wallet" class="icon-wallet"></em>
+                     <a href="wallet.html" title="Wallet" data-toggle="collapse">
+                        <em class="icon-wallet"></em>
                         <span data-localize="sidebar.nav.WALLET">Wallet</span>
                      </a>
+                     <ul id="wallet.html" class="nav sidebar-subnav collapse">
+                        <li class="sidebar-subnav-header">Wallet</li>
+                        <li class=" ">
+                           <a href="balans.html">
+                              <span data-localize="sidebar.nav.BALANS">Баланс BTC</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="payments.html">
+                              <span data-localize="sidebar.nav.PAYMENTS">Банковские счета</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="history.html">
+                              <span data-localize="sidebar.nav.HISTORY">История операций</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="orders.html">
+                              <span data-localize="sidebar.nav.ORDERS">Заявки/поручения</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="cashin.html">
+                              <span data-localize="sidebar.nav.CASHIN">Ввод/вывод BTC</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="blockchain-check.html">
+                              <span data-localize="sidebar.nav.BLOCKCHAIN">Проверка по Blockchain</span>
+                           </a>
+                        </li>
+                     </ul>
                   </li>
                   <li class=" ">
                      <a href="trades.html">
@@ -469,16 +492,33 @@
                      </a>
                   </li>
                   <li class=" ">
-                     <a href="help.html">
-                        <em data-toggle="tooltip" data-placement="right" title="Help" class="icon-help"></em>
+                     <a href="help.html" title="Help" data-toggle="collapse">
+                        <em class="icon-help"></em>
                         <span data-localize="sidebar.nav.HELP">Help</span>
                      </a>
-                  </li>
-                  <li class=" ">
-                     <a href="news.html">
-                        <em data-toggle="tooltip" data-placement="right" title="News" class="icon-news"></em>
-                        <span data-localize="sidebar.nav.NEWS">News</span>
-                     </a>
+                     <ul id="help.html" class="nav sidebar-subnav collapse">
+                        <li class="sidebar-subnav-header">Help</li>
+                        <li class=" ">
+                           <a href="faq.html">
+                              <span data-localize="sidebar.nav.FAQ">FAQ</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="instructions.html">
+                              <span data-localize="sidebar.nav.INSTRUCTIONS">Инструкции</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="support.html">
+                              <span data-localize="sidebar.nav.SUPPORT">Тех Поддержка</span>
+                           </a>
+                        </li>
+                        <li class=" ">
+                           <a href="contact_us.html">
+                              <span data-localize="sidebar.nav.CONTACTUS">Свяжитесь с нами</span>
+                           </a>
+                        </li>
+                     </ul>
                   </li>
                </ul>
                <!-- END sidebar nav-->
@@ -530,9 +570,6 @@
                      <em class="icon-edit"></em><a href="#">Мои данные</a>
                   </li>
                   <li>
-                     <em class="icon-partner"></em><a href="#">Партнерская программа</a>
-                  </li>
-                  <li>
                      <em class="icon-favorite"></em><a href="#">Избранное</a>
                   </li>
                   <li>
@@ -542,7 +579,25 @@
                <div class="line"></div>
                <ul class="menu">
                   <li>
-                     <em class="icon-exit"></em><a href="">Выйти</a>
+                     <div class="clearfix">
+                        <div class="pull-left">
+                           <em class="icon-exit"></em><a href="">Выйти</a>
+                        </div>
+                        <div class="pull-right">
+                           <div class="leng">
+                              <div data-toggle="dropdown" class="lenguage_changer">
+                                 <span data-localize="topbar.current_lenguage" class="lang"></span>
+                                 <span class="icon-down-arrow"></span>
+                              </div>
+                              <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+                                 <li><a href="#" data-set-lang="en">English</a>
+                                 </li>
+                                 <li><a href="#" data-set-lang="ru">Russian</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
                   </li>
                </ul>
             </div>
@@ -568,51 +623,80 @@
    <footer>
       <div class="footer clearfix">
          <div class="container-fluid">
-            <div class="col-xs-5 col-md-4 col-lg-3 left">
-               <img src="img/logo_gray.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
-               <img src="img/logo.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
+            <div class="col-xs-12 col-md-3 col-lg-3 left">
+               <img src="img/exall_beta.svg" alt="Exall - Bitcoin everywhere" class="light_version img-responsive">
+               <img src="img/exall_beta.svg" alt="Exall - Bitcoin everywhere" class="dark_version img-responsive">
                <p>DISCLAIMER: Bitcoin and crypto currencies prices are volatile and fluctuate day-to-day. Trading in these crypto currencies may be considered a high risk activity.Proper and sound judgement should be used in evaluating the risks associated
                   with these activities. ExAll does not solicit nor make any representation that crypto currencies are an investment vehicle.
                   <br>The decision to trade crypto currencies rests entirely on the users own independent judgement.</p>
             </div>
-            <div class="col-xs-7 col-md-5 col-lg-5">
-               <ul>
-                  <li><a>About</a>
-                  </li>
-                  <li><a>How it works?</a>
-                  </li>
-                  <li><a>Limits</a>
-                  </li>
-                  <li><a>Safety</a>
-                  </li>
-                  <li><a>Feedback</a>
-                  </li>
-                  <li><a>News</a>
-                  </li>
-               </ul>
-               <ul>
-                  <li><a>FAQ</a>
-                  </li>
-                  <li><a>Support</a>
-                  </li>
-                  <li><a>Terms of use</a>
-                  </li>
-                  <li><a>Partnership</a>
-                  </li>
-                  <li><a>Login</a>
-                  </li>
-               </ul>
-            </div>
-            <div class="col-xs-12 col-md-3 col-lg-2">
-               <div class="social">
-                  <span class="icon-youtube"></span>
-                  <span class="icon-twitter"></span>
-                  <span class="icon-facebook"></span>
+            <div class="col-xs-12 col-md-9 col-lg-8">
+               <div class="row">
+                  <div class="col-xs-6">
+                     <div class="social">
+                        <label>Мы в соцсетях –</label>
+                        <span class="icon-youtube"></span>
+                        <span class="icon-twitter"></span>
+                        <span class="icon-facebook"></span>
+                     </div>
+                  </div>
+                  <div class="col-xs-6">
+                     <form>
+                        <label for="subscribe">Subscribe for a newsletter:</label>
+                        <input id="subscribe" type="email" placeholder="Your email">
+                     </form>
+                  </div>
                </div>
-               <form>
-                  <label for="subscribe">Subscribe for a newsletter:</label>
-                  <input id="subscribe" type="email" placeholder="Your email">
-               </form>
+               <div class="row">
+                  <ul class="col-xs-3 col-md-2">
+                     <li class="title">Информация</li>
+                     <li><a>О нас</a>
+                     </li>
+                     <li><a>Как работает</a>
+                     </li>
+                     <li><a>Безопасность</a>
+                     </li>
+                     <li><a>Комиссии</a>
+                     </li>
+                  </ul>
+                  <ul class="col-xs-5 col-md-3">
+                     <li class="title"></li>
+                     <li><a>Новости</a>
+                     </li>
+                     <li><a>Отзывы</a>
+                     </li>
+                     <li><a>Форум</a>
+                     </li>
+                     <li><a>Партнерская программа</a>
+                     </li>
+                  </ul>
+                  <ul class="col-xs-4 col-md-2">
+                     <li class="title">Помощь</li>
+                     <li><a>FAQ</a>
+                     </li>
+                     <li><a>Инструкции</a>
+                     </li>
+                     <li><a>Тех поддержка</a>
+                     </li>
+                     <li><a>Свяжитесь с нами </a>
+                     </li>
+                  </ul>
+                  <ul class="col-xs-8 col-md-3">
+                     <li class="title">Документы</li>
+                     <li><a>Условия использования</a>
+                     </li>
+                     <li><a>Пользовательское соглашение</a>
+                     </li>
+                     <li><a>Политика конфиденциальности</a>
+                     </li>
+                     <li><a>Партнерское соглашение</a>
+                     </li>
+                  </ul>
+                  <ul class="col-xs-4 col-md-2">
+                     <li class="title"><a>Торговые предложения</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
          </div>
       </div>

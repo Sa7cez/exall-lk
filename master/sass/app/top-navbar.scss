@@ -372,6 +372,7 @@ $nav-border-color:              #4d5d79;
 
       span {
         padding-left: 10px;
+        font-size:12px;
       }
     }
   }
@@ -398,6 +399,13 @@ $nav-border-color:              #4d5d79;
       background-color: white;
       -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
       box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+      .archive {
+        padding:13px 35px 13px 30px;
+        line-height: 22px;
+        border-bottom: 1px solid #ced3dc;
+        font-size:12px;
+        opacity: .4;
+      }
       ul {
         padding-left: 0;
         list-style:none;
@@ -470,45 +478,6 @@ $nav-border-color:              #4d5d79;
       width: 46px;
       height: 46px;
       @include border-radius(50%);
-    }
-  }
-  .leng {
-    position: relative;
-    .lenguage_changer {
-      cursor: pointer;
-      width: 60px;
-      height: 30px;
-      border: 1px solid $nav-border-color;
-      @include border-radius(3px);
-      margin:18px 15px 0 20px;
-      font-size: 12px;
-      color: $nav-top-item-desktop;
-      padding:5px 9px;
-
-      .lang {
-        text-transform: uppercase;
-      }
-
-      .icon-down-arrow {
-        float: right;
-        font-size: 8px;
-        line-height: 20px;
-        color: rgba(255,255,255,.4);
-        @include transition(all .3s);
-      }
-
-      &:hover {
-        .icon-down-arrow {
-          color: $nav-top-item-desktop;
-        }
-      }
-    }
-    .dropdown-menu {
-        right: -15px !important;
-        min-width: 110px;
-        background-color: white;
-        -webkit-box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
-        box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
     }
   }
 }
