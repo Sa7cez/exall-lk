@@ -21,20 +21,67 @@ nav.navbar.topnavbar(role='navigation')
         li.wallet-opener
           .wallet
             em.icon-wallet
-            | 2.43567823
+            | 2.43567823 BTC
           .wallet-dropdown.dropdown-menu.dropdown-menu-right.animated.fadeIn
+            .top-line.clearfix 
+              .pull-left
+                | Криптовалюта
+                select.delay-selector
+                  option(value="BTC") BTC
+                  option(value="LTC") LTC
+                  option(value="EPR") EPR
+                  option(value="DLC") DLC
+              a.pull-right
+                em.icon-wallet
+                | В кошелек
+
             .line
-              | 0.23646723
-              span(data-localize="topbar.confirmation") 
+
+            ul
+              li
+                em.icon-info
+                a(href="#") Доступно
+                .count 2.43567823
+              li.center
+                | Депонировано
+                .count 0.27645352
+              li
+                | Ожидает
+                .count 1.27645351
+
             .line
-              | 0.23646723
-              span(data-localize="topbar.deposited")
+
+            .qr
+              img(src="img/qr_code.jpg", alt="QR code")
+              | Нажмите на QR-код, чтобы пополнить автоматически
+            form.address
+              | Отправьте биткоины на этот адрес, чтобы пополнить кошелек:
+              .code 1FXwtJuCMVfB5ehTS4ThBsJo9n3fChKuT9
+              button.refresh.btn.btn-transparent Обновить адрес
+              .line
+              | Или введите биткоины через встроенный клиент:
+              br
+              .selects
+                | BTC: 
+                input.input-sm
+                select.delay-selector
+                  option(value='RUB') RUB
+                  option(value='USD') USD
+                  option(value='EUR') EUR
+                  option(value='DKK') DKK
+                  option(value='ZAR') ZAR
+                  option(value='RON') RON
+                  option(value='JPY') JPY
+                  option(value='CNY') CNY
+                input.input-sm
+              input(type="submit", value="Пополнить").btn.btn-green.btn-sm
+
         // Notification icon
         li.notification
           #notification_label.label.label-danger 4
           .dropdown-menu.animated.fadeIn
             .archive
-              a(href="") Архив уведомлений
+              a(href="#") Архив уведомлений
             ul.notifications
               li
                 a(href="#") Уведомление о чем-то интересном
@@ -78,9 +125,56 @@ nav.navbar.topnavbar(role='navigation')
       // START Currencies bar
       .nav.navbar-nav.navbar-left.currencies-wrapper
         .currencies
-          .border
+          #BTC-informer.border
+            em.icon-cross
+            .currency-name BTC
+            .chooser
+              div.icon-down-arrow(data-toggle="open-currencies")
+              .chooser_popup.dropdown-menu.animated.fadeIn
+                fieldset
+                  .form-group.needsclick
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='RUB').needsclick
+                        span.icon-checkbox_checked
+                        | RUB
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='CNY')
+                        span.icon-checkbox_checked
+                        | CNY
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='ZAR')
+                        span.icon-checkbox_checked
+                        | ZAR
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='RON')
+                        span.icon-checkbox_checked
+                        | RON
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='USD')
+                        span.icon-checkbox_checked
+                        | USD
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='EUR')
+                        span.icon-checkbox_checked
+                        | EUR
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='JPY')
+                        span.icon-checkbox_checked
+                        | JPY
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='DKK')
+                        span.icon-checkbox_checked
+                        | DKK
             ul
-              li#RUB_info
+              li.RUB_info
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -102,7 +196,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down
                   span 24 605 RUB
-              li#CNY_info
+              li.CNY_info
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -124,7 +218,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-up
                   span 150 CNY
-              li#ZAR_info
+              li.ZAR_info(style="display:none")
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -146,7 +240,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down
                   span 150 ZAR
-              li#RON_info
+              li.RON_info(style="display:none")
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -168,8 +262,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down 
                   span 140 RON
-            ul
-              li#USD_info
+              li.USD_info(style="display:none")
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -191,7 +284,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-up
                   span 250 USD
-              li#EUR_info
+              li.EUR_info(style="display:none")
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -213,7 +306,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down
                   span 220 EUR
-              li#JPY_info
+              li.JPY_info(style="display:none")
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -235,7 +328,7 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-up 
                   span 220 JPY
-              li#DKK_info
+              li.DKK_info(style="display:none")
                 .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
                   .arrow
                   table
@@ -257,51 +350,706 @@ nav.navbar.topnavbar(role='navigation')
                 span(data-toggle="dropdown")
                   em.icon-small-arrow-down 
                   span 223 DKK
-          .chooser
-            div.icon-down-arrow(data-toggle="open-currencies")
-            .chooser_popup.dropdown-menu.animated.fadeIn
+          #LTC-informer.border
+            em.icon-cross
+            .currency-name LTC
+            .chooser
+              div.icon-down-arrow(data-toggle="open-currencies")
+              .chooser_popup.dropdown-menu.animated.fadeIn
+                fieldset
+                  .form-group.needsclick
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='RUB').needsclick
+                        span.icon-checkbox_checked
+                        | RUB
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='CNY')
+                        span.icon-checkbox_checked
+                        | CNY
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='ZAR')
+                        span.icon-checkbox_checked
+                        | ZAR
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='RON')
+                        span.icon-checkbox_checked
+                        | RON
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='USD')
+                        span.icon-checkbox_checked
+                        | USD
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='EUR')
+                        span.icon-checkbox_checked
+                        | EUR
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='JPY')
+                        span.icon-checkbox_checked
+                        | JPY
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='DKK')
+                        span.icon-checkbox_checked
+                        | DKK
+            ul
+              li.RUB_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 USD (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 24 605 RUB
+              li.CNY_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 CNY (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 CNY (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 CNY (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 150 CNY
+              li.ZAR_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 ZAR (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 ZAR (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 ZAR (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 150 ZAR
+              li.RON_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 RON (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 RON (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 RON (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 140 RON
+              li.USD_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 USD (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 250 USD
+              li.EUR_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 EUR (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 EUR (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 EUR (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 220 EUR
+              li.JPY_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 JPY (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 JPY (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 JPY (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up 
+                  span 220 JPY
+              li.DKK_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 DKK (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 DKK (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 DKK (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 223 DKK
+          #ETH-informer.border(style="display:none")
+            em.icon-cross
+            .currency-name ETH
+            .chooser
+              div.icon-down-arrow(data-toggle="open-currencies")
+              .chooser_popup.dropdown-menu.animated.fadeIn
+                fieldset
+                  .form-group.needsclick
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='RUB').needsclick
+                        span.icon-checkbox_checked
+                        | RUB
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='CNY')
+                        span.icon-checkbox_checked
+                        | CNY
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='ZAR')
+                        span.icon-checkbox_checked
+                        | ZAR
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='RON')
+                        span.icon-checkbox_checked
+                        | RON
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='USD')
+                        span.icon-checkbox_checked
+                        | USD
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='EUR')
+                        span.icon-checkbox_checked
+                        | EUR
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='JPY')
+                        span.icon-checkbox_checked
+                        | JPY
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='DKK')
+                        span.icon-checkbox_checked
+                        | DKK
+            ul
+              li.RUB_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 USD (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 24 605 RUB
+              li.CNY_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 CNY (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 CNY (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 CNY (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 150 CNY
+              li.ZAR_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 ZAR (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 ZAR (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 ZAR (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 150 ZAR
+              li.RON_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 RON (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 RON (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 RON (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 140 RON
+              li.USD_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 USD (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 250 USD
+              li.EUR_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 EUR (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 EUR (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 EUR (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 220 EUR
+              li.JPY_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 JPY (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 JPY (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 JPY (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up 
+                  span 220 JPY
+              li.DKK_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 DKK (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 DKK (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 DKK (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 223 DKK
+          #DLC-informer.border(style="display:none")
+            em.icon-cross
+            .currency-name DLC
+            .chooser
+              div.icon-down-arrow(data-toggle="open-currencies")
+              .chooser_popup.dropdown-menu.animated.fadeIn
+                fieldset
+                  .form-group.needsclick
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='RUB').needsclick
+                        span.icon-checkbox_checked
+                        | RUB
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='CNY')
+                        span.icon-checkbox_checked
+                        | CNY
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='ZAR')
+                        span.icon-checkbox_checked
+                        | ZAR
+                    .checkbox.c-checkbox
+                      label
+                        input(type='checkbox', checked='', value='RON')
+                        span.icon-checkbox_checked
+                        | RON
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='USD')
+                        span.icon-checkbox_checked
+                        | USD
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='EUR')
+                        span.icon-checkbox_checked
+                        | EUR
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='JPY')
+                        span.icon-checkbox_checked
+                        | JPY
+                    .checkbox.c-checkbox.needsclick
+                      label.needsclick
+                        input(type='checkbox', checked='', value='DKK')
+                        span.icon-checkbox_checked
+                        | DKK
+            ul
+              li.RUB_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 USD (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 24 605 RUB
+              li.CNY_info
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 CNY (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 CNY (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 CNY (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 150 CNY
+              li.ZAR_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 ZAR (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 ZAR (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 ZAR (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 150 ZAR
+              li.RON_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 RON (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 RON (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 RON (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 140 RON
+              li.USD_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 USD (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 USD (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 USD (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up
+                  span 250 USD
+              li.EUR_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 EUR (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 EUR (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 EUR (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down
+                  span 220 EUR
+              li.JPY_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 JPY (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 JPY (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 JPY (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-up 
+                  span 220 JPY
+              li.DKK_info(style="display:none")
+                .dropdown-menu.dropdown-menu-right.animated.fadeInUpShort.popover_cur
+                  .arrow
+                  table
+                    tr
+                      td(data-localize="topbar.for_hour")
+                      td 
+                        em.icon-small-arrow-up
+                        | $0.79 DKK (0.18%)
+                    tr
+                      td(data-localize="topbar.for_day")
+                      td 
+                        em.icon-small-arrow-up
+                        | $5.79 DKK (1.48%)
+                    tr
+                      td(data-localize="topbar.for_week")
+                      td 
+                        em.icon-small-arrow-up
+                        | $15.79 DKK (5.67%)
+                span(data-toggle="dropdown")
+                  em.icon-small-arrow-down 
+                  span 223 DKK
+          .plus
+            em.icon-plus(data-toggle="open-plus-currencies")
+            .variants.dropdown-menu.animated.fadeIn
               fieldset
                 .form-group.needsclick
                   .checkbox.c-checkbox.needsclick
                     label.needsclick
-                      input(type='checkbox', checked='', value='RUB').needsclick
+                      input(type='checkbox', checked='', value='BTC')
                       span.icon-checkbox_checked
-                      | RUB
+                      | 2.43567823 BTC
                   .checkbox.c-checkbox
                     label
-                      input(type='checkbox', checked='', value='CNY')
+                      input(type='checkbox', checked='', value='LTC')
                       span.icon-checkbox_checked
-                      | CNY
+                      | 1.36746834 LTC
                   .checkbox.c-checkbox
                     label
-                      input(type='checkbox', checked='', value='ZAR')
+                      input(type='checkbox', checked='', value='ETH')
                       span.icon-checkbox_checked
-                      | ZAR
+                      | 4.4747 ETH
                   .checkbox.c-checkbox
                     label
-                      input(type='checkbox', checked='', value='RON')
+                      input(type='checkbox', checked='', value='DLC')
                       span.icon-checkbox_checked
-                      | RON
-                  .checkbox.c-checkbox.needsclick
-                    label.needsclick
-                      input(type='checkbox', checked='', value='USD')
-                      span.icon-checkbox_checked
-                      | USD
-                  .checkbox.c-checkbox.needsclick
-                    label.needsclick
-                      input(type='checkbox', checked='', value='EUR')
-                      span.icon-checkbox_checked
-                      | EUR
-                  .checkbox.c-checkbox.needsclick
-                    label.needsclick
-                      input(type='checkbox', checked='', value='JPY')
-                      span.icon-checkbox_checked
-                      | JPY
-                  .checkbox.c-checkbox.needsclick
-                    label.needsclick
-                      input(type='checkbox', checked='', value='DKK')
-                      span.icon-checkbox_checked
-                      | DKK
+                      | 523434 DLC
       // END Currencies bar
   
     // END Nav wrapper

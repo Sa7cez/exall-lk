@@ -21,10 +21,8 @@ footer {
   color: rgba(255, 255, 255, 0.3); }
   footer .prefooter {
     border-color: #323539; }
-  footer .footer .social {
-    opacity: .2; }
-    footer .footer .social a, footer .footer .social span {
-      color: #FFF; }
+  footer .footer .social a, footer .footer .social span {
+    color: rgba(255, 255, 255, 0.3); }
   footer .footer .left {
     border-right: 1px solid #323539; }
     footer .footer .left .light_version {
@@ -32,6 +30,8 @@ footer {
     footer .footer .left .dark_version {
       display: block !important; }
   footer .footer ul li a {
+    color: rgba(255, 255, 255, 0.3); }
+  footer .footer label {
     color: rgba(255, 255, 255, 0.3); }
 
 #buysell,
@@ -196,7 +196,7 @@ footer {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF212121', endColorstr='#FF212121', GradientType=1); }
   .topnavbar .currencies .border {
     border-color: #494949; }
-  .offsidebar .lenguage_changer,
+  .topnavbar .lenguage_changer,
   .topnavbar .profile {
     border-color: #494949;
     color: rgba(255, 255, 255, 0.4); }
@@ -237,7 +237,14 @@ footer {
         color: black; } }
 /* ========================================================================
    Component: sidebar
- ======================================================================= */
+ ========================================================================== */
+.tooltip-inner {
+  color: #000;
+  background-color: #fff; }
+
+.tooltip.right .tooltip-arrow {
+  border-right-color: #fff; }
+
 .sidebar {
   background-color: #262626; }
   .sidebar .nav-heading {
@@ -305,29 +312,37 @@ footer {
 /* ========================================================================
    Component: offsidebar
  ========================================================================== */
+.switch .icon-sun {
+  color: #f8a035; }
+.switch span {
+  background-color: #212121;
+  border: 1px solid rgba(86, 86, 86, 0.3); }
+  .switch span:after {
+    background-color: #474747;
+    border-color: #474747; }
+
+.notification em {
+  color: #c7cbd3 !important; }
+  .notification em.active {
+    color: #f8a035 !important; }
+.notification li {
+  border-bottom: 1px solid #494949 !important; }
+  .notification li a {
+    color: rgba(255, 255, 255, 0.4); }
+
 .offsidebar {
-border: none;
-background-color: transparent;
-color: #969696; }
-.offsidebar .profile {
-background-color: #262626; }
-.offsidebar .profile .switch .icon-sun {
-color: #f8a035; }
-.offsidebar .profile .switch span {
-background-color: #212121;
-border: 1px solid rgba(86, 86, 86, 0.3); }
-.offsidebar .profile .switch span:after {
-background-color: #474747;
-border-color: #474747; }
-.offsidebar .profile a {
-color: #969696; }
-.offsidebar .profile .line {
-background-color: #494949; }
-.offsidebar .profile .content .circles li {
-color: #969696; }
-.offsidebar .profile .lang {
-color: #969696 !important;
-}
+  border: none;
+  background-color: transparent;
+  color: #969696; }
+  .offsidebar .profile {
+    background-color: #262626; }
+    .offsidebar .profile a {
+      color: #969696; }
+    .offsidebar .profile .line {
+      background-color: #494949; }
+    .offsidebar .profile .leng, .offsidebar .profile .lang, .offsidebar .profile .icon-down-arrow,
+    .offsidebar .profile .content .circles li {
+      color: #969696 !important; }
 
 .buysell_popup {
   background-color: #262626;
@@ -338,6 +353,8 @@ color: #969696 !important;
   .buysell_popup a, .buysell_popup em, .buysell_popup .text {
     color: rgba(255, 255, 255, 0.4); }
   .buysell_popup .order.opened {
+    background-color: #2B2B2B; }
+  .buysell_popup .order.closed:hover {
     background-color: #2B2B2B; }
   .buysell_popup .line {
     background-color: #484848; }

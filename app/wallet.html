@@ -77,21 +77,64 @@
                   <!-- Wallet icon-->
                   <li class="wallet-opener">
                      <div class="wallet">
-                        <em class="icon-wallet"></em>2.43567823</div>
+                        <em class="icon-wallet"></em>2.43567823 BTC</div>
                      <div class="wallet-dropdown dropdown-menu dropdown-menu-right animated fadeIn">
-                        <div class="line">0.23646723
-                           <span data-localize="topbar.confirmation"></span>
+                        <div class="top-line clearfix">
+                           <div class="pull-left">Криптовалюта
+                              <select class="delay-selector">
+                                 <option value="BTC">BTC</option>
+                                 <option value="LTC">LTC</option>
+                                 <option value="EPR">EPR</option>
+                                 <option value="DLC">DLC</option>
+                              </select>
+                           </div>
+                           <a class="pull-right">
+                              <em class="icon-wallet"></em>В кошелек</a>
                         </div>
-                        <div class="line">0.23646723
-                           <span data-localize="topbar.deposited"></span>
-                        </div>
+                        <div class="line"></div>
+                        <ul>
+                           <li>
+                              <em class="icon-info"></em><a href="#">Доступно</a>
+                              <div class="count">2.43567823</div>
+                           </li>
+                           <li class="center">Депонировано
+                              <div class="count">0.27645352</div>
+                           </li>
+                           <li>Ожидает
+                              <div class="count">1.27645351</div>
+                           </li>
+                        </ul>
+                        <div class="line"></div>
+                        <div class="qr">
+                           <img src="img/qr_code.jpg" alt="QR code">Нажмите на QR-код, чтобы пополнить автоматически</div>
+                        <form class="address">Отправьте биткоины на этот адрес, чтобы пополнить кошелек:
+                           <div class="code">1FXwtJuCMVfB5ehTS4ThBsJo9n3fChKuT9</div>
+                           <button class="refresh btn btn-transparent">Обновить адрес</button>
+                           <div class="line"></div>Или введите биткоины через встроенный клиент:
+                           <br>
+                           <div class="selects">BTC:
+                              <input class="input-sm">
+                              <select class="delay-selector">
+                                 <option value="RUB">RUB</option>
+                                 <option value="USD">USD</option>
+                                 <option value="EUR">EUR</option>
+                                 <option value="DKK">DKK</option>
+                                 <option value="ZAR">ZAR</option>
+                                 <option value="RON">RON</option>
+                                 <option value="JPY">JPY</option>
+                                 <option value="CNY">CNY</option>
+                              </select>
+                              <input class="input-sm">
+                           </div>
+                           <input type="submit" value="Пополнить" class="btn btn-green btn-sm">
+                        </form>
                      </div>
                   </li>
                   <!-- Notification icon-->
                   <li class="notification">
                      <div id="notification_label" class="label label-danger">4</div>
                      <div class="dropdown-menu animated fadeIn">
-                        <div class="archive"><a href="">Архив уведомлений</a>
+                        <div class="archive"><a href="#">Архив уведомлений</a>
                         </div>
                         <ul class="notifications">
                            <li><a href="#">Уведомление о чем-то интересном</a>
@@ -143,9 +186,60 @@
                <!-- START Currencies bar-->
                <div class="nav navbar-nav navbar-left currencies-wrapper">
                   <div class="currencies">
-                     <div class="border">
+                     <div id="BTC-informer" class="border">
+                        <em class="icon-cross"></em>
+                        <div class="currency-name">BTC</div>
+                        <div class="chooser">
+                           <div data-toggle="open-currencies" class="icon-down-arrow"></div>
+                           <div class="chooser_popup dropdown-menu animated fadeIn">
+                              <fieldset>
+                                 <div class="form-group needsclick">
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="RUB" class="needsclick">
+                                          <span class="icon-checkbox_checked"></span>RUB</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="CNY">
+                                          <span class="icon-checkbox_checked"></span>CNY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="ZAR">
+                                          <span class="icon-checkbox_checked"></span>ZAR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="RON">
+                                          <span class="icon-checkbox_checked"></span>RON</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="USD">
+                                          <span class="icon-checkbox_checked"></span>USD</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="EUR">
+                                          <span class="icon-checkbox_checked"></span>EUR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="JPY">
+                                          <span class="icon-checkbox_checked"></span>JPY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="DKK">
+                                          <span class="icon-checkbox_checked"></span>DKK</label>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </div>
+                        </div>
                         <ul>
-                           <li id="RUB_info">
+                           <li class="RUB_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -171,7 +265,7 @@
                                  <span>24 605 RUB</span>
                               </span>
                            </li>
-                           <li id="CNY_info">
+                           <li class="CNY_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -197,7 +291,7 @@
                                  <span>150 CNY</span>
                               </span>
                            </li>
-                           <li id="ZAR_info">
+                           <li style="display:none" class="ZAR_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -223,7 +317,7 @@
                                  <span>150 ZAR</span>
                               </span>
                            </li>
-                           <li id="RON_info">
+                           <li style="display:none" class="RON_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -249,9 +343,7 @@
                                  <span>140 RON</span>
                               </span>
                            </li>
-                        </ul>
-                        <ul>
-                           <li id="USD_info">
+                           <li style="display:none" class="USD_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -277,7 +369,7 @@
                                  <span>250 USD</span>
                               </span>
                            </li>
-                           <li id="EUR_info">
+                           <li style="display:none" class="EUR_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -303,7 +395,7 @@
                                  <span>220 EUR</span>
                               </span>
                            </li>
-                           <li id="JPY_info">
+                           <li style="display:none" class="JPY_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -329,7 +421,7 @@
                                  <span>220 JPY</span>
                               </span>
                            </li>
-                           <li id="DKK_info">
+                           <li style="display:none" class="DKK_info">
                               <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
                                  <div class="arrow"></div>
                                  <table>
@@ -357,50 +449,819 @@
                            </li>
                         </ul>
                      </div>
-                     <div class="chooser">
-                        <div data-toggle="open-currencies" class="icon-down-arrow"></div>
-                        <div class="chooser_popup dropdown-menu animated fadeIn">
+                     <div id="LTC-informer" class="border">
+                        <em class="icon-cross"></em>
+                        <div class="currency-name">LTC</div>
+                        <div class="chooser">
+                           <div data-toggle="open-currencies" class="icon-down-arrow"></div>
+                           <div class="chooser_popup dropdown-menu animated fadeIn">
+                              <fieldset>
+                                 <div class="form-group needsclick">
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="RUB" class="needsclick">
+                                          <span class="icon-checkbox_checked"></span>RUB</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="CNY">
+                                          <span class="icon-checkbox_checked"></span>CNY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="ZAR">
+                                          <span class="icon-checkbox_checked"></span>ZAR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="RON">
+                                          <span class="icon-checkbox_checked"></span>RON</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="USD">
+                                          <span class="icon-checkbox_checked"></span>USD</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="EUR">
+                                          <span class="icon-checkbox_checked"></span>EUR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="JPY">
+                                          <span class="icon-checkbox_checked"></span>JPY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="DKK">
+                                          <span class="icon-checkbox_checked"></span>DKK</label>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </div>
+                        </div>
+                        <ul>
+                           <li style="display:none" class="RUB_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>24 605 RUB</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="CNY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 CNY (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 CNY (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 CNY (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>150 CNY</span>
+                              </span>
+                           </li>
+                           <li class="ZAR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 ZAR (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 ZAR (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 ZAR (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>150 ZAR</span>
+                              </span>
+                           </li>
+                           <li class="RON_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 RON (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 RON (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 RON (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>140 RON</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="USD_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>250 USD</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="EUR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 EUR (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 EUR (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 EUR (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>220 EUR</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="JPY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 JPY (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 JPY (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 JPY (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>220 JPY</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="DKK_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 DKK (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 DKK (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 DKK (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>223 DKK</span>
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div id="ETH-informer" style="display:none" class="border">
+                        <em class="icon-cross"></em>
+                        <div class="currency-name">ETH</div>
+                        <div class="chooser">
+                           <div data-toggle="open-currencies" class="icon-down-arrow"></div>
+                           <div class="chooser_popup dropdown-menu animated fadeIn">
+                              <fieldset>
+                                 <div class="form-group needsclick">
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="RUB" class="needsclick">
+                                          <span class="icon-checkbox_checked"></span>RUB</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="CNY">
+                                          <span class="icon-checkbox_checked"></span>CNY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="ZAR">
+                                          <span class="icon-checkbox_checked"></span>ZAR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="RON">
+                                          <span class="icon-checkbox_checked"></span>RON</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="USD">
+                                          <span class="icon-checkbox_checked"></span>USD</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="EUR">
+                                          <span class="icon-checkbox_checked"></span>EUR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="JPY">
+                                          <span class="icon-checkbox_checked"></span>JPY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="DKK">
+                                          <span class="icon-checkbox_checked"></span>DKK</label>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </div>
+                        </div>
+                        <ul>
+                           <li class="RUB_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>24 605 RUB</span>
+                              </span>
+                           </li>
+                           <li class="CNY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 CNY (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 CNY (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 CNY (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>150 CNY</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="ZAR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 ZAR (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 ZAR (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 ZAR (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>150 ZAR</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="RON_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 RON (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 RON (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 RON (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>140 RON</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="USD_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>250 USD</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="EUR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 EUR (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 EUR (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 EUR (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>220 EUR</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="JPY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 JPY (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 JPY (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 JPY (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>220 JPY</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="DKK_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 DKK (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 DKK (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 DKK (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>223 DKK</span>
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div id="DLC-informer" style="display:none" class="border">
+                        <em class="icon-cross"></em>
+                        <div class="currency-name">DLC</div>
+                        <div class="chooser">
+                           <div data-toggle="open-currencies" class="icon-down-arrow"></div>
+                           <div class="chooser_popup dropdown-menu animated fadeIn">
+                              <fieldset>
+                                 <div class="form-group needsclick">
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="RUB" class="needsclick">
+                                          <span class="icon-checkbox_checked"></span>RUB</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="CNY">
+                                          <span class="icon-checkbox_checked"></span>CNY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="ZAR">
+                                          <span class="icon-checkbox_checked"></span>ZAR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox">
+                                       <label>
+                                          <input type="checkbox" checked="" value="RON">
+                                          <span class="icon-checkbox_checked"></span>RON</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="USD">
+                                          <span class="icon-checkbox_checked"></span>USD</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="EUR">
+                                          <span class="icon-checkbox_checked"></span>EUR</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="JPY">
+                                          <span class="icon-checkbox_checked"></span>JPY</label>
+                                    </div>
+                                    <div class="checkbox c-checkbox needsclick">
+                                       <label class="needsclick">
+                                          <input type="checkbox" checked="" value="DKK">
+                                          <span class="icon-checkbox_checked"></span>DKK</label>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </div>
+                        </div>
+                        <ul>
+                           <li class="RUB_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>24 605 RUB</span>
+                              </span>
+                           </li>
+                           <li class="CNY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 CNY (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 CNY (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 CNY (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>150 CNY</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="ZAR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 ZAR (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 ZAR (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 ZAR (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>150 ZAR</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="RON_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 RON (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 RON (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 RON (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>140 RON</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="USD_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 USD (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 USD (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 USD (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>250 USD</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="EUR_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 EUR (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 EUR (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 EUR (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>220 EUR</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="JPY_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 JPY (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 JPY (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 JPY (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-up"></em>
+                                 <span>220 JPY</span>
+                              </span>
+                           </li>
+                           <li style="display:none" class="DKK_info">
+                              <div class="dropdown-menu dropdown-menu-right animated fadeInUpShort popover_cur">
+                                 <div class="arrow"></div>
+                                 <table>
+                                    <tr>
+                                       <td data-localize="topbar.for_hour"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$0.79 DKK (0.18%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_day"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$5.79 DKK (1.48%)</td>
+                                    </tr>
+                                    <tr>
+                                       <td data-localize="topbar.for_week"></td>
+                                       <td>
+                                          <em class="icon-small-arrow-up"></em>$15.79 DKK (5.67%)</td>
+                                    </tr>
+                                 </table>
+                              </div>
+                              <span data-toggle="dropdown">
+                                 <em class="icon-small-arrow-down"></em>
+                                 <span>223 DKK</span>
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="plus">
+                        <em data-toggle="open-plus-currencies" class="icon-plus"></em>
+                        <div class="variants dropdown-menu animated fadeIn">
                            <fieldset>
                               <div class="form-group needsclick">
                                  <div class="checkbox c-checkbox needsclick">
                                     <label class="needsclick">
-                                       <input type="checkbox" checked="" value="RUB" class="needsclick">
-                                       <span class="icon-checkbox_checked"></span>RUB</label>
+                                       <input type="checkbox" checked="" value="BTC">
+                                       <span class="icon-checkbox_checked"></span>2.43567823 BTC</label>
                                  </div>
                                  <div class="checkbox c-checkbox">
                                     <label>
-                                       <input type="checkbox" checked="" value="CNY">
-                                       <span class="icon-checkbox_checked"></span>CNY</label>
+                                       <input type="checkbox" checked="" value="LTC">
+                                       <span class="icon-checkbox_checked"></span>1.36746834 LTC</label>
                                  </div>
                                  <div class="checkbox c-checkbox">
                                     <label>
-                                       <input type="checkbox" checked="" value="ZAR">
-                                       <span class="icon-checkbox_checked"></span>ZAR</label>
+                                       <input type="checkbox" checked="" value="ETH">
+                                       <span class="icon-checkbox_checked"></span>4.4747 ETH</label>
                                  </div>
                                  <div class="checkbox c-checkbox">
                                     <label>
-                                       <input type="checkbox" checked="" value="RON">
-                                       <span class="icon-checkbox_checked"></span>RON</label>
-                                 </div>
-                                 <div class="checkbox c-checkbox needsclick">
-                                    <label class="needsclick">
-                                       <input type="checkbox" checked="" value="USD">
-                                       <span class="icon-checkbox_checked"></span>USD</label>
-                                 </div>
-                                 <div class="checkbox c-checkbox needsclick">
-                                    <label class="needsclick">
-                                       <input type="checkbox" checked="" value="EUR">
-                                       <span class="icon-checkbox_checked"></span>EUR</label>
-                                 </div>
-                                 <div class="checkbox c-checkbox needsclick">
-                                    <label class="needsclick">
-                                       <input type="checkbox" checked="" value="JPY">
-                                       <span class="icon-checkbox_checked"></span>JPY</label>
-                                 </div>
-                                 <div class="checkbox c-checkbox needsclick">
-                                    <label class="needsclick">
-                                       <input type="checkbox" checked="" value="DKK">
-                                       <span class="icon-checkbox_checked"></span>DKK</label>
+                                       <input type="checkbox" checked="" value="DLC">
+                                       <span class="icon-checkbox_checked"></span>523434 DLC</label>
                                  </div>
                               </div>
                            </fieldset>
@@ -419,6 +1280,14 @@
          <!-- START Sidebar (left)-->
          <div class="aside-inner">
             <nav data-sidebar-anyclick-close="" class="sidebar">
+               <div class="selector">
+                  <select class="delay-selector">
+                     <option value="BTC">BTC</option>
+                     <option value="LTC">LTC</option>
+                     <option value="EPR">EPR</option>
+                     <option value="DLC">DLC</option>
+                  </select>
+               </div>
                <div data-toggle="tooltip" data-placement="right" title="Collapse menu" class="hamburger">
                   <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
                   <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
@@ -437,6 +1306,12 @@
                         <div class="pull-right label label-success">5</div>
                         <em data-toggle="tooltip" data-placement="right" title="Dashboard" class="icon-dashboard"></em>
                         <span data-localize="sidebar.nav.DASHBOARD">Dashboard</span>
+                     </a>
+                  </li>
+                  <li class=" ">
+                     <a href="trades.html">
+                        <em data-toggle="tooltip" data-placement="right" title="Trades" class="icon-trades"></em>
+                        <span data-localize="sidebar.nav.TRADES">Trades</span>
                      </a>
                   </li>
                   <li class=" active">
@@ -477,13 +1352,6 @@
                            </a>
                         </li>
                      </ul>
-                  </li>
-                  <li class=" ">
-                     <a href="trades.html">
-                        <div class="pull-right label label-success">30</div>
-                        <em data-toggle="tooltip" data-placement="right" title="Trades" class="icon-trades"></em>
-                        <span data-localize="sidebar.nav.TRADES">Trades</span>
-                     </a>
                   </li>
                   <li class=" ">
                      <a href="referral.html">
@@ -711,6 +1579,52 @@
          </div>
       </div>
    </footer>
+   <div id="yesNoModal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+            <div class="modal-body">Оффер будет отменен.
+               <br>Вы уверены что хотите отменить его?</div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-green">Подтвердить</button>
+               <button type="button" data-dismiss="modal" class="btn btn-gray">Отменить</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="editOffer" tabindex="-1" role="dialog" aria-labelledby="myModalLabelSmall" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 id="myModalLabelSmall" class="modal-title">Изменить параметры оффера</h4>
+            </div>
+            <div class="modal-body">Создасться новый оффер с теми-же пара-
+               <br>метрами, доступными для редактирования.
+               <br>
+               <br>Текущий оффер отменится, и его можно будет
+               <br>найти в архиве по кнопке «Показать все офферы».</div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-green">Подтвердить</button>
+               <button type="button" data-dismiss="modal" class="btn btn-gray">Отменить</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="cancelOffer" tabindex="-1" role="dialog" aria-labelledby="cancelLabelSmall" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 id="cancelLabelSmall" class="modal-title">Отменить оффер</h4>
+            </div>
+            <div class="modal-body">Вы собираетесь отменить оффер.
+               <br>Оффер B5636 на сумму 145 834 RUB
+               <br>будет отменен.</div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-green">Подтвердить</button>
+               <button type="button" data-dismiss="modal" class="btn btn-gray">Отменить</button>
+            </div>
+         </div>
+      </div>
+   </div>
    <!-- =============== VENDOR SCRIPTS ===============-->
    <!-- MODERNIZR-->
    <script src="../vendor/modernizr/modernizr.custom.js"></script>

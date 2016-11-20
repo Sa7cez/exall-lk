@@ -191,6 +191,10 @@ $btn-orange-color:               #fff;
 $btn-orange-bg:                  rgb(248, 160, 53);
 $btn-orange-border:              transparent;
 
+$btn-green-color:               #fff;
+$btn-green-bg:                  #07b910;
+$btn-green-border:              transparent;
+
 $btn-gray-color:               #fff;
 $btn-gray-bg:                  rgb(199, 203, 211);
 $btn-gray-border:              transparent;
@@ -644,7 +648,7 @@ $modal-title-line-height:     $line-height-base;
 //** Background color of modal content area
 $modal-content-bg:                             #fff;
 //** Modal content border color
-$modal-content-border-color:                   rgba(0,0,0,.2);
+$modal-content-border-color:                   #fff;
 //** Modal content border color **for IE8**
 $modal-content-fallback-border-color:          #999;
 
@@ -659,7 +663,7 @@ $modal-footer-border-color:   $modal-header-border-color;
 
 $modal-lg:                    900px;
 $modal-md:                    600px;
-$modal-sm:                    300px;
+$modal-sm:                    380px;
 
 
 //== Alerts

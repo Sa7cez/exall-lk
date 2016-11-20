@@ -22,11 +22,28 @@ $submenu-header-hg:               40px;   // Submenu header when hover collapse 
 $sidebar-item-border-wd:          4px;
 $scrollbar-wd:                    17px;
 
+$top-padding:                     10px;
+$left-padding:                    24px;
+
+$em-margin:                       26px;
+
 .sidebar {
   height: 100%;
   padding-bottom: 20px;
   background-color: $sidebar-bg;
   -webkit-overflow-scrolling: touch;
+
+  .selector {
+    padding:$top-padding ($left-padding - 5);
+
+    .select2-container {
+      min-width:51px;
+
+      .select2-container--default .select2-selection--single {
+        padding-right: 15px;
+      }
+    }    
+  }
   
   .hamburger {
     position: absolute;
@@ -92,7 +109,6 @@ $scrollbar-wd:                    17px;
   // First main level
   > .nav {
     position: relative;
-    padding-top: 42px;
 
     // Only the first item in sidebar
     > .nav-heading:first-child {
@@ -105,7 +121,7 @@ $scrollbar-wd:                    17px;
       
       > a,
       > .nav-item {
-        padding: 11px 24px;
+        padding: $top-padding $left-padding $top-padding ($left-padding + $em-margin);
         color: $sidebar-item-color;
         letter-spacing: -.035em;
         font-weight: normal;
@@ -126,13 +142,20 @@ $scrollbar-wd:                    17px;
           color: $sidebar-icon-color;
           padding-top: 5px;
           vertical-align: top;
+          margin-left: (-$em-margin + 1);
         }
       }
 
-      > a span {
-        display: inline-block;
-        width: 91px;
-        line-height: 21px;
+      > .nav-item {
+        > span {
+          //display: inline-block;
+          max-width: 91px;
+          line-height: 21px;
+        }
+        .select-container {
+          margin-top: -5px;
+          display: none;
+        }
       }
 
       // Active item state
@@ -160,7 +183,7 @@ $scrollbar-wd:                    17px;
 
   > .news_block {
     @include transition(all 0.4s ease);
-    margin: 11px 19px 11px 24px;
+    margin: $top-padding 19px $top-padding $left-padding;
     background-color: $sidebar-item-bg-active;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -298,6 +321,10 @@ $tablet-landscape: 1025px;
 // Collapsed state styles
 .aside-collapsed {
 
+  .selector {
+    padding: $top-padding 6px;
+  }
+
   .sidebar {
     overflow-x: hidden;
     // Applies to first level items
@@ -318,6 +345,7 @@ $tablet-landscape: 1025px;
           > em {
             font-size: 1.6em; // increase icons size
             width: auto;
+            margin: 0;
           }
           &:hover,
           &:focus { // accessibility

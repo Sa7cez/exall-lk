@@ -1,0 +1,530 @@
+
+.dropdown-menu.popup
+  .arrow
+  table
+    tr
+      td 30+
+      td Сделок на бирже
+    tr
+      td 100
+      td Рейтинг
+    tr
+      td A+
+      td Trust Score
+    tr.line
+      td EN
+      td English
+    tr
+      td RU
+      td Русский
+    tr
+      td FR
+      td Francais
+
+
+"NEW" : "Новый",
+"WAITING_AGREEMENT" : "Покупатель согласен перевести средства",
+"WAITING_FOR_PAYMENT" : "Ожидает перевода",
+"WAITING_CONFIRMATION" : "Ожидает подтверждения",
+"ON_CHECK" : "На арбитраже",
+"MONEY_BACK" : "Возврат средств",
+"POPUP_FEEDBACK" : "",
+"FINISHED" : "Исполнен",
+"CANCELLED" : "Отменен",
+
+.bordered
+	.info Реквизиты появятся здесь, когда начнется сделка.
+    .rate 1 BTC = 600 USD
+    .send 
+      span.left(data-localize="trades.BUY_BTC")
+      label
+        input.form-control.input-sm
+      a(href="#", data-localize="trades.ALL")
+      .residue
+        span(data-localize="trades.RESIDUE")
+        span.end 0.14658393
+      
+      span.left(data-localize="trades.AMOUNT_USD")
+      label
+        input.form-control.input-sm
+      a(href="#", data-localize="trades.ALL")
+      .residue
+        span(data-localize="trades.RESIDUE")
+        span.end 300
+
+
+
+.block.requisites
+  .name 
+    | Сбербанк
+    .adds (банковский перевод, Россия, RUB)
+  .bordered
+    .info 
+      .part Реквизиты появятся здесь, когда начнется сделка.
+      .rate.clearfix
+        .pull-left 1 BTC = 600 USD
+        .pull-right Мин. сумма сделки: 0.25 BTC
+      .send 
+        span.left(data-localize="trades.BUY_BTC")
+        label
+          input.form-control.input-sm
+        a(href="#", data-localize="trades.ALL")
+        .residue
+          span(data-localize="trades.RESIDUE")
+          span.end 0.14658393
+        
+        span.left(data-localize="trades.AMOUNT_USD")
+        label
+          input.form-control.input-sm
+        a(href="#", data-localize="trades.ALL")
+        .residue
+          span(data-localize="trades.RESIDUE")
+          span.end 300
+      .footer
+        | Сумма сделки в валюте: 
+        span.select-inline
+          select
+            option(value="") 655 USD
+            option(value="") 38000 RUB
+.block.requisites
+  .name 
+    | Webmoney
+    .adds (электронные деньги, RUB)
+  .bordered
+    .info 
+      .part Реквизиты появятся здесь, когда начнется сделка.
+      .rate.clearfix
+        .pull-left 1 BTC = 40 600 RUB
+        .pull-right Мин. сумма сделки: 0.25 BTC
+      .send 
+        span.left(data-localize="trades.BUY_BTC")
+        label
+          input.form-control.input-sm
+        a(href="#", data-localize="trades.ALL")
+        .residue
+          span(data-localize="trades.RESIDUE")
+          span.end 0.14658393
+        
+        span.left(data-localize="trades.AMOUNT_USD")
+        label
+          input.form-control.input-sm
+        a(href="#", data-localize="trades.ALL")
+        .residue
+          span(data-localize="trades.RESIDUE")
+          span.end 300
+      .footer
+        | Сумма сделки в валюте: 
+        span.select-inline
+          select
+            option(value="") 655 USD
+            option(value="") 38000 RUB
+.block.elements.long
+  p Предложите сделку продавцу. Если ваша кандидатура будет одобрена тогда сделка начнется и вам будут предоставлены реквизиты.
+  p
+    button.btn.btn-orange.btn-sm Предложить сделку
+  p
+    a(href="#") Отменить сделку
+
+
+
+
+
+
+
+
+
+
+  .payment_methods.clearfix
+    .block.requisites
+      .name 
+        | Сбербанк
+        .adds (банковский еперевод, Россия, RUB)
+      .bordered
+        .info 
+          .part Реквизиты появятся здесь, когда начнется сделка.
+    .block.pt50.long.elements
+      p
+        | Вы предложили сделку по курсу: 1 BTC = 600 ZAR ≈
+        span.select-inline
+          select
+            option(value="") 500 USD
+            option(value="") 38000 RUB
+        br
+        | Продавец согласен заключить с вами сделку 
+        br
+        | только по текущему курсу площадки : 1 BTC = 615 ZAR ≈ 
+        span.select-inline
+          select
+            option(value="") 525 USD
+            option(value="") 38000 RUB
+        br
+        br
+        | Сумма сделки по новому курсу: 1075 USD
+      p
+        a(href="#") Отменить сделку
+        button.btn.btn-orange.btn-sm Заключить сделку
+
+
+
+
+
+
+
+// Create order
+
+#create_order_buy,
+#create_order_sell {
+  position: absolute;
+  width: 340px;
+  background-color: rgb(255, 255, 255);
+  @include box-shadow(0 13px 51px rgba(0, 1, 0, 0.21));
+  z-index:10;
+  padding:0;
+  margin:-39px 0 0;
+  font-size:12px;
+  
+  @media (max-width: 662px) { 
+    overflow: hidden;
+  }
+  .top {
+    padding: 10px 30px;
+    line-height: 30px;
+    select {
+
+    }
+    .hide_it {
+      font-size:14px;
+      opacity: .3;
+      em {
+        margin-right: 11px;
+      }
+      em,span {
+        cursor: pointer;
+      }
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  .line {
+    padding:10px 15px 10px 30px;
+
+    &.title {
+      font-size:14px;
+      padding-top:18px;
+      padding-bottom: 8px;
+    }
+    .plus {
+      line-height: 40px;
+      margin:0;
+      font-size:14px;
+
+      .select2-container--default.select2-container--disabled .select2-selection--single {
+        opacity: 0.2;
+      }
+      .select2-container--open .select2-dropdown--below {
+        @include border-radius(3px);
+      }
+      .select2-container--default .select2-selection--single {
+        padding:5px 7px 5px 7px;
+        height: 40px;
+        background-color: transparent;
+        border: 1px solid rgb(199, 203, 211);
+      }
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size:14px;
+        line-height: 27px;
+        padding-left: 28px;
+        padding-right: 0;
+      }
+      .select2-container--default .select2-selection--single .select2-selection__arrow {
+        left: 3px;
+        b {
+          &:before {
+            content: "\e91a";
+            opacity: 0.45;
+            width: 10px;
+            height: 10px;
+            color: rgb(11, 36, 84);
+            font-size:10px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+    &.payments {
+      .select2-container {
+        width: 210px !important;  
+      }
+    }
+    .payments {
+      float: left;
+      width: 186px;
+      min-height: 70px;
+      padding-bottom: 8px;
+    }
+    .text {
+      margin-top: 14px;
+      line-height: 16px;
+      font-size:12px;
+    }
+    .sortable {
+      margin: 0;
+      padding: 0;
+      min-height: 76px;
+      min-width: 130px;
+
+      li {
+        position: relative;
+        margin: 4px 0 6px 0;
+        width: 160px;
+        height: 30px;
+        line-height: 30px;
+        padding:0 10px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(199, 203, 211);
+        @include border-radius(3px);
+        
+        em {
+          cursor: move;
+          opacity: 0.3;
+          font-size:11px;
+          color: rgb(11, 36, 84);
+        }
+        
+        .remove {
+            position: absolute;
+            opacity: 0.45;
+            width: 15px;
+            line-height: 15px;
+            color: #7A7A7A;
+            font-size: 10px;
+            line-height: 30px;
+            cursor: pointer;
+            top:0;
+            bottom: 0;
+            left: 165px;
+            margin:auto 0;
+            pointer-events: all;
+          
+          &:after {
+            content: "\e919";
+            font-family: 'exall';
+          }
+            &:hover {
+              opacity: .8;
+            }
+        }
+      }
+    }
+    &.currencies {
+      min-height: 70px;
+      padding-bottom: 8px;
+      li {
+        width: 70px;
+      }
+      .text {
+        margin-top: 22px;
+      }
+      .remove {
+        left: 76px !important;
+      }
+    }
+    &.currency {
+      label {
+        float:left;
+        width: 130px;
+      }
+      .select2-container {
+        width: 97px !important; 
+      }
+      .text {
+        padding-top: 6px;
+        padding-right: 45px;
+      }
+    }
+    &.country {
+      /* padding-left: 61px; */
+      li {
+        width: 120px;
+      }
+      .select2-container {
+        width: 160px !important;  
+      }
+    }
+    &.countries {
+      /* padding-left: 61px; */
+      .col {
+        width: 170px;
+      }
+      li {
+        width: 140px;
+      }
+      .remove {
+        left: 145px !important;
+      }
+    }
+    &.gray {
+      background-color: #f6f8f9;
+    }
+    &.green {
+      background-color: #27c14c;
+      line-height: 18px;
+      font-size:12px;
+      color: #fff;
+      padding:13px 30px;
+    }
+    .col {
+      width: 130px;
+      float:left;
+    }
+    .col2.fee {
+      padding-top: 25px;
+    }
+    &.inputs {
+      span {
+        display: inline-block;
+
+      }
+      padding-top: 20px;
+      padding-bottom: 7px;
+      input {
+        width: 97px;
+            margin: 5px 0 10px;
+          height: 40px;
+      }
+    }
+    &.settings {
+      padding-top: 18px;
+      line-height: 24px;
+      padding-bottom: 0;
+      a {
+        text-decoration: underline;
+        &.arrow:after {
+          position: absolute;
+          content: "\e900";
+            color: rgb(98, 111, 133);
+            font-size: 8px;
+            opacity: .5;
+            font-family: 'exall';
+            cursor: pointer;
+            margin-left: 21px;
+        }
+      }
+      .btn {
+        margin-right: 19px;
+        margin-top: 6px;
+        margin-bottom: 24px;
+      }
+    }
+    &.others {
+      padding-left: 61px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      padding-right: 0;
+
+      .select2 {
+        margin-bottom: 20px;
+      }
+
+      .time-react {
+        .select2-container {
+          width: 150px !important;
+        }
+      }
+
+      .time-confirm {
+        .select2-container {
+          width: 220px !important;
+        } 
+      }
+
+      .time-buy {
+        float: left;
+        .select2-container {
+          width: 191px !important;
+        }
+      }
+
+      .main-currency {
+        .select2-container {
+          width: 65px !important;
+        }
+      }
+
+      line-height: 40px;
+      font-size:14px;
+
+      .select2-container--default.select2-container--disabled .select2-selection--single {
+        opacity: 0.2;
+      }
+      .select2-container--open .select2-dropdown--below {
+        @include border-radius(3px);
+      }
+      .select2-container--default .select2-selection--single {
+        padding:5px 7px 5px 10px;
+        height: 40px;
+        border: 1px solid rgb(199, 203, 211);
+      }
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size:14px;
+        line-height: 27px;
+        padding-left: 0;
+        padding-right: 36px;
+      }
+      .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 33px;
+      }
+    }
+  }
+
+  .title {
+
+  }
+
+  .sortable {
+    li {
+      em {
+
+      }
+    }
+  }
+
+  .settings-panel {
+    position: absolute;
+    bottom:0;
+    left:100%;
+    width: 380px;
+    background-color: #fff;
+    @include box-shadow(0 13px 51px rgba(0, 1, 0, 0.21));
+    .close-settings {
+      cursor: pointer;
+      padding-top: 14px;
+      padding-bottom: 10px;
+      padding-left: 61px;
+      font-size:10px;
+      opacity: .3;
+      em {
+        margin-right: 11px;
+      }
+      em,span {
+        cursor: pointer;
+      }
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    @media (max-width: $mq-desktop) { 
+      left:50%;
+    }
+    @media (max-width: $mq-tablet) {  
+      left:52%;
+    }
+    @media (max-width: 662px) { 
+      left: -30px;
+      position: relative;
+    }
+  }
+}

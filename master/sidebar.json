@@ -11,7 +11,7 @@
       "text": "Trades",
       "href": "trades.html",
       "icon": "icon-trades",
-      "alert": "30",
+      "select": ["BTC", "LTC", "EPR", "DLC"],
       "translate": "sidebar.nav.TRADES"
     },  
     {

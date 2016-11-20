@@ -3,6 +3,40 @@ block active
   //- then we check it against the sidebar configuration 
   //- to set as active the current sidebar item 
 
+mixin build_sidebar_tree_with_select(tree)
+  - each item in tree
+
+    //- check only items, we will active parents later using client-side JS
+    - item.active = (sidebar_active==item.href)
+    
+    li(class=(item.heading?'nav-heading':'')+' '+(item.active?'active':''))
+      - var label = item.label || 'label label-success'
+      - if (item.heading)
+        span(data-localize=item.translate)= item.text
+      - else
+        - if (item.submenu)
+          .nav-item(title=item.text, data-toggle="collapse")
+            - if (item.alert)
+              .pull-right(class=label)= item.alert
+            - if (typeof item.icon !== 'undefined')
+              em(class=item.icon)
+            a(href=item.href, data-localize=item.translate)= item.text
+          ul.nav.sidebar-subnav.collapse(id=item.href.replace('#',''))
+            li.sidebar-subnav-header= item.text
+            +build_sidebar_tree(item.submenu)
+        - else
+          .nav-item
+            - if (item.alert)
+              .pull-right(class=label)= item.alert
+            - if (item.select)
+              .pull-right.select-container
+                select.delay-selector
+                  - each option in item.select
+                    option(value="#{option}")= option
+            - if (typeof item.icon !== 'undefined')
+              em(class=item.icon, data-toggle='tooltip', data-placement='right', title=item.text)
+            a(href=item.href, data-localize=item.translate)= item.text
+
 mixin build_sidebar_tree(tree)
   - each item in tree
 
@@ -35,6 +69,13 @@ mixin build_sidebar_tree(tree)
 // START Sidebar (left)
 .aside-inner
   nav.sidebar(data-sidebar-anyclick-close="")
+    
+    .selector
+      select.delay-selector
+        option(value='BTC') BTC
+        option(value='LTC') LTC
+        option(value='EPR') EPR
+        option(value='DLC') DLC
 
     div.hamburger(data-toggle='tooltip', data-placement='right', title='Collapse menu')
       // Button used to collapse the left sidebar. Only visible on tablet and desktops

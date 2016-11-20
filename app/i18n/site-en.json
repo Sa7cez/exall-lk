@@ -2,7 +2,7 @@
   "trades": {
     "BUY": "Buy bitcoin",
     "SELL": "Sell bitcoin",
-    "ORDER": "Order",
+    "ORDER": "Offer",
     "AMOUNT": "Amount",
     "COUNTRY": "Country",
     "STATUS": "Status",
@@ -11,6 +11,7 @@
     "CREATE_ORDER": "Create order",
     "ORDERSBUY": "Orders to buy",
     "ORDERSSELL": "Orders to sell",
+    "MY-OFFERS": "My offers",
     "BUY": "Buy",
     "SELL": "Sell",
     "PRICE": "Price",
@@ -19,13 +20,14 @@
     "SELLER": "Seller",
     "RATING": "Rating",
     "FAVORITE": "Choose from favorites",
-    "SEARCH": "Search for all applications",
+    "SEARCH": "Search user",
     "statuses" : {
       "WAIT" : "Wait",
       "WAITPAYMENT" : "Awayting transfer",
       "SENDED": "Transferred",
       "COMPLETE": "Completed",
-      "WAITCOMPLETE" : "Waiting"
+      "WAITCOMPLETE" : "Waiting",
+      "PARTCOMPLETE" : "Partially fulfilled"
     },
     "popup": {
       "BUY": "Buy Bitcoin",

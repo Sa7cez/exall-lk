@@ -32,10 +32,10 @@ $nav-border-color:              #4d5d79;
 
 // Navbar top layout
 .topnavbar {
+  background-color: $nav-top-bg;
   -webkit-backface-visibility: hidden; /* fixes chrome jump */
   margin-bottom: 0;
   border-radius: 0;
-  background-color: #fff;
   z-index: 1050;
   border:0;
   border-bottom: 1px solid #b0b7c2;
@@ -66,7 +66,6 @@ $nav-border-color:              #4d5d79;
 // ------------------------------
 
 .topnavbar {
-  @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
   position: relative;
 
   .dropdown-menu {
@@ -149,38 +148,141 @@ $nav-border-color:              #4d5d79;
   .currencies {
     position: relative;
     display: none;
-    margin-left: 60px;
-    margin-top: 11px;
-    max-width:340px;
+    margin-top: 20px;
+    white-space: nowrap;
 
     .border {
-      float: left;
-      max-width: 320px;
-      max-height: 46px;
+      display: inline-block;
+      position: relative;
+      height: 30px;
+      margin-left: 20px;
       border: 1px solid $nav-border-color;
-      padding: 2px 2px 2px 8px;
       @include border-radius(3px);
-      overflow: hidden;
+      max-width: 50%;
+      min-width: 62px;
+
+      .icon-cross {
+        cursor: pointer;
+        background-color: $nav-top-bg;
+        width: 9px;
+        height: 9px;
+        position: absolute;
+        left: -4.5px;  
+        top: -6.5px;
+        font-size:7px;
+        color:$nav-border-color;
+        line-height: 9px;
+        text-align: center;
+        &:hover {
+          color:white;
+        }
+      }
+
+      .currency-name {
+        float: left;
+        width: 30px;
+        line-height: 28px;
+        color: white;
+        font-size: 12px;
+        font-weight: 300;
+        text-align: center;
+        border-right: 1px solid $nav-border-color;
+      }
+
+      &.size1 {
+        max-width: 99%;
+      }
+      &.size2 {
+        max-width: 49%;
+      }
+      &.size3 {
+        max-width: 32%;
+      }
+      &.size4 {
+        max-width: 22%;
+        margin-left: 10px;
+
+        &:first-child {
+          margin-left: 20px;
+        }
+      }
+
+    }
+    .plus {
+      display: inline-block;
+      cursor: pointer;
+      font-size: 11px;
+      color: rgba(255,255,255,.4);
+      vertical-align: top;
+      margin-left: 23px;
+      line-height: 30px;
+      &:hover {
+        color: rgba(255,255,255,.7);
+      }
+      .variants {
+        border-top: 0;
+        margin-top: 6px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 45px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        margin-left: -24px;
+        fieldset {
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+        .checkbox {
+          margin: 0;
+        }
+        .c-checkbox span {
+          width: 17px;
+          height: 17px;
+        }
+        .c-checkbox input[type=checkbox]:checked + span, 
+        .c-checkbox input[type=radio]:checked + span {
+          border-color: #27c14c;
+        }
+        .c-checkbox input[type=checkbox]:checked + span:before, 
+        .c-checkbox input[type=radio]:checked + span:before {
+          color: #27c14c;
+          font-size: 17px;
+          line-height: 1;
+          margin-top: -1px;
+          margin-left: 0;
+          vertical-align: sub;
+        }
+        .c-checkbox:hover span {
+          border-color: #27c14c;
+        }
+        label {
+          color:black;
+        }
+      }
     }
     ul {
       padding:0;
       list-style: none;
-      margin: 0;
+      margin-right: 35px;
+      max-width: 100%;
+      overflow-x: hidden;
+
       li {
         cursor: pointer;
         display: inline-block;
         vertical-align: top;
-        width: 74px;
-        height: 18px;
-        line-height: 18px;
         text-align: left;
+        margin-left: 10px;
 
         em {
             cursor: pointer;
             display: inline-block;
-            font-size: 5px;
+            font-size: 4px;
             width: 8px;
-            line-height: 18px;
+            line-height: 28px;
             text-align: center;
             vertical-align: bottom;
 
@@ -194,9 +296,9 @@ $nav-border-color:              #4d5d79;
         }
 
         span {
-          font-size: 12px;
+          font-size: 10px;
           font-weight: 300;
-          letter-spacing: .03em;
+          line-height: 28px;
           color: $nav-top-item-desktop;
         }
 
@@ -217,6 +319,7 @@ $nav-border-color:              #4d5d79;
                 em {
                   margin-left: -8px;
                   margin-right: 3px;
+                  line-height: 18px;
                 }
                 &:last-child {
                   padding-left: 20px;
@@ -261,9 +364,10 @@ $nav-border-color:              #4d5d79;
       }
     }
     .chooser {
-      position: absolute;
-      display: inline;
-      margin-left: 10px;
+      float: right;
+      width: 30px;
+      line-height: 28px;
+      text-align: center;
 
       &.open {
         .icon-down-arrow:before {
@@ -275,7 +379,7 @@ $nav-border-color:              #4d5d79;
     .icon-down-arrow {
       cursor: pointer;
       font-size: 9px;
-      line-height: 50px;
+      line-height: 29px;
       color: rgba(255,255,255,.4);
       z-index:5;
       position: relative;
@@ -287,8 +391,8 @@ $nav-border-color:              #4d5d79;
     }
 
     .chooser_popup {
-      top:10px;
-      right: -72px !important;
+      top: -2px;
+      right: -58px !important;
       width: 87px;
       min-width: 87px;
       z-index:4;
@@ -347,32 +451,175 @@ $nav-border-color:              #4d5d79;
     }
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-width: 845px) {
     .wallet {
-      margin-right: 63px;
+      margin-right: 10px;
+      font-size:12px;
+      line-height: 21px;
+      em {
+        font-size:12px;
+        margin-right: 5px;
+      }
+    }
+    .currencies .plus {
+      margin-left: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 845px) {
+    .wallet {
+      margin-right: 53px;
     }
   }
 
   .open .wallet-dropdown {
-    border: 1px solid #4d5d79;
-    padding: 6px 12px;
-    margin-top: -1px !important;
-    text-align: left;
-    left: 16px !important;
-    right: auto !important;
-    background-color: #0F3276;
     border-top: 0;
+    margin-top: 1px;
+
+    width: 380px;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 13px 51px rgba(0, 1, 0, 0.21);
+
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+
+    .top-line {
+      padding:13px 30px 11px 42px;
+      font-weight:400;
+      line-height: 30px;
+
+      .select2 {
+        margin-left: 11px;
+        margin-top: -3px;
+      }
+      em {
+        font-size:14px;
+        margin-right: 11px;
+        opacity: .4;
+        vertical-align: text-bottom;
+      }
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+          opacity: .6;
+          em {
+            opacity: .6;
+          }
+        }
+      }
+    }
+
+    ul {
+      margin: 8px 0 16px;
+      padding: 0;
+      li {
+        width: 128px;
+        height: 42px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 18px;
+
+        &.center {
+          width: 117px;
+          border-left:1px solid #f1f3f5;
+          border-right:1px solid #f1f3f5;
+        }
+
+        em {
+          font-size: 11px;
+          opacity: .5;
+          margin-right: 10px;
+          line-height: 18px;
+        }
+        a {
+          display: inline-block;
+          line-height: 1.1;
+          border-bottom: 1px solid rgba(0,0,0, .5);
+          text-decoration: none;
+        }
+        .count {
+          color: rgba(0,0,0,.8);
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 26px;
+        }
+      }
+    }
     
     .line {
-      color: white;
-      font-size: 14px;
-      line-height: 22px;
-      white-space: nowrap;
-      letter-spacing: 0.003em;
+      height: 1px;
+      background-color: #f1f3f5;
+    }
 
-      span {
-        padding-left: 10px;
-        font-size:12px;
+    .qr {
+      float: left;
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 12px;
+      color: Rgba(0, 0, 0, 0.8);
+      width: 106px;
+      margin-left: 41px;
+      margin-top: 20px;
+
+      img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 13px;
+      }
+    }
+
+    .address {
+      float: left;
+      padding-top: 17px;
+      width: 210px;
+
+      .code {
+        color: black;
+        font-weight: 400;
+        padding: 6px 0 11px;
+      }
+      .refresh {
+        width: 120px;
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 12px;
+        text-align: center;
+        padding: 5px 0;
+        margin-bottom: 16px;
+        &:hover {
+          background-color: #eff1f4;
+          border: 1px solid #dee1e8;
+        }
+      }
+      .line {
+        margin-bottom: 10px;
+      }
+      .selects {
+        line-height: 30px;
+
+        .input-sm {
+          width: 57px;
+          height: 30px;
+          outline: none;
+          border: 1px solid #dfe2e7;
+          margin: 10px 0 16px ;
+          vertical-align: -webkit-baseline-middle;
+        }
+
+        .input-sm:first-child {
+          margin-right: 8px;
+          margin-left: 8px;
+        }
+
+      }
+      .btn-green {
+        width: 110px;
       }
     }
   }
@@ -583,9 +830,6 @@ $nav-border-color:              #4d5d79;
 
   // Navbar top styles
   .topnavbar {
-
-    background-color: $nav-top-bg;
-    @include gradient-horizontal($nav-top-bg-start, $nav-top-bg-end);
     
     .navbar-header {
       @include gradient-remove();
@@ -648,6 +892,7 @@ $nav-border-color:              #4d5d79;
 @media only screen and (min-width: $mq-tablet) {
   .topnavbar .currencies {
     display: block;
+    white-space: nowrap;
   }
   .topnavbar .currencies-wrapper {
     @include transition(all .5s);

@@ -1,0 +1,46 @@
+#yesNoModal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog.modal-sm
+      .modal-content
+        .modal-body
+          | Оффер будет отменен. 
+          br
+          | Вы уверены что хотите отменить его?
+        .modal-footer
+          button.btn.btn-green(type="button") Подтвердить
+          button.btn.btn-gray(type="button", data-dismiss="modal") Отменить
+
+#editOffer.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabelSmall', aria-hidden='true')
+    .modal-dialog.modal-sm
+      .modal-content
+        .modal-header
+          h4#myModalLabelSmall.modal-title Изменить параметры оффера
+        .modal-body
+          | Создасться новый оффер с теми-же пара-
+          br
+          | метрами, доступными для редактирования.
+          br
+          br
+          | Текущий оффер отменится, и его можно будет
+          br
+          | найти в архиве по кнопке «Показать все офферы».
+        .modal-footer
+          button.btn.btn-green(type="button") Подтвердить
+          button.btn.btn-gray(type="button", data-dismiss="modal") Отменить
+
+#cancelOffer.modal.fade(tabindex='-1', role='dialog', aria-labelledby='cancelLabelSmall', aria-hidden='true')
+    .modal-dialog.modal-sm
+      .modal-content
+        .modal-header
+          h4#cancelLabelSmall.modal-title Отменить оффер
+        .modal-body
+          | Вы собираетесь отменить оффер.
+          br
+          | Оффер B5636 на сумму 145 834 RUB
+          br
+          | будет отменен.
+        .modal-footer
+          button.btn.btn-green(type="button") Подтвердить
+          button.btn.btn-gray(type="button", data-dismiss="modal") Отменить
+
+
+

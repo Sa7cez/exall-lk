@@ -1,159 +1,186 @@
 {
   "aaData": [{
-    "price": "57 583",
+    "price": "57583 RUB",
     "amount": "0.01207051",
-    "payment": "Western Union",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Константин Константинопольский</a>",
-    "rating": "10"
+    "payment": "<span title='Trust 100'>Western Union</span>",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Константин Константинопольский</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "10",
+    "country": "Меж-нар.",
+    "link": "<a href='#test' class='icon-cart-wrapper'><i class='icon-cart'></i></a>"
   }, {
-    "price": "583",
+    "price": "583 USD",
     "amount": "1.01207054",
-    "payment": "Sberbank",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
-    "rating": "100"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Александридис Константинопулос</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "100",
+    "country": "Меж-нар."
   }, {
-    "price": "7 583",
+    "price": "7583 DKK",
     "amount": "13.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
-    "rating": "75"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Валерий Панфилов</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "75",
+    "country": "США"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "1.01207053",
-    "payment": "Сбербанк",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
-    "rating": "35"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "35",
+    "country": "Португалия"
   }, {
-    "price": "137 583",
+    "price": "136583 JPY",
     "amount": "1.01207051",
-    "payment": "Альфа-Банк",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
-    "rating": "-25"
+    "payment": "<span title='Trust 50'>Альфа-Банк</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Panteley</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-25",
+    "country": "Испания"
   }, {
-    "price": "4 583.1",
+    "price": "4583.1 ZAR",
     "amount": "1.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
-    "rating": "-10"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Максим Сергеевич</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-10",
+    "country": "Китай"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "1.01207051",
-    "payment": "Western Union",
-    "seller": "<a href=\"#\">Иванов Андрейка</a>",
-    "rating": "20"
+    "payment": "<span title='Trust 100'>Western Union</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Иванов Андрейка</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "20",
+    "country": "США"
   }, {
-    "price": "583",
+    "price": "583 EUR",
     "amount": "1.01207051",
-    "payment": "Sberbank",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
-    "rating": "100"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Александридис Константинопулос</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "100",
+    "country": "США"
   }, {
-    "price": "7 583",
+    "price": "7583 USD",
     "amount": "1.01207059",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
-    "rating": "75"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Валерий Панфилов</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "75",
+    "country": "США"
   }, {
-    "price": "583",
+    "price": "Мультивал.",
     "amount": "1.01207051",
-    "payment": "Sberbank",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
-    "rating": "100"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Александридис Константинопулос</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "100",
+    "country": "США"
   }, {
-    "price": "7 583",
+    "price": "7583 USD",
     "amount": "1.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
-    "rating": "75"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Валерий Панфилов</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "75",
+    "country": "Португалия"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "1.01207051",
-    "payment": "Сбербанк",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
-    "rating": "35"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "35",
+    "country": "Бразилия"
   }, {
-    "price": "137 583",
+    "price": "137583 USD",
     "amount": "1.01207031",
-    "payment": "Альфа-Банк",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
-    "rating": "-25"
+    "payment": "<span title='Trust 50'>Альфа-Банк</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Panteley</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-25",
+    "country": "США"
   }, {
-    "price": "4 583",
+    "price": "4583 RON",
     "amount": "14.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
-    "rating": "-10"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Максим Сергеевич</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-10",
+    "country": "США"
   }, {
-    "price": "1 583",
+    "price": "1583 CNY",
     "amount": "1.01207051",
-    "payment": "Western Union",
-    "seller": "<a href=\"#\">Иванов Андрейка</a>",
-    "rating": "20"
+    "payment": "<span title='Trust 100'>Western Union</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Иванов Андрейка</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "20",
+    "country": "Китай"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "1.01207051",
-    "payment": "Сбербанк",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
-    "rating": "35"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "35",
+    "country": "США"
   }, {
-    "price": "583",
+    "price": "583 USD",
     "amount": "1.01207051",
-    "payment": "Sberbank",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Александридис Константинопулос</a>",
-    "rating": "100"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Александридис Константинопулос</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "100",
+    "country": "США"
   }, {
-    "price": "7 583",
+    "price": "7583 USD",
     "amount": "1.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Валерий Панфилов</a>",
-    "rating": "75"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Валерий Панфилов</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "75",
+    "country": "США"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "1.01207051",
-    "payment": "Сбербанк",
-    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a>",
-    "rating": "35"
+    "payment": "<span title='Trust 100'>Sberbank</span>",
+    "seller": "<span class=\"status online\"></span><a href=\"#\">Александр Валерьев</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "35",
+    "country": "США"
   }, {
-    "price": "137 583",
+    "price": "137583 USD",
     "amount": "1.01207011",
-    "payment": "Альфа-Банк",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
-    "rating": "-25"
+    "payment": "<span title='Trust 50'>Альфа-Банк</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Panteley</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-25",
+    "country": "США"
   }, {
-    "price": "4 583.5",
+    "price": "4583.5 USD",
     "amount": "11.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
-    "rating": "-10"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Максим Сергеевич</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-10",
+    "country": "Китай"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "11.11207051",
-    "payment": "Western Union",
-    "seller": "<a href=\"#\">Иванов Андрейка</a>",
-    "rating": "20"
+    "payment": "<span title='Trust 100'>Western Union</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Иванов Андрейка</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "20",
+    "country": "США"
   }, {
-    "price": "137 583",
+    "price": "137583 USD",
     "amount": "1.01207051",
-    "payment": "Альфа-Банк",
-    "seller": "<span class=\"status away\"></span><a href=\"#\">Panteley</a>",
-    "rating": "-15"
+    "payment": "<span title='Trust 50'>Альфа-Банк</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Panteley</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-15",
+    "country": "Россия"
   }, {
-    "price": "4 583.11",
+    "price": "4583.11 USD",
     "amount": "14.01207051",
-    "payment": "Bank of America",
-    "seller": "<span class=\"status offline\"></span><a href=\"#\">Максим Сергеевич</a>",
-    "rating": "-30"
+    "payment": "<span title='Trust 75'>Bank of America</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Максим Сергеевич</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "-30",
+    "country": "США"
   }, {
-    "price": "1 583",
+    "price": "1583 USD",
     "amount": "1.01203251",
-    "payment": "Western Union",
-    "seller": "<a href=\"#\">Иванов Андрейка</a>",
-    "rating": "20"
+    "payment": "<span title='Trust 100'>Western Union</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Иванов Андрейка</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "20",
+    "country": "Испания"
   }, {
-    "price": "2 583",
+    "price": "2583 USD",
     "amount": "0.01212051",
-    "payment": "Western Union",
-    "seller": "<a href=\"#\">Boobsman</a>",
-    "rating": "45"
+    "payment": "<span title='Trust 100'>Western Union</span>",
+    "seller": "<span class=\"status offline\" data-toggle=\"tooltip\" data-placement=\"left\" data-original-title=\"5 часов назад\"></span><a href=\"#\">Boobsman</a><span class=\"rating\">(30+, 100, A+, RU, EN)</span><div class=\"dropdown-menu arrow-popup\"><div class=\"arrow\"></div><table><tbody><tr><td>30+</td><td>Сделок на бирже</td></tr><tr><td>100</td><td>Рейтинг</td></tr><tr><td>A+</td><td>Trust Score</td></tr><tr class=\"line\"><td>EN</td><td>English</td></tr><tr><td>RU</td><td>Русский</td></tr><tr><td>FR</td><td>Francais</td></tr></tbody></table></div>",
+    "rating": "45",
+    "country": "Китай"
   }]
 }

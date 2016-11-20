@@ -126,7 +126,7 @@ html, body {
 // Page main content
 // -----------------------------
 .content-wrapper {
-  padding: 56px $content-padding;
+  padding: 23px $content-padding 56px;
   width: 100%;
   // styling to visually wrap the component
   border-top: 1px solid rgba(0,0,0,.15);
@@ -167,7 +167,7 @@ html, body {
   }
 
   @media only screen and (min-width: $mq-tablet) {
-    padding: 56px $content-padding;
+    padding: 23px $content-padding 56px;
     //overflow: auto; // required for portlets
     > h3,
     > .content-heading {
