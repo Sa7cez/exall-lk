@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'exall';
-  src:  url('fonts/exall.eot?15paab');
-  src:  url('fonts/exall.eot?15paab#iefix') format('embedded-opentype'),
-    url('fonts/exall.ttf?15paab') format('truetype'),
-    url('fonts/exall.woff?15paab') format('woff'),
-    url('fonts/exall.svg?15paab#exall') format('svg');
+  src:  url('fonts/exall.eot?38nfq');
+  src:  url('fonts/exall.eot?38nfq#iefix') format('embedded-opentype'),
+    url('fonts/exall.ttf?38nfq') format('truetype'),
+    url('fonts/exall.woff?38nfq') format('woff'),
+    url('fonts/exall.svg?38nfq#exall') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,8 +24,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-download:before {
+.icon-solved:before {
+  content: "\e924";
+}
+.icon-open:before {
+  content: "\e922";
+}
+.icon-closed:before {
+  content: "\e923";
+}
+.icon-pending:before {
   content: "\e920";
+}
+.icon-new:before {
+  content: "\e926";
 }
 .icon-cogwheel:before {
   content: "\e921";

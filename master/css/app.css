@@ -2822,6 +2822,21 @@ h3 > .breadcrumb,
 label {
   font-weight: normal; }
 
+.icon-new {
+  color: #27c04c; }
+
+.icon-closed {
+  color: #c62828; }
+
+.icon-solved {
+  color: #d6d6d6; }
+
+.icon-pending {
+  color: #65c3e9; }
+
+.icon-open {
+  color: #65c3e9; }
+
 .tooltip {
   position: absolute; }
 
